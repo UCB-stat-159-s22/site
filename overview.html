@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistics 159/259, Spring 2021 Course Summary &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Statistics 159/259: Weekly Plan" href="schedule.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Statistics 159/259, Spring 2021 Course Summary
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/overview.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concepts">
+   Concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terms-related-to-reproducibility">
+     Terms related to reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducibility-and-the-philosophy-of-science">
+     Reproducibility and the Philosophy of Science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-reproducibility">
+     Obstacles to reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-replicability">
+     Obstacles to replicability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-good-science-and-applied-statistics">
+     Obstacles to good science and applied Statistics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weaponizing-reproducible-open-science">
+   Weaponizing reproducible/open science
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-ideas-tools-from-software-engineering-that-can-help-improve-science">
+     Key ideas/tools from software engineering that can help improve science
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-testing-statistical-models-sensitivity-stability">
+   Hypothesis testing, statistical models, sensitivity/stability
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Statistics 159/259, Spring 2021 Course Summary</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concepts">
+   Concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terms-related-to-reproducibility">
+     Terms related to reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reproducibility-and-the-philosophy-of-science">
+     Reproducibility and the Philosophy of Science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-reproducibility">
+     Obstacles to reproducibility
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-replicability">
+     Obstacles to replicability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obstacles-to-good-science-and-applied-statistics">
+     Obstacles to good science and applied Statistics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weaponizing-reproducible-open-science">
+   Weaponizing reproducible/open science
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-ideas-tools-from-software-engineering-that-can-help-improve-science">
+     Key ideas/tools from software engineering that can help improve science
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-testing-statistical-models-sensitivity-stability">
+   Hypothesis testing, statistical models, sensitivity/stability
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <!--- compile: pandoc overview18.md -o overview18.pdf --toc --toc-depth=4 -->
+<hr class="docutils" />
+<p>header-includes:</p>
+<ul class="simple">
+<li><p>\hypersetup{colorlinks=false,
+allbordercolors={0 0 0},
+pdfborderstyle={/S/U/W 1}}</p></li>
+</ul>
+<hr class="docutils" />
+<div class="tex2jax_ignore mathjax_ignore section" id="statistics-159-259-spring-2021-course-summary">
+<h1>Statistics 159/259, Spring 2021 Course Summary<a class="headerlink" href="#statistics-159-259-spring-2021-course-summary" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="terms-related-to-reproducibility">
+<h3>Terms related to reproducibility<a class="headerlink" href="#terms-related-to-reproducibility" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>reproducibility</p></li>
+<li><p>replicability</p></li>
+<li><p>repeatability</p></li>
+<li><p>computational reproducibility</p></li>
+<li><p>“preproducibility”</p></li>
+</ul>
+</div>
+<div class="section" id="reproducibility-and-the-philosophy-of-science">
+<h3>Reproducibility and the Philosophy of Science<a class="headerlink" href="#reproducibility-and-the-philosophy-of-science" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>the role of replication in science</p></li>
+<li><p>“virtual witnessing” and the role(s) of scientific publishing</p></li>
+</ul>
+</div>
+<div class="section" id="obstacles-to-reproducibility">
+<h3>Obstacles to reproducibility<a class="headerlink" href="#obstacles-to-reproducibility" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>data availability</p>
+<ul>
+<li><p>data</p></li>
+<li><p>data format</p></li>
+<li><p>data dictionary</p></li>
+<li><p>data cleaning and munging</p></li>
+<li><p>data pre-processing</p></li>
+</ul>
+</li>
+<li><p>reliance on proprietary software</p></li>
+<li><p>analysis</p>
+<ul>
+<li><p>breadcrumbs / description</p></li>
+<li><p>actual code</p></li>
+<li><p>description and what was done are often different</p></li>
+<li><p>scripting analyses is key–but not enough</p></li>
+<li><p>software versions, libraries, compilers, environments, hardware can matter</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="obstacles-to-replicability">
+<h3>Obstacles to replicability<a class="headerlink" href="#obstacles-to-replicability" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>lack of preproducibility: what was done?</p></li>
+<li><p>“researcher degrees of freedom”</p>
+<ul>
+<li><p>what was considered but not tried, or tried and discarded?</p></li>
+<li><p>choice of hypotheses, P-hacking</p></li>
+<li><p>choice of data subsets</p></li>
+<li><p>choice of transformations</p></li>
+<li><p>choice of models</p></li>
+<li><p>choice of estimators</p>
+<ul>
+<li><p>if Bayesian, choice of prior</p></li>
+<li><p>if frequentist, what method and why?</p></li>
+<li><p>constraints?</p></li>
+</ul>
+</li>
+<li><p>choice of measures of uncertainty</p>
+<ul>
+<li><p>nonparametric / model-based / parametric / asymptotic</p></li>
+<li><p>local / global</p></li>
+<li><p>selective inference, P-hacking, cherry-picking, “garden of forking paths”</p></li>
+<li><p>hypothesis tests: what is the full null? What does it have to do with reality?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>“file-drawer effect”</p>
+<ul>
+<li><p>small <span class="math notranslate nohighlight">\(n\)</span> studies</p></li>
+</ul>
+</li>
+<li><p>ignoring multiplicity &amp; multiple testing (including selective inference)</p></li>
+<li><p>intrinsic variability</p></li>
+<li><p>sensitivity to “influential” observations</p></li>
+<li><p>appropriate level of abstraction</p></li>
+</ul>
+</div>
+<div class="section" id="obstacles-to-good-science-and-applied-statistics">
+<h3>Obstacles to good science and applied Statistics<a class="headerlink" href="#obstacles-to-good-science-and-applied-statistics" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>confirmation bias</p></li>
+<li><p>Foundational issues; misinterpretations of probability and uncertainty</p>
+<ul>
+<li><p>Interpretation of probability</p>
+<ul>
+<li><p>prior probabilities</p></li>
+</ul>
+</li>
+<li><p>Types of uncertainty</p>
+<ul>
+<li><p>Epistemic and aleatory uncertainty</p></li>
+<li><p>constraints versus priors</p></li>
+</ul>
+</li>
+<li><p>Bayesian and frequentist measures of uncertainty</p></li>
+<li><p>Duality between minimax and Bayes estimation</p></li>
+<li><p>models versus response schedules</p></li>
+</ul>
+</li>
+<li><p>model mania</p>
+<ul>
+<li><p>correlation (even really strong correlation) is not causation</p></li>
+<li><p>fit does not imply correctness</p></li>
+<li><p>familiarity does not imply appropriateness (Fallacies do not cease to be fallacies because they become fashions. —G.K. Chesterton)</p></li>
+<li><p>Statistical practice as superstition</p></li>
+</ul>
+</li>
+<li><p>ritualization of Statistics, cargo-cult science</p></li>
+<li><p>bad incentive structure in academia</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="weaponizing-reproducible-open-science">
+<h2>Weaponizing reproducible/open science<a class="headerlink" href="#weaponizing-reproducible-open-science" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>https://int.nyt.com/data/documenttools/transparency-rule/d1fb06c8db2b3d4a/full.pdf
+https://www.nytimes.com/2021/01/04/climate/trump-epa-science.html</p></li>
+</ul>
+<div class="section" id="key-ideas-tools-from-software-engineering-that-can-help-improve-science">
+<h3>Key ideas/tools from software engineering that can help improve science<a class="headerlink" href="#key-ideas-tools-from-software-engineering-that-can-help-improve-science" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>revision/version control</p></li>
+<li><p>documentation, documentation, documentation</p></li>
+<li><p>modularity and abstraction</p></li>
+<li><p>scripted analyses and automation</p></li>
+<li><p>unit tests, regression tests, coverage tests, continuous integration</p></li>
+<li><p>code review</p></li>
+<li><p>pair programming</p></li>
+<li><p>consistency: APIs, calling signatures, object-oriented code</p></li>
+<li><p>separating data, computation, presentation</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="hypothesis-testing-statistical-models-sensitivity-stability">
+<h2>Hypothesis testing, statistical models, sensitivity/stability<a class="headerlink" href="#hypothesis-testing-statistical-models-sensitivity-stability" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>It’s all about the null hypothesis</p>
+<ul>
+<li><p>null has to let you find sampling distribution of the test</p></li>
+<li><p>if the null is not appropriate, the test is not appropriate</p>
+<ul>
+<li><p>example: <span class="math notranslate nohighlight">\(t\)</span>-test for RCTs</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span>-values:  <span class="math notranslate nohighlight">\(\Pr \{ P \le p || H_0 \} \le p\)</span>.</p></li>
+<li><p>Fisher and <span class="math notranslate nohighlight">\(P\)</span>-values</p>
+<ul>
+<li><p>The Design of Experiments</p></li>
+</ul>
+</li>
+<li><p>Replicability and <span class="math notranslate nohighlight">\(r\)</span>-values</p></li>
+<li><p>Multiple testing, multiplicity, multiplicity adjustments</p>
+<ul>
+<li><p>Bonferroni’s inequality</p></li>
+<li><p>Independence</p></li>
+<li><p>False discovery rate (not covered)</p></li>
+</ul>
+</li>
+<li><p>The Neyman model for causal inference</p>
+<ul>
+<li><p>potential outcomes</p></li>
+<li><p>strong null and weak null</p></li>
+<li><p>non-interference</p></li>
+<li><p>responses can be distributions</p></li>
+<li><p>honor the randomization!</p></li>
+</ul>
+</li>
+<li><p>Permutation tests</p>
+<ul>
+<li><p>nulls that imply invariance of the probability distribution under a group</p></li>
+<li><p>has to match the real world</p></li>
+<li><p>generating random permutations</p>
+<ul>
+<li><p>comparison of PRNGs, algorithms for generating random integers, sampling algorithms</p></li>
+</ul>
+</li>
+<li><p>simulation to estimate <span class="math notranslate nohighlight">\(P\)</span>-values; randomized tests to find conservative <span class="math notranslate nohighlight">\(P\)</span>-values</p></li>
+<li><p>permutation tests for regression, two-sample test, etc.</p></li>
+</ul>
+</li>
+<li><p>Randomization tests</p>
+<ul>
+<li><p>probability distribution of statistics induced by how subjects were randomized</p></li>
+<li><p>sometimes identical to permutation tests</p></li>
+<li><p>Fisher’s Lady Tasting Tea (again)</p></li>
+<li><p>RCTs</p>
+<ul>
+<li><p>“vanilla”</p></li>
+<li><p>blocked designs, balance</p></li>
+<li><p>multi-center designs</p></li>
+<li><p>“black box” clinical trial software</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Goodness of fit tests</p>
+<ul>
+<li><p>Kolmogorov-Smirnov</p></li>
+<li><p>Chi-square statistic</p>
+<ul>
+<li><p>asymptotic tests versus exact tests versus conservative tests</p></li>
+</ul>
+</li>
+<li><p>other tests</p></li>
+</ul>
+</li>
+<li><p>Intersection-union tests and stratified tests</p>
+<ul>
+<li><p>combining information from different tests</p></li>
+<li><p>combining functions, including Fisher’s combining function</p></li>
+<li><p>nonparametric combination of tests</p>
+<ul>
+<li><p>“lockstep” permutations</p></li>
+<li><p>unrolling the loops</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Fixed-<span class="math notranslate nohighlight">\(n\)</span> tests versus sequential tests</p>
+<ul>
+<li><p>Wald’s sequential probability ratio test</p></li>
+<li><p>Martingale-based tests</p>
+<ul>
+<li><p>martingales, supermartingales, submartingales</p></li>
+<li><p>stopping times</p></li>
+<li><p>likelihood ratios are nonnegative martingales</p></li>
+<li><p>Ville’s Inequality for nonnegative martingales</p></li>
+<li><p>Wald’s SPRT as an application of Ville’s inequality</p></li>
+<li><p>some martingales useful for inference</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Models versus response schedules</p>
+<ul>
+<li><p>Response schedules and “physics.”</p></li>
+<li><p>common models</p>
+<ul>
+<li><p>regression</p>
+<ul>
+<li><p>assumptions required to perform OLS</p></li>
+<li><p>assumptions required for OLS to be unbiased</p></li>
+<li><p>assumptions required to compute SE</p></li>
+<li><p>assumptions required for <span class="math notranslate nohighlight">\(\hat{\beta}/SE\)</span> to have a t-distribution</p></li>
+</ul>
+</li>
+<li><p>linear probability models</p></li>
+<li><p>logit and probit models</p></li>
+<li><p>Poisson regression</p>
+<ul>
+<li><p>MLE for Poisson regression</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>nonparametric tests for parametric models
++</p></li>
+</ul>
+</li>
+<li><p>Sensitivity analysis and sensitivity auditing</p>
+<ul>
+<li><p>Sensitivity analysis:</p>
+<ul>
+<li><p>General technique for assessing qualitative sensitivity to:</p>
+<ul>
+<li><p>data pre-processing</p></li>
+<li><p>influential observations / outliers</p></li>
+<li><p>model parametrization</p></li>
+<li><p>values of external parameters</p></li>
+<li><p>estimation method</p></li>
+<li><p>etc.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sensitivity auditing</p>
+<ul>
+<li><p>consider / catalogue sources of uncertainty</p></li>
+<li><p>consider how the scientific question is framed; built-in assumptions</p></li>
+<li><p>data quality</p></li>
+<li><p>data and model provenance</p></li>
+<li><p>NUSAP</p></li>
+</ul>
+</li>
+<li><p>Post-Normal Science</p>
+<ul>
+<li><p>“facts uncertain, values in dispute, stakes high, decisions urgent”</p></li>
+<li><p>distinction between theorists’ tools and policy tools</p></li>
+<li><p>importance of asking the right question</p></li>
+<li><p>examples:</p>
+<ul>
+<li><p>neonicotinoids &amp; bees</p></li>
+<li><p>nanoparticles</p></li>
+<li><p>climate change</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="schedule.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Statistics 159/259: Weekly Plan</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

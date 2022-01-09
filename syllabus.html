@@ -1,0 +1,660 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Statistics 159/259: Weekly Plan" href="schedule.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Statistics 159/259, Spring 2021 Course Summary
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/syllabus.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fernando-perez-philip-b-stark-department-of-statistics-uc-berkeley">
+   Fernando Perez, Philip B. Stark Department of Statistics, UC Berkeley
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-version-today">
+   This version: \today
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#administrativia">
+   Administrativia
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#format-and-assessment">
+     Format and assessment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#office-hours">
+     Office hours
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graduate-student-instructor">
+     Graduate Student Instructor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#communication">
+     Communication
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grading">
+     Grading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-of-conduct-attribution-of-work">
+     Code of conduct; attribution of work
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disability-accommodations">
+     Disability accommodations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fernando-perez-philip-b-stark-department-of-statistics-uc-berkeley">
+   Fernando Perez, Philip B. Stark Department of Statistics, UC Berkeley
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-version-today">
+   This version: \today
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#administrativia">
+   Administrativia
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#format-and-assessment">
+     Format and assessment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#office-hours">
+     Office hours
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graduate-student-instructor">
+     Graduate Student Instructor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#communication">
+     Communication
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grading">
+     Grading
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-of-conduct-attribution-of-work">
+     Code of conduct; attribution of work
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disability-accommodations">
+     Disability accommodations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <!--- compile: pandoc syllabus.md -o syllabus.pdf --toc --toc-depth=4 -->
+<hr class="docutils" />
+<p>header-includes:</p>
+<ul class="simple">
+<li><p>\hypersetup{colorlinks=false,
+allbordercolors={0 0 0},
+pdfborderstyle={/S/U/W 1}}</p></li>
+</ul>
+<hr class="docutils" />
+<div class="tex2jax_ignore mathjax_ignore section" id="syllabus-for-statistics-159-259-reproducible-and-collaborative-statistical-data-science">
+<h1>Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science<a class="headerlink" href="#syllabus-for-statistics-159-259-reproducible-and-collaborative-statistical-data-science" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fernando-perez-philip-b-stark-department-of-statistics-uc-berkeley">
+<h2><a class="reference external" href="http://fperez.org/">Fernando Perez</a>, <a class="reference external" href="https://www.stat.berkeley.edu/~stark">Philip B. Stark</a> Department of Statistics, UC Berkeley<a class="headerlink" href="#fernando-perez-philip-b-stark-department-of-statistics-uc-berkeley" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="this-version-today">
+<h2>This version: \today<a class="headerlink" href="#this-version-today" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This course teaches “the why and how” of reproducible and collaborative research by conducting
+applied statistics, including reproducing published work and critically re-analyzing
+the data in published work–reproducibly.
+The course also involves contributing to open-source libraries.</p>
+<p>It addresses replicability, reproducibility, statistical models, statistical malpractice (<span class="math notranslate nohighlight">\(P\)</span>-hacking, selective inference, inappropriate models and tests), and elements of the
+philosophy of science and the foundations of statistics.</p>
+<p>Themes that pervade the course include evidence, uncertainty, risk, models, and public policy.
+Examples will be drawn from elections, public health, racial and gender bias, fraud detection, and natural disasters:</p>
+<ul class="simple">
+<li><p>fraud in the 2020 presidential election</p></li>
+<li><p>statistical audits of election results</p></li>
+<li><p>effectiveness of interventions (lockdowns, business closures) on the spread of COVID-19</p></li>
+<li><p>models of the spread of COVID-19</p></li>
+<li><p>statistical detection of lottery fraud and fraud in Minecraft speedruns</p></li>
+<li><p>statistical models to predict earthquakes and crime</p></li>
+<li><p>impact of climate change on extinctions</p></li>
+<li><p>gender bias in teaching evaluations</p></li>
+<li><p>racial bias in soccer</p></li>
+</ul>
+<p>Technical topics include:</p>
+<ul class="simple">
+<li><p>Hypothesis tests and <span class="math notranslate nohighlight">\(P\)</span>-values</p></li>
+<li><p>Multiple testing and the False Discovery Rate</p></li>
+<li><p>Sequential testing and martingales</p></li>
+<li><p>Combining hypothesis tests</p></li>
+<li><p>Selective inference</p></li>
+<li><p>Meta-analysis</p></li>
+<li><p>Goodness-of-fit tests</p></li>
+<li><p>Pseudo-random number generation</p></li>
+<li><p>Marked point-process models</p></li>
+</ul>
+<p>Software engineering topics include:</p>
+<ul class="simple">
+<li><p>style, readability</p></li>
+<li><p>abstraction, modularity</p></li>
+<li><p>literate programming</p></li>
+<li><p>unit tests, regression tests, and continuous integration</p></li>
+<li><p>revision control systems</p></li>
+</ul>
+<p>Consistent class participation is crucial: we will be discussing subtle substantive, technical, and philosophical issues and reviewing code during class.
+Even though we plan to record the lectures,
+if you cannot attend the lectures synchronously,
+please do <em>not</em> take the course.</p>
+<p>There will be roughly ten projects, some individual and some collaborative in groups of 4-5.
+You will be asked to review your own contributions and each others contributions
+to group projects.
+There will not be a midterm or final exam, but there will be a videorecorded
+final presentation of group work.</p>
+<p><strong>The COVID-19 pandemic introduces quite a bit of uncertainty into timelines; this document reflects our intentions but it is not a “contract” we can promise to follow. Circumstances may require us to change plans.
+Regardless, your learning is our primary focus, and we hope you will find the course interesting and valuable.</strong></p>
+</div>
+<div class="section" id="administrativia">
+<h2>Administrativia<a class="headerlink" href="#administrativia" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Statistics 133, 134, 135</p></li>
+<li><p>Willingness to learn programming languages and software tools independently
+(tools used will include
+Python; Jupyter Notebooks; the Python “scientific stack” of
+numpy, scipy, matplotlib, pandas, and scikit; git; GitHub; GitHub actions;
+Docker; LaTeX,
+Markdown, pandoc)</p></li>
+<li><p>Willingness to learn some statistical methodology by reading on one’s own (materials and links
+will be provided, but not all topics required to do the homework will be covered in lecture)</p></li>
+</ul>
+</div>
+<div class="section" id="format-and-assessment">
+<h3>Format and assessment<a class="headerlink" href="#format-and-assessment" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>3 hours of lecture and 2 hours of lab per week</p>
+<ul>
+<li><p>lectures will focus on theory, philosophy of science, foundations of statistics, scientific applications, software engineering, and code reviews</p></li>
+<li><p>lab will focus on computing, software tools, workflow, and collaboration</p></li>
+</ul>
+</li>
+<li><p>approximately 10 assignments, some individual and some collaborative</p></li>
+</ul>
+</div>
+<div class="section" id="office-hours">
+<h3>Office hours<a class="headerlink" href="#office-hours" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Perez: Tuesday, 1-2PM (<a class="reference external" href="https://berkeley.zoom.us/j/97935938101?pwd=NUlzR3R6blU0ZFRHSTF1T2o5SkJYQT09">Zoom link</a>)</p></li>
+<li><p>Stark: Thursday, 11AM-12PM (<a class="reference external" href="https://meet.google.com/cks-bphy-oia">Google Meet</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="graduate-student-instructor">
+<h3>Graduate Student Instructor<a class="headerlink" href="#graduate-student-instructor" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Daniel McAndrew</p></li>
+<li><p>Labs: Wednesday 2-4PM &amp; 5-7PM (<a class="reference external" href="https://berkeley.zoom.us/my/danielmcandrew">Zoom link</a>)</p></li>
+<li><p>Office hours: Thursday 2-3 PM (<a class="reference external" href="https://berkeley.zoom.us/my/danielmcandrew">Zoom link</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="communication">
+<h3>Communication<a class="headerlink" href="#communication" title="Permalink to this headline">¶</a></h3>
+<p>Please use the course Slack channels for questions about course material and logistics.
+For personal matters (illness, accommodations, etc.) that should remain private, please send email to
+the instructors or GSI.</p>
+<p>During the work week, we expect to be able to reply to Slack messages and email within 24 hours.
+On weekends, we might need longer.</p>
+</div>
+<div class="section" id="grading">
+<h3>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h3>
+<p>The course is <em>not</em> graded on a curve.
+It is possible for every student to make an A.
+We encourage you to focus on mastering the material, not on your grade.
+The weight of each assignment will be announced with the assignment.
+We are still working out the details, but we expect about 10 assignments in all,
+roughly 6 of which will be individual and 4 group.</p>
+<p><em>Submitting assignments:</em> Submit written assignments by making a pull request
+to your private repository within the Berkeley GitHub organization for the class,
+https://github.berkeley.edu/stat-159-s21</p>
+<p>Use your CalNet credentials to access your private repository.
+Create a directory for each assignment labeled with the assignment number, e.g., “Assignment1” for
+the first assignment.</p>
+<ul class="simple">
+<li><p>Text documents should be written in LaTeX or Markdown (Markdown, processed by pandoc, is preferred: using Markdown can really speed up your writing and your source will be much easier to read).
+A pdf and the source file should be submitted.
+Microsoft Word is not acceptable.</p></li>
+<li><p>Code and analyses should be in python. All code should have accompanying unit tests.
+In some cases, Jupyter notebooks will be the appropriate thing to submit;
+in others (more extensive analyses), a notebook and a collection of .py files might be more appropriate.
+For term projects, the “deliverable” will include a repository that includes code, data,
+analyses, and unit tests. The adequacy and coverage of the unit tests will be
+part of the grade.</p></li>
+<li><p>Final projects are due on the first day of final exams, 10 May 2021.
+Final projects include a video presentation by team members.</p></li>
+</ul>
+</div>
+<div class="section" id="code-of-conduct-attribution-of-work">
+<h3>Code of conduct; attribution of work<a class="headerlink" href="#code-of-conduct-attribution-of-work" title="Permalink to this headline">¶</a></h3>
+<p>The high academic standard at the University of California, Berkeley, is reflected in each degree awarded.
+Every student is expected to maintain this high standard by ensuring that all
+academic work reflects unique ideas or properly attributes the ideas to the original sources.</p>
+<p>These are some basic expectations of students with regards to academic integrity:
+Any work submitted should be your own individual thoughts, and should not have been submitted
+for credit in another course unless you have prior written permission to re-use it in this
+course from this instructor.</p>
+<p>All assignments must use “proper attribution,” meaning that you have identified the original
+source and extent or words or ideas that you reproduce or use in your assignment.
+This includes drafts and homework assignments!
+If you are unclear about expectations, ask your instructor.</p>
+<p>Do not collaborate or work with other students on assignments or projects unless the
+instructor gives you permission or instruction to do so.</p>
+</div>
+<div class="section" id="disability-accommodations">
+<h3>Disability accommodations<a class="headerlink" href="#disability-accommodations" title="Permalink to this headline">¶</a></h3>
+<p>If you need an accommodation for a disability, if you have information your wish to share with
+the instructor about a medical emergency,
+or if you need special arrangements if the building needs to be evacuated, please inform the
+instructor as soon as possible.</p>
+<p>If you are not currently listed with DSP (the Disabled Students’ Program) and believe you might
+benefit from their support, please apply online at https://dsp.berkeley.edu/.</p>
+</div>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Communication: class Slack channel https://join.slack.com/t/stat-a7u3014/shared_invite/zt-kl7fket1-q8IKC9aTs01cbB5GBEA7PA</p></li>
+<li><p>Lectures will be recorded and posted in <a class="reference external" href="https://drive.google.com/drive/u/1/folders/1DfuR06LbUaCs0gmWX9QyaUI35-mwnI-S">Google drive</a>, but attendance is mandatory.
+(Much of the pedagogical value of the class is in participating in discussions and code reviews.)</p></li>
+<li><p>Course readings that are not easy to find free on the web or through the UC Berkeley Library will be posted to <a class="reference external" href="https://drive.google.com/drive/u/1/folders/1DfuR06LbUaCs0gmWX9QyaUI35-mwnI-S">Google drive</a></p></li>
+<li><p>Computing resources</p>
+<ul>
+<li><p>We will use Jupyter notebooks. We will start with hosted notebooks on https://datahub.berkeley.edu/. Later in the term, we will discuss installing Jupyter on your own device. The datahub.berkeley.edu server will have all the packages you need pre-installed. In contrast, if you use the Anaconda distribution on your own device, you will need to install some extra things, such as the permute and cryptorandom packages.</p></li>
+<li><p>We will use the campus github server, github.berkeley.edu</p></li>
+<li><p>The class notes and most other materials are available at https://github.com/UCB-stat-159-s21/site</p></li>
+<li><p>Assignments should be submitted by pull request to your private repository within the class organization https://github.berkeley.edu/stat-159-s21</p></li>
+</ul>
+</li>
+<li><p>Git and git workflows</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/berkeley-scf/tutorial-git-basics/blob/master/git-intro.md">Introduction to Git</a>.</p></li>
+<li><p><a class="reference external" href="http://gitimmersion.com">Immersion course</a></p></li>
+<li><p><a class="reference external" href="https://book.git-scm.com">git-scm guide</a></p></li>
+<li><p><a class="reference external" href="http://statlab.github.io/permute/dev/index.html">Statlab development git workflow</a></p></li>
+</ul>
+</li>
+<li><p>Continuous integration</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.github.com/en/free-pro-team&#64;latest/actions">GitHub actions</a></p></li>
+</ul>
+</li>
+<li><p>Scientific Python, Jupyter</p>
+<ul>
+<li><p><a class="reference external" href="https://www.scipy-lectures.org/intro/">Lecture notes on scientific python</a></p></li>
+<li><p><a class="reference external" href="http://fperez.org/py4science/">Python for scientific computing</a> by Fernando Perez</p></li>
+<li><p>https://hplgit.github.io/primer.html/doc/pub/half/book.pdf</p></li>
+<li><p><a class="reference external" href="http://proquest.safaribooksonline.com/9781491922927">Elegant SciPy</a>, <a class="reference external" href="https://bids.berkeley.edu/people/st%C3%A9fan-van-der-walt">Stefan van der Walt</a>. The <a class="reference external" href="https://github.com/elegant-scipy/elegant-scipy">full book</a> and all the <a class="reference external" href="https://github.com/elegant-scipy/notebooks">notebooks</a> are available.</p></li>
+<li><p><a class="reference external" href="https://github.com/TiesdeKok/LearnPythonforResearch">Getting started with Python for research</a>, a gentle introduction to Python in data-intensive research.</p></li>
+<li><p><a class="reference external" href="https://github.com/stefanv/ds_intro">An introduction to “Data Science”</a>, a collection of Notebooks by BIDS’ <a class="reference external" href="https://bids.berkeley.edu/people/st%C3%A9fan-van-der-walt">Stéfan Van der Walt</a>.</p></li>
+<li><p><a class="reference external" href="http://proquest.safaribooksonline.com/book/physics/9781491901564">Effective Computation in Physics</a>, by Kathryn D. Huff; Anthony Scopatz. <a class="reference external" href="https://github.com/physics-codes/seminar">Notebooks to accompany the book</a>.</p></li>
+<li><p><a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython/index.html">A Whirlwind Tour of Python</a>, by Jake VanderPlas.</p></li>
+<li><p><a class="reference external" href="http://proquest.safaribooksonline.com/book/programming/python/9781491957653">Python for Data Analysis, 2nd Edition</a>, by  Wes McKinney, creator of Pandas. <a class="reference external" href="https://github.com/wesm/pydata-book">Companion Notebooks</a></p></li>
+<li><p><a class="reference external" href="https://github.com/TomAugspurger/effective-pandas">Effective Pandas</a>, a book by Tom Augspurger, core Pandas developer.</p></li>
+</ul>
+</li>
+<li><p>Docker</p>
+<ul>
+<li><p>https://docs.docker.com/get-started/</p></li>
+<li><p>https://docker-curriculum.com/</p></li>
+</ul>
+</li>
+<li><p>LaTeX</p>
+<ul>
+<li><p>https://www.tug.org/twg/mactex/tutorials/ltxprimer-1.0.pdf</p></li>
+</ul>
+</li>
+<li><p>Markdown</p>
+<ul>
+<li><p>https://daringfireball.net/projects/markdown/syntax</p></li>
+<li><p>https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</p></li>
+<li><p>https://www.markdownguide.org/getting-started/</p></li>
+</ul>
+</li>
+<li><p>Pandoc</p>
+<ul>
+<li><p>https://pandoc.org/getting-started.html</p></li>
+<li><p>https://pandoc.org/MANUAL.pdf</p></li>
+</ul>
+</li>
+<li><p>Miscellaneous computing tutorials</p>
+<ul>
+<li><p><a class="reference external" href="http://statistics.berkeley.edu/computing/training/tutorials">Berkeley Statistical Computing Facility tutorials</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="schedule.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Statistics 159/259: Weekly Plan</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
