@@ -1,0 +1,7 @@
+jupyter-book == 0.9.1
+matplotlib
+numpy
+scipy
+pandas
+scikit-learn
+scikit-image

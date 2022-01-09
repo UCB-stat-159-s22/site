@@ -1,0 +1,9 @@
+format: jb-book
+root: overview
+parts:
+- caption: Overview
+  chapters:
+  - file: schedule
+- caption: Syllabus
+  chapters:
+  - file: syllabus
