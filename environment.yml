@@ -102,4 +102,4 @@ dependencies:
   - pip
   - pip:
     - -r infra-requirements.txt
-    - -r requirements.txt
+    - -r book-requirements.txt

@@ -1,12 +1,3 @@
-<!--- compile: pandoc overview18.md -o overview18.pdf --toc --toc-depth=4 -->
-
----
-header-includes:
-  - \hypersetup{colorlinks=false,
-            allbordercolors={0 0 0},
-            pdfborderstyle={/S/U/W 1}}
----
-
 # Statistics 159/259, Spring 2022 Course Summary
 
 
