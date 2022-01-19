@@ -1,9 +1,12 @@
-# A few packages not available on conda-forge. The rest of the environment is 
-# provided in environment.yml
+# Pip packages required only for the book build, to be used by github actions
+# Note that these deps should already be satisfied by the environment.yml,
+# but we list them here separately so github actions runs as fast as possible.
 
-# Measure popularity of different packages in our hubs
-# https://discourse.jupyter.org/t/request-for-implementation-instrument-libraries-actively-used-by-users-on-a-jupyterhub/7994?u=yuvipanda
-popularity-contest==0.4.1
-
-# Assist git credentials management
-git-credential-helpers==0.2
+jupyter-book==0.12.1
+jupyter-sphinx==0.3.2
+markdown-it-py==1.1.0
+markupsafe==2.0.1
+myst-nb==0.13.1
+myst-parser==0.15.2
+sphinx==4.4.0
+sphinx-jupyterbook-latex==0.4.6

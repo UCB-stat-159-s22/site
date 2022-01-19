@@ -77,7 +77,6 @@ dependencies:
   - pandocfilters=1.5.0
   - pep8=1.7.1
   - pillow=8.4.0
-  - pip=21.3.1
   - plotly=5.5.0
   - pooch=1.5.2
   - proj=8.2.1
@@ -100,6 +99,7 @@ dependencies:
   - xarray=0.20.2
   - xlrd=2.0.1
 
-- pip
-- pip:
-  - -r requirements.txt
+  - pip
+  - pip:
+    - -r infra-requirements.txt
+    - -r requirements.txt
