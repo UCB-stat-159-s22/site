@@ -88,7 +88,7 @@ will be provided, but not all topics required to do the homework will be covered
 
 ### Graduate Student Instructor
 + [Facu Sapienza](mailto:fsapienza@berkeley.edu)
-+ Labs: Monday 2-4PM & 5-7PM ([Zoom link TBD]())
++ Labs: Monday 11AM-1PM & 2-4PM ([Zoom link TBD]())
 + Office hours: TBD ([Zoom link TBD]())
 
 
