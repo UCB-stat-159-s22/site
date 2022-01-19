@@ -7,3 +7,6 @@ parts:
 - caption: Syllabus
   chapters:
   - file: syllabus
+- caption: Lectures
+  chapters:
+  - file: lectures/intro-git/Git-Tutorial
