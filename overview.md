@@ -7,7 +7,7 @@ header-includes:
             pdfborderstyle={/S/U/W 1}}
 ---
 
-# Statistics 159/259, Spring 2021 Course Summary
+# Statistics 159/259, Spring 2022 Course Summary
 
 
 ## Concepts
