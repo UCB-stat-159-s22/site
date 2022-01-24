@@ -10,3 +10,6 @@ parts:
 - caption: Lectures
   chapters:
   - file: lectures/intro-git/Git-Tutorial
+- caption: Labs
+  chapters:
+  - file: lab/lab01.ipynb
