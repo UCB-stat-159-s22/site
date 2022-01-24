@@ -332,7 +332,7 @@
 <p>Welcome to Stat 159/259! This is our first lab, so for today we will focus in setting you up in Github and make some practice in Python. The menu for today is</p>
 <ol class="simple">
 <li><p><strong>Setting up GitHub Account.</strong> If you want to learn more about how to work with GitHub and how GitHub internally works, we recommend you to take a look to <a class="reference external" href="https://matthew-brett.github.io/curious-git/">The curious coder’s guide to git</a>. After we all have a GitHub account, we will ask you to complete this <a class="reference external" href="https://docs.google.com/forms/d/e/1FAIpQLSeWn3GLSAV4gWkMOyYiMcfN4VqUR4reUR2OOGKZWqYQoLzmnA/viewform">form</a> so we can add you to GitHub Classroom.</p></li>
-<li><p><strong>Warming up with Python.</strong> We will follow the Python tutorial written by Jake VanderPlas, <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython">A Whirlwind Tour of Python</a>.</p></li>
+<li><p><strong>Warming up with Python.</strong> We will follow the Python tutorial written by Jake VanderPlas, <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython">A Whirlwind Tour of Python</a>. We also invite you to play with the <a class="reference external" href="https://pythontutor.com">PythonTutor</a>, where you can see how variables are referenced to objects as you write your code.</p></li>
 <li><p><strong>Debugging in Python/iPython.</strong></p>
 <ol class="simple">
 <li><p>Debuggin with <a class="reference external" href="https://docs.python.org/3/library/pdb.html">pdb</a></p></li>
@@ -365,6 +365,14 @@
 <blockquote>
 <div><p>Once you have your GitHub account, please take a few minutes to complete this <a class="reference external" href="https://docs.google.com/forms/d/e/1FAIpQLSeWn3GLSAV4gWkMOyYiMcfN4VqUR4reUR2OOGKZWqYQoLzmnA/viewform">form</a>.</p>
 </div></blockquote>
+<p>The way we have to authenticate push/pull from the hub is by using this <a class="reference external" href="https://github.com/yuvipanda/github-app-user-auth">github-app-user-auth</a>, a tool developed by <a class="reference external" href="https://github.com/yuvipanda">&#64;yuvipanda</a>. Here’s how you can use it.</p>
+<ol class="simple">
+<li><p>Go to https://github.com/apps/stat159-berkeley-datahub-access, and ‘Install’ the app. Give it access to whichever repositories you want to push to. You can come back and add more repos here later if you wish.</p></li>
+<li><p>Login to stat159.datahub.berkeley.edu, and open a terminal.</p></li>
+<li><p>Run github-app-user-auth on the terminal. It’ll tell you to open a link in your browser, and input a 6 character code it gives you in the page opened.</p></li>
+<li><p>Once done, ‘Accept’ and it’ll ask you if you want to authenticate.</p></li>
+<li><p>Once accepted, you’re done! You can now push to the repositories you gave access to in step 1 for the next 8 hours or until your server stops from inactivity! We’ll hopefully have a quick ‘sign in’ button at some point that can make this a bit more streamlined, but this should work nicely already.</p></li>
+</ol>
 </div>
 <div class="section" id="warming-up-with-python">
 <h2>2. Warming up with Python<a class="headerlink" href="#warming-up-with-python" title="Permalink to this headline">¶</a></h2>
