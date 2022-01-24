@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022) &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="An interactive Git Tutorial: the tool you didn’t know you needed" href="../lectures/intro-git/Git-Tutorial.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lab/lab01.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lab/lab01.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-github">
+   1. Setting up GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warming-up-with-python">
+   2. Warming up with Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     2.1. Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#errors-and-exceptions">
+     2.2. Errors and Exceptions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#debugging-in-jupyter">
+   3. Debugging in Jupyter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-github">
+   1. Setting up GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warming-up-with-python">
+   2. Warming up with Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     2.1. Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#errors-and-exceptions">
+     2.2. Errors and Exceptions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#debugging-in-jupyter">
+   3. Debugging in Jupyter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-session-no1-stat-159-259-collaborative-and-reproducible-data-science-spring-2022">
+<h1>LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)<a class="headerlink" href="#lab-session-no1-stat-159-259-collaborative-and-reproducible-data-science-spring-2022" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>Monday 01-24-2022, 11AM-1PM &amp; 2PM-4PM</p>
+<p>Instructor: <a class="reference external" href="https://statistics.berkeley.edu/people/facu-sapienza">Facundo Sapienza</a></p>
+</div></blockquote>
+<p>Welcome to Stat 159/259! This is our first lab, so for today we will focus in setting you up in Github and make some practice in Python. The menu for today is</p>
+<ol class="simple">
+<li><p><strong>Setting up GitHub Account.</strong> If you want to learn more about how to work with GitHub and how GitHub internally works, we recommend you to take a look to <a class="reference external" href="https://matthew-brett.github.io/curious-git/">The curious coder’s guide to git</a>. After we all have a GitHub account, we will ask you to complete this <a class="reference external" href="https://docs.google.com/forms/d/e/1FAIpQLSeWn3GLSAV4gWkMOyYiMcfN4VqUR4reUR2OOGKZWqYQoLzmnA/viewform">form</a> so we can add you to GitHub Classroom.</p></li>
+<li><p><strong>Warming up with Python.</strong> We will follow the Python tutorial written by Jake VanderPlas, <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython">A Whirlwind Tour of Python</a>.</p></li>
+<li><p><strong>Debugging in Python/iPython.</strong></p>
+<ol class="simple">
+<li><p>Debuggin with <a class="reference external" href="https://docs.python.org/3/library/pdb.html">pdb</a></p></li>
+<li><p>Jupyter debugger</p></li>
+</ol>
+</li>
+</ol>
+<p>Remember we will be working in the <a class="reference external" href="https://stat159.datahub.berkeley.edu/hub/login?next=%2Fhub%2F">JupyterHub</a> for the full course, which has the libraries and tools we will be using during the semester. Why do we use the Hub? Well, it is quite convenient since you don’t need to install anything in your personal computer and you don’t need to worry about having installed all the required packages with their right version.</p>
+<p>As we have already mentioned, we are going to use Python for all the projects and homeworks in this course. However, it is important to remark that many of the concepts we will see in this course apply to other programming languages too (Julia, R, C, etc). Some good reasons for working in Python include</p>
+<ul class="simple">
+<li><p>Interpreted instead of compiled</p></li>
+<li><p>Clean syntax</p></li>
+<li><p>Object oriented (attributes + methods), convenient language constructs</p></li>
+<li><p>Variables can access large data structures by reference, without making a copy (speed and memory efficient).</p></li>
+</ul>
+<div class="section" id="setting-up-github">
+<h2>1. Setting up GitHub<a class="headerlink" href="#setting-up-github" title="Permalink to this headline">¶</a></h2>
+<p>If you don’t have a GitHub account yet, you can create one following this <a class="reference external" href="http://github.com/">link</a> (please DON’T use github.berkeley.edu). You can configure your preferences by using</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">&lt;setting&gt;</span> <span class="pre">&lt;option&gt;</span> </code></p>
+<p>For example, you can configure your email and</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git config --global user.name <span class="s2">&quot;Facu Sapienza&quot;</span>
+<span class="o">!</span>git config --global user.email <span class="s2">&quot;fsapienza@berkeley.edu&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For this course, we will be using <a class="reference external" href="https://classroom.github.com">GitHub Classroom</a>. Once you all have a GitHub account created, we will add you to the repository for the course.</p>
+<blockquote>
+<div><p>Once you have your GitHub account, please take a few minutes to complete this <a class="reference external" href="https://docs.google.com/forms/d/e/1FAIpQLSeWn3GLSAV4gWkMOyYiMcfN4VqUR4reUR2OOGKZWqYQoLzmnA/viewform">form</a>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="warming-up-with-python">
+<h2>2. Warming up with Python<a class="headerlink" href="#warming-up-with-python" title="Permalink to this headline">¶</a></h2>
+<p>For today’s session, we will follow <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython/">A Whirlwind Tour of Python</a>. You can see the contents of the book online, but you can also clone the repository of the book with the following command</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/jakevdp/WhirlwindTourOfPython.git</span></code></p>
+<blockquote>
+<div><p>Whenever you are doing this from the terminal or a notebook, remember to run this command from the directory you want the repository to be cloned.</p>
+</div></blockquote>
+<p>It is important that you are familiar with the contents of chapters 1-8, which include some introductory python syntax and data structures. If not, please take a few minutes to go thought these notebooks and get familiar with them. These concepts include:</p>
+<ul class="simple">
+<li><p>Basic operations (arithmetic, comparison, assignment, …)</p></li>
+<li><p>Manipulation of simple data structures (lists, dictionaries, tuples)</p></li>
+<li><p>Control flow (for loops, conditional statements)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Simple Python code examples</span>
+
+<span class="c1">## ...  [To do during the lab]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="functions">
+<h3>2.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<p>For this part of the lecture, we recommend following Chapter 9. As we write more and more code, keeping track of what each piece is doing can became quite difficult. Functions allow us to encapsulate pieces of code that are responsible for addressing a more specific task. Then, a nice piece of code looks like different functions (sometimes concatenated one to each other) doing different tasks in order to archive a final mayor goal.</p>
+<p>Functions receive different kind of arguments. The scope of this variables is always local, meaning that the variable name is declared <em>just</em> inside the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### .... [To do during the lab] Construct the following function</span>
+
+
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">gcd</span>      <span class="c1"># we import the great common divisor function from math</span>
+
+<span class="k">def</span> <span class="nf">get_coprimes</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Function to extract the coprimes elements of a list with respect to some give integer</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments:</span>
+<span class="sd">        - L: list with integers </span>
+<span class="sd">        - d: integer agains with the coprimality is evaluated</span>
+<span class="sd">        </span>
+<span class="sd">    Outputs:</span>
+<span class="sd">        - res: list of subelements of L that are coprime with d</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">gcd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="n">get_coprimes</span><span class="p">(</span><span class="n">L0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 3, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_coprimes</span><span class="p">(</span><span class="n">L0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A few comments about this last example:</p>
+<ol class="simple">
+<li><p>Suppose we want to ignore the trivial case of every number being coprimer with <code class="docutils literal notranslate"><span class="pre">1</span></code>. What can we do then? Do we add another conditional statement?</p></li>
+<li><p>What do we do if <code class="docutils literal notranslate"><span class="pre">L</span></code> has negative values?</p></li>
+<li><p>What do we do if there are values in <code class="docutils literal notranslate"><span class="pre">L</span></code> that are no integers?</p></li>
+<li><p>Can you think in ways of implementing <code class="docutils literal notranslate"><span class="pre">get_coprimes</span></code> by using a different kind of data structures?</p></li>
+<li><p>Is it possible to extent the scope of the variables inside the function (eg, to obtain the value of <code class="docutils literal notranslate"><span class="pre">res</span></code> inside <code class="docutils literal notranslate"><span class="pre">get_coprimes</span></code> outside the scope of the function)?</p></li>
+</ol>
+<p>We can solve some of these problems by hand. In the next section we will see how to add exceptions for conflictive cases.</p>
+<p>Something really useful about functions in Python is that we can add flexible arguments. These are divided into</p>
+<ul class="simple">
+<li><p>Simple arguments: <code class="docutils literal notranslate"><span class="pre">*args</span></code></p></li>
+<li><p>Keyword arguments: <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">catch_all</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;args =&quot;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;kwags =&quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">catch_all</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>args = (1, 2, 3)
+kwags = {&#39;b&#39;: 1.1, &#39;c&#39;: 1.2}
+2
+1.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="n">x</span>
+        
+    <span class="k">if</span> <span class="s2">&quot;factor&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">res</span> <span class="o">*=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;factor&quot;</span><span class="p">]</span>
+        
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_args</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also define anonymous functions, usually referred by the symbol <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. This are useful for different things (for example, we will see how useful they are when dealing with dataframes in Pandas)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add_one</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add_one</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">L0</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">%</span><span class="k">2</span>)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 4, 6, 1, 3, 5]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="errors-and-exceptions">
+<h3>2.2. Errors and Exceptions<a class="headerlink" href="#errors-and-exceptions" title="Permalink to this headline">¶</a></h3>
+<p>Different kinds of errors that occur as we write code include syntax, runtime and semantic errors. Specially for runtime errors, Python give us a clue about what kind or error may happened during the execution of our code. For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: &#39;c&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">+</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_dict</span> <span class="o">+</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;dict&#39; and &#39;dict&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many more different kind of built-in exceptions in Python. You can find some more examples in this <a class="reference external" href="https://docs.python.org/3/library/exceptions.html">link</a>. A general <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> is raised when the detected error doesn’t fall in any of the other categories.</p>
+<p>There are different ways of dealing with runtime errors in Python, there include the</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">try</span></code>…<code class="docutils literal notranslate"><span class="pre">except</span></code> clause</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raise</span></code> statement</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># numerator</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># denominator</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I was here&quot;</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Was I here?&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Something wrong happened&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I was here
+Something wrong happened
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;b must be different than zero.&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;b must be different than zero.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+
+<span class="ne">ValueError</span>: b must be different than zero.
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the following example, we use both <code class="docutils literal notranslate"><span class="pre">try</span></code>…<code class="docutils literal notranslate"><span class="pre">except</span></code> and <code class="docutils literal notranslate"><span class="pre">raise</span></code>, but it’s not working as we may expect. Can you identify the problem?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I was here&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;b must be different than zero.&quot;</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Was I here?&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Something wrong happen&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I was here
+Something wrong happen
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="debugging-in-jupyter">
+<h2>3. Debugging in Jupyter<a class="headerlink" href="#debugging-in-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter allow us to do post-mortem debugging with the <code class="docutils literal notranslate"><span class="pre">%debug</span></code> command. This is a wrapper around the basic <a class="reference external" href="https://docs.python.org/3/library/pdb.html">pdb debugger</a> that ships with the Python language.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">Input In [9],</span> in <span class="ni">inverse</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">debug</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; <span class=" -Color -Color-Green">/tmp/ipykernel_111/2900781285.py</span>(2)<span class=" -Color -Color-Cyan">inverse</span><span class=" -Color -Color-Blue">()</span>
+<span class=" -Color -Color-Green">      1 def</span> inverse<span class=" -Color -Color-Blue">(</span>x<span class=" -Color -Color-Blue">):</span>
+<span class=" -Color -Color-Green">----&gt; 2 </span><span class=" -Color -Color-Red">    </span><span class=" -Color -Color-Green">return</span> <span class=" -Color -Color-Cyan">1</span><span class=" -Color -Color-Blue">/</span>x
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ipdb&gt;  w
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  <span class=" -Color -Color-Green">/tmp/ipykernel_111/2697043687.py</span>(1)<span class=" -Color -Color-Cyan">&lt;module&gt;</span><span class=" -Color -Color-Blue">()</span>
+<span class=" -Color -Color-Green">----&gt; 1 </span>y <span class=" -Color -Color-Blue">=</span> inverse<span class=" -Color -Color-Blue">(</span><span class=" -Color -Color-Cyan">0</span><span class=" -Color -Color-Blue">)</span>
+
+&gt; <span class=" -Color -Color-Green">/tmp/ipykernel_111/2900781285.py</span>(2)<span class=" -Color -Color-Cyan">inverse</span><span class=" -Color -Color-Blue">()</span>
+<span class=" -Color -Color-Green">      1 def</span> inverse<span class=" -Color -Color-Blue">(</span>x<span class=" -Color -Color-Blue">):</span>
+<span class=" -Color -Color-Green">----&gt; 2 </span><span class=" -Color -Color-Red">    </span><span class=" -Color -Color-Green">return</span> <span class=" -Color -Color-Cyan">1</span><span class=" -Color -Color-Blue">/</span>x
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ipdb&gt;  !x
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ipdb&gt;  q
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">66</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y</span>
+
+<span class="ne">NameError</span>: name &#39;y&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, JupyterLab also includes a debugger we can use.</p>
+</div>
+<div class="section" id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Write a function that takes a list of numbers (integers) and returns something that looks like an histogram of the data. For example, For the following list</p>
+<p><code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">[1,1,2,2,2]</span></code></p>
+<p>You can return something that allow us to count the number of repetitions, for example</p>
+<p><code class="docutils literal notranslate"><span class="pre">{1:</span> <span class="pre">2,</span> <span class="pre">2:</span> <span class="pre">3}</span></code></p>
+<p>(for the output of this function, you can also propose a different data structure or you can even try to make a plot of the histogram)
+Try to include arguments such as the number of bins or the spacing between them or a variable that indicates if the histogram has to be normalized (divided by the total number of elements, such that the total mass of the histogram is 1).</p>
+<p>When writing your function, remember that sometimes less is more. Following Andy Oram and Greg Wilson advice in <em>Beautiful Code</em>,</p>
+<blockquote>
+<div><p><em>A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.</em></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### def ... ():</span>
+<span class="c1">### &quot;&quot;&quot;</span>
+<span class="c1">### ...</span>
+<span class="c1">### &quot;&quot;&quot;</span>
+<span class="c1">### return ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then try your function on the following examples</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">L0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">L1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">L2</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">L0</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/lab01_40_0.png" src="../_images/lab01_40_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lab"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../lectures/intro-git/Git-Tutorial.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">An interactive Git Tutorial: the tool you didn’t know you needed</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
