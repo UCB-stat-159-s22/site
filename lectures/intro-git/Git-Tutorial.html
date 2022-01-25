@@ -270,6 +270,13 @@
   <a class="reference internal nav-link" href="#first-things-first-git-must-be-configured-before-first-use">
    First things first: git must be configured before first use
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convenient-credentials-management">
+     Convenient credentials management
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stage-1-local-single-user-linear-workflow">
@@ -515,6 +522,13 @@
   <a class="reference internal nav-link" href="#first-things-first-git-must-be-configured-before-first-use">
    First things first: git must be configured before first use
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convenient-credentials-management">
+     Convenient credentials management
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stage-1-local-single-user-linear-workflow">
@@ -843,8 +857,23 @@ git config --global user.email <span class="s2">&quot;Fernando.Perez@berkeley.ed
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global color.ui <span class="s2">&quot;auto&quot;</span>
 </pre></div>
 </div>
-<p>Set git to use the credential memory cache so we don’t have to retype passwords too frequently.</p>
-<p>Github offers in its help pages instructions on how to configure the credentials helper for <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac">Mac OSX</a>, <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac">Windows</a> and <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux">Linux</a>.</p>
+<div class="section" id="convenient-credentials-management">
+<h3>Convenient credentials management<a class="headerlink" href="#convenient-credentials-management" title="Permalink to this headline">¶</a></h3>
+<p>Next, we configure git so that we manage our credentials without having to manually type our passwords for each and every operation.</p>
+<p>For general users, Github offers in its help pages instructions on how to configure the credentials helper for <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac">Mac OSX</a>, <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac">Windows</a> and <a class="reference external" href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux">Linux</a>.</p>
+<p>But in this document we will focus on configuring the <a class="reference external" href="https://github.com/yuvipanda/github-app-user-auth">github app for JupyterHub</a> developed by Berkeley’s Yuvi Panda. Our JupyterHub already has this app pre-installed, which makes it very convenient to push and pull securely from selected repositories.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global credential.helper <span class="s2">&quot;store --file=/tmp/github-app-git-credentials&quot;</span>
+</pre></div>
+</div>
+<p>And then, follow these steps, which you’ll need to do again each time you log into the Hub and want to push/pull to/from GitHub:</p>
+<ol class="simple">
+<li><p>Open a terminal, and type <code class="docutils literal notranslate"><span class="pre">github-app-user-auth</span></code>.</p></li>
+<li><p>It should give you a link to go to, and a code to input into the web page when that link is opened. Open the link, enter the code there.</p></li>
+<li><p>Grant access to the device in the web page, and you’re done!</p></li>
+</ol>
+<p>Authentication is valid for 8 hours, and once it expires, this process will need to be repeated. In the future, we might have a web app or other process to make this less painful. However, keeping the length of this session limited drastically helps with security too.</p>
+<p>Later, you can see what repositories you’ve given it access to by visiting <a class="reference external" href="https://github.com/settings/installations">your GitHub installations page</a>.</p>
+</div>
 </div>
 <div class="section" id="stage-1-local-single-user-linear-workflow">
 <h2>Stage 1: Local, single-user, linear workflow<a class="headerlink" href="#stage-1-local-single-user-linear-workflow" title="Permalink to this headline">¶</a></h2>
@@ -860,44 +889,47 @@ git config --global user.email <span class="s2">&quot;Fernando.Perez@berkeley.ed
            [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]
            [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
            [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]
+           [--super-prefix=&lt;path&gt;] [--config-env=&lt;name&gt;=&lt;envvar&gt;]
            &lt;command&gt; [&lt;args&gt;]
 
 These are common Git commands used in various situations:
 
 start a working area (see also: git help tutorial)
-   clone      Clone a repository into a new directory
-   init       Create an empty Git repository or reinitialize an existing one
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
 
 work on the current change (see also: git help everyday)
-   add        Add file contents to the index
-   mv         Move or rename a file, a directory, or a symlink
-   reset      Reset current HEAD to the specified state
-   rm         Remove files from the working tree and from the index
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
 
 examine the history and state (see also: git help revisions)
-   bisect     Use binary search to find the commit that introduced a bug
-   grep       Print lines matching a pattern
-   log        Show commit logs
-   show       Show various types of objects
-   status     Show the working tree status
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
 
 grow, mark and tweak your common history
-   branch     List, create, or delete branches
-   checkout   Switch branches or restore working tree files
-   commit     Record changes to the repository
-   diff       Show changes between commits, commit and working tree, etc
-   merge      Join two or more development histories together
-   rebase     Reapply commits on top of another base tip
-   tag        Create, list, delete or verify a tag object signed with GPG
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
 
 collaborate (see also: git help workflows)
-   fetch      Download objects and refs from another repository
-   pull       Fetch from and integrate with another repository or a local branch
-   push       Update remote refs along with associated objects
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
 
 &#39;git help -a&#39; and &#39;git help -g&#39; list available subcommands and some
 concept guides. See &#39;git help &lt;command&gt;&#39; or &#39;git help &lt;concept&gt;&#39;
 to read about a specific subcommand or concept.
+See &#39;git help git&#39; for an overview of the system.
 </pre></div>
 </div>
 </div>
