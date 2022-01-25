@@ -1,6 +1,9 @@
 # Public  website for Berkeley Statistics 159/259, Reproducible and Collaborative Statistical Data Science, Spring 2022
 
-This repository contains all source materials (lecture notes, homework assignments, etc.) for the class, and is available as a static website [here](https://ucb-stat-159-s21.github.io/site), rendered automatically with JupyterBook on any commit to the `main` branch.
+This repository contains all source materials (lecture notes, homework
+assignments, etc.) for the class, and is available as a static website
+[here](https://ucb-stat-159-s21.github.io/site), rendered
+automatically with JupyterBook on any commit to the `main` branch.
 
 Instructor: [Fernando Perez](https://fperez.org)
 
