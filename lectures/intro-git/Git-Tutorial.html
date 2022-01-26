@@ -944,7 +944,7 @@ See &#39;git help git&#39; for an overview of the system.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/fperez/teach/icesat2/intro-jupyter-git&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/fperez/teach/stat159/2022sp/site/lectures/intro-git&#39;
 </pre></div>
 </div>
 </div>
@@ -958,7 +958,7 @@ git init test
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /Users/fperez/teach/icesat2/intro-jupyter-git/test/.git/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /Users/fperez/teach/stat159/2022sp/site/lectures/intro-git/test/.git/
 </pre></div>
 </div>
 </div>
@@ -992,9 +992,9 @@ ls -la
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 0
-drwxr-xr-x   3 fperez  staff   96 Jun 19 08:52 .
-drwxr-xr-x  31 fperez  staff  992 Jun 19 08:52 ..
-drwxr-xr-x   9 fperez  staff  288 Jun 19 08:52 .git
+drwxr-xr-x  3 fperez  wavelet   96 Jan 25 23:50 .
+drwxr-xr-x  6 fperez  wavelet  192 Jan 25 23:50 ..
+drwxr-xr-x  9 fperez  wavelet  288 Jan 25 23:50 .git
 </pre></div>
 </div>
 </div>
@@ -1010,13 +1010,13 @@ ls -l .git
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 24
--rw-r--r--   1 fperez  staff   23 Jun 19 08:52 HEAD
--rw-r--r--   1 fperez  staff  137 Jun 19 08:52 config
--rw-r--r--   1 fperez  staff   73 Jun 19 08:52 description
-drwxr-xr-x  13 fperez  staff  416 Jun 19 08:52 hooks
-drwxr-xr-x   3 fperez  staff   96 Jun 19 08:52 info
-drwxr-xr-x   4 fperez  staff  128 Jun 19 08:52 objects
-drwxr-xr-x   4 fperez  staff  128 Jun 19 08:52 refs
+-rw-r--r--   1 fperez  wavelet   21 Jan 25 23:50 HEAD
+-rw-r--r--   1 fperez  wavelet  137 Jan 25 23:50 config
+-rw-r--r--   1 fperez  wavelet   73 Jan 25 23:50 description
+drwxr-xr-x  15 fperez  wavelet  480 Jan 25 23:50 hooks
+drwxr-xr-x   3 fperez  wavelet   96 Jan 25 23:50 info
+drwxr-xr-x   4 fperez  wavelet  128 Jan 25 23:50 objects
+drwxr-xr-x   4 fperez  wavelet  128 Jan 25 23:50 refs
 </pre></div>
 </div>
 </div>
@@ -1056,13 +1056,12 @@ git status
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
 
 No commits yet
 
 Changes to be committed:
   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
-
 	new file:   file1.txt
 </pre></div>
 </div>
@@ -1082,7 +1081,7 @@ git commit -a -m&quot;This is our first commit&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master (root-commit) f850212] This is our first commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main (root-commit) a3ee476] This is our first commit
  1 file changed, 1 insertion(+)
  create mode 100644 file1.txt
 </pre></div>
@@ -1103,9 +1102,9 @@ git log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit f850212ca594f6e4c4ba246f1567f1d21e8869a8
-Author: Fernando Perez &lt;Fernando.Perez@berkeley.edu&gt;
-Date:   Wed Jun 19 08:52:41 2019 -0700
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit a3ee47693d62d3be0e10cf25e2df2274263c32b8
+Author: Fernando Pérez &lt;fernando.perez@berkeley.edu&gt;
+Date:   Tue Jan 25 23:50:14 2022 -0800
 
     This is our first commit
 </pre></div>
@@ -1184,7 +1183,7 @@ git commit -a -m&quot;I have made great progress on this critical matter.&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master 943ee30] I have made great progress on this critical matter.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 963d786] I have made great progress on this critical matter.
  1 file changed, 1 insertion(+)
 </pre></div>
 </div>
@@ -1204,15 +1203,15 @@ git log
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 943ee30cdfc3a32f4b6f8f8c6b1ef4f6ca505624
-Author: Fernando Perez &lt;Fernando.Perez@berkeley.edu&gt;
-Date:   Wed Jun 19 08:52:56 2019 -0700
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>commit 963d78694d2b4e10d8b2fea40181760314186e21
+Author: Fernando Pérez &lt;fernando.perez@berkeley.edu&gt;
+Date:   Tue Jan 25 23:50:23 2022 -0800
 
     I have made great progress on this critical matter.
 
-commit f850212ca594f6e4c4ba246f1567f1d21e8869a8
-Author: Fernando Perez &lt;Fernando.Perez@berkeley.edu&gt;
-Date:   Wed Jun 19 08:52:41 2019 -0700
+commit a3ee47693d62d3be0e10cf25e2df2274263c32b8
+Author: Fernando Pérez &lt;fernando.perez@berkeley.edu&gt;
+Date:   Tue Jan 25 23:50:14 2022 -0800
 
     This is our first commit
 </pre></div>
@@ -1230,8 +1229,8 @@ git log --oneline --topo-order --graph
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 943ee30 I have made great progress on this critical matter.
-* f850212 This is our first commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 963d786 I have made great progress on this critical matter.
+* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1251,8 +1250,8 @@ git slog
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 943ee30 I have made great progress on this critical matter.
-* f850212 This is our first commit
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 963d786 I have made great progress on this critical matter.
+* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1272,10 +1271,9 @@ git status
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
 Changes to be committed:
-  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
-
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
 	renamed:    file1.txt -&gt; file-newname.txt
 </pre></div>
 </div>
@@ -1294,13 +1292,13 @@ git slog
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master db7b10a] I like this new name better
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main ae5580b] I like this new name better
  1 file changed, 0 insertions(+), 0 deletions(-)
  rename file1.txt =&gt; file-newname.txt (100%)
 Let&#39;s look at the log again:
-* db7b10a I like this new name better
-* 943ee30 I have made great progress on this critical matter.
-* f850212 This is our first commit
+* ae5580b I like this new name better
+* 963d786 I have made great progress on this critical matter.
+* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1340,7 +1338,7 @@ ls
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch master
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch main
 nothing to commit, working tree clean
 file-newname.txt
 </pre></div>
@@ -1353,13 +1351,12 @@ file-newname.txt
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd test
 
-git branch experiment
-git checkout experiment
+git switch -c experiment
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;experiment&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to a new branch &#39;experiment&#39;
 </pre></div>
 </div>
 </div>
@@ -1377,13 +1374,13 @@ git slog
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[experiment c5f8e8a] Trying something new
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[experiment b71b77a] Trying something new
  1 file changed, 1 insertion(+)
  create mode 100644 experiment.txt
-* c5f8e8a Trying something new
-* db7b10a I like this new name better
-* 943ee30 I have made great progress on this critical matter.
-* f850212 This is our first commit
+* b71b77a Trying something new
+* ae5580b I like this new name better
+* 963d786 I have made great progress on this critical matter.
+* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1393,18 +1390,18 @@ git slog
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd test
 
-git checkout master
+git switch main
 git slog
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* db7b10a I like this new name better
-* 943ee30 I have made great progress on this critical matter.
-* f850212 This is our first commit
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;master&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* ae5580b I like this new name better
+* 963d786 I have made great progress on this critical matter.
+* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1421,12 +1418,12 @@ git slog
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master 5bb96bd] The mainline keeps moving
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main eddded5] The mainline keeps moving
  1 file changed, 1 insertion(+)
-* 5bb96bd The mainline keeps moving
-* db7b10a I like this new name better
-* 943ee30 I have made great progress on this critical matter.
-* f850212 This is our first commit
+* eddded5 The mainline keeps moving
+* ae5580b I like this new name better
+* 963d786 I have made great progress on this critical matter.
+* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1442,12 +1439,12 @@ git slog --all
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* 5bb96bd The mainline keeps moving
-| * c5f8e8a Trying something new
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>* eddded5 The mainline keeps moving
+| * b71b77a Trying something new
 |/  
-* db7b10a I like this new name better
-* 943ee30 I have made great progress on this critical matter.
-* f850212 This is our first commit
+* ae5580b I like this new name better
+* 963d786 I have made great progress on this critical matter.
+* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1479,18 +1476,18 @@ git slog
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merge made by the &#39;recursive&#39; strategy.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merge made by the &#39;ort&#39; strategy.
  experiment.txt | 1 +
  1 file changed, 1 insertion(+)
  create mode 100644 experiment.txt
-*   f449025 Merge branch &#39;experiment&#39;
+*   e752aa4 Merge branch &#39;experiment&#39;
 |\  
-| * c5f8e8a Trying something new
-* | 5bb96bd The mainline keeps moving
+| * b71b77a Trying something new
+* | eddded5 The mainline keeps moving
 |/  
-* db7b10a I like this new name better
-* 943ee30 I have made great progress on this critical matter.
-* f850212 This is our first commit
+* ae5580b I like this new name better
+* 963d786 I have made great progress on this critical matter.
+* a3ee476 This is our first commit
 </pre></div>
 </div>
 </div>
@@ -1527,16 +1524,18 @@ Let&#39;s see if we have any remote repositories here:
 cd test
 
 git remote add origin https://github.com/fperez/test.git
-git push -u origin master
+git branch -M main
+git push -u origin main
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Branch master set up to track remote branch master from origin.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>error: remote origin already exists.
+To https://github.com/fperez/test.git
+ * [new branch]      main -&gt; main
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>To https://github.com/fperez/test.git
- * [new branch]      master -&gt; master
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>branch &#39;main&#39; set up to track &#39;origin/main&#39;.
 </pre></div>
 </div>
 </div>
@@ -1573,12 +1572,12 @@ git remote -v
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/fperez/teach/berkeley/2017-stat159/lecture-notes/lectures/git/test2
-origin	https://github.com/fperez/test.git (fetch)
-origin	https://github.com/fperez/test.git (push)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;test2&#39;...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;test2&#39;...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/fperez/teach/stat159/2022sp/site/lectures/intro-git/test2
+origin	https://github.com/fperez/test.git (fetch)
+origin	https://github.com/fperez/test.git (push)
 </pre></div>
 </div>
 </div>
@@ -1595,7 +1594,7 @@ git commit -a -m&quot;More work, on machine #2&quot;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master 94c7438] More work, on machine #2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 2320847] More work, on machine #2
  1 file changed, 1 insertion(+)
 </pre></div>
 </div>
@@ -1613,7 +1612,7 @@ git push
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>To https://github.com/fperez/test.git
-   27b0ec9..94c7438  master -&gt; master
+   e752aa4..2320847  main -&gt; main
 </pre></div>
 </div>
 </div>
@@ -1629,14 +1628,14 @@ git pull
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating 27b0ec9..94c7438
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>From https://github.com/fperez/test
+   e752aa4..2320847  main       -&gt; origin/main
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating e752aa4..2320847
 Fast-forward
  experiment.txt | 1 +
  1 file changed, 1 insertion(+)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>From https://github.com/fperez/test
-   27b0ec9..94c7438  master     -&gt; origin/master
 </pre></div>
 </div>
 </div>
@@ -1650,8 +1649,7 @@ Fast-forward
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd test
 
-git branch trouble
-git checkout trouble
+git switch -c trouble
 echo &quot;This is going to be a problem...&quot; &gt;&gt; experiment.txt
 git commit -a -m&quot;Changes in the trouble branch&quot;
 </pre></div>
@@ -1673,7 +1671,7 @@ git commit -a -m&quot;Changes in the trouble branch&quot;
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
 cd test
 
-git checkout master
+git switch main
 echo &quot;More work on the master branch...&quot; &gt;&gt; experiment.txt
 git commit -a -m&quot;Mainline work&quot;
 </pre></div>
