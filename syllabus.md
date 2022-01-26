@@ -1,6 +1,6 @@
 # Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
 
-## [Fernando Perez](http://fperez.org), Department of Statistics, UC Berkeley
+## [Fernando Pérez](http://fperez.org), Department of Statistics, UC Berkeley
 
 ## Overview
 
@@ -18,6 +18,12 @@ You will be asked to review your own contributions and each others contributions
 to group projects.
 There will not be a midterm or final exam, but there will be a videorecorded
 final presentation of group work.
+
+**The COVID-19 pandemic introduces quite a bit of uncertainty into timelines; this document reflects our intentions but it is not a "contract" we can promise to follow. Circumstances may require us to change plans.
+Regardless, your learning is our primary focus, and we hope you will find the course interesting and valuable.**
+
+_Note:_ This course is inspired by, and based on, previous editions taught by myself as well as Professor Philip Stark, from UC Berkeley's Statistics Department.
+
 
 **Course Objectives:** At the completion of this course, students will:
 
@@ -38,30 +44,9 @@ final presentation of group work.
 6.  be familiar with scientific computing in Python
 
 
-## Textbook and key resources
+## Textbook
 
-While not strictly a textbook for this course, we will rely heavily on the excellent, openly licensed: [Research software engineering in Python](https://merely-useful.tech/py-rse).  We will complement it with these other scientific python resources:
-
-- Katy Huff's - [Effective Computation in Physics](http://physics.codes/).
-
-- Jake van der Plas' [A Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython).
-
-- Stefan van der Walt's [Python Survival Pack](https://github.com/stefanv/ds_intro) and [Elegant SciPy Book](https://github.com/elegant-scipy/elegant-scipy).
-
-- Josh Bloom's [Python for Data Science Berkeley Course](https://github.com/profjsb/python-seminar).
-
-- And we'll use these Earth Science resources for our domain focus:
-
-  - Ryan Abernathey's [research computing for Earth Sciences](https://github.com/rabernat/research_computing).
-
-  - Brain Rose's [Climate Laboratory](https://brian-rose.github.io/ClimateLaboratoryBook/home.html).
-
-  - Lisa Tauxe's [Python for Earth Science Students](https://nbviewer.org/github/ltauxe/Python-for-Earth-Science-Students/blob/master/_TableOfContents.ipynb)
-
-**The COVID-19 pandemic introduces quite a bit of uncertainty into timelines; this document reflects our intentions but it is not a "contract" we can promise to follow. Circumstances may require us to change plans.
-Regardless, your learning is our primary focus, and we hope you will find the course interesting and valuable.**
-
-_Note:_ This course is inspired by, and based on, previous editions taught by myself as well as Professor Philip Stark, from UC Berkeley's Statistics Department.
+While not strictly a textbook for this course, we will rely heavily on the excellent, openly licensed: [Research software engineering in Python](https://merely-useful.tech/py-rse). More resources are listed in the [course overview page](overview.html).
 
 ## Administrativia
 
@@ -81,7 +66,8 @@ will be provided, but not all topics required to do the homework will be covered
 + 3 hours of lecture and 2 hours of lab per week 
     - lectures will focus on theory, philosophy of science, foundations of statistics, scientific applications, software engineering, code reviews and group discussion.
     - lab will focus on computing, software tools, workflow, and collaboration
-+ approximately 8 assignments, some individual and some collaborative.
+
+For each assigned reading, you will submit a brief, 2 paragraph report by 21:00 on the Monday it is due. The first paragraph should summarize the reading. The second paragraph should briefly explore something that interested you (e.g., you may wish to focus on one aspect of the paper in more depth, you may wish to discuss something in the reading that you disagree with).  During lecture, we will draw upon your reports for some group discussion.
 
 ### Office hours
 + Perez: Thursday, 11AM-12PM ([Zoom link](https://berkeley.zoom.us/j/95468568274?pwd=M3BTaTZhVnNQKzZwTXZSdjZ2VEgwUT09)). These may move into 419 Evans after February, depending on how conditions evolve.
@@ -90,7 +76,6 @@ will be provided, but not all topics required to do the homework will be covered
 + [Facu Sapienza](mailto:fsapienza@berkeley.edu)
 + Labs: Monday 11AM-1PM & 2-4PM ([Zoom link](https://berkeley.zoom.us/j/93593491135)). These may move into 342 Evans after February, depending on how conditions evolve.
 + Office hours: Tuesdays 10AM-11AM & Thursday 2PM-3PM ([Zoom link](https://berkeley.zoom.us/j/96363536716)). These may move into 428 Evans after February, depending on how conditions evolve.
-
 
 ### Communication
 
@@ -104,12 +89,14 @@ During the work week, we expect to be able to reply to Piazza messages and email
 The course is *not* graded on a curve. 
 It is possible for every student to make an A.
 We encourage you to focus on mastering the material, not on your grade.
-The weight of each assignment will be announced with the assignment.
-We are still working out the details, but we expect about 8 assignments in all.
+The weight of each assignment will be announced with the assignment; the overall grade structure will be:
+
++ 85%: from approximately 8 computational assignments, some individual and some collaborative.
++ 15%: reading assignments (weekly, on average).
 
 _Submitting assignments:_ Submit written assignments by making a pull request
 to your private repository within the Berkeley GitHub organization for the class,
-https://github.berkeley.edu/stat-159-s22, using the [GitHub Classroom](https://classroom.github.com/classrooms/95771491-ucb-stat-159-s22-classroom) (you will practice all this, don't worry.
+https://github.berkeley.edu/stat-159-s22, using the [GitHub Classroom](https://classroom.github.com/classrooms/95771491-ucb-stat-159-s22-classroom) (you will practice all this, don't worry).
 
 
 ### Code of conduct; attribution of work
@@ -139,56 +126,3 @@ instructor as soon as possible.
 
 If you are not currently listed with DSP (the Disabled Students' Program) and believe you might 
 benefit from their support, please apply online at https://dsp.berkeley.edu.
-
-## Resources
-
-+ Communication: [class Piazza](https://piazza.com/class/kykqjx3dgbt406).
-
-+ Lectures will be recorded and posted in the Kaltura system (link pending), but attendance is mandatory. (Much of the pedagogical value of the class is in participating in discussions and code reviews).
-
-+ Course readings that are not easy to find free on the web or through the UC Berkeley Library will be posted to bCourses.
-
-+ Computing resources
-    - We will use Jupyter notebooks. We will start with hosted notebooks on our [Stat 159 JupyterHub](https://stat159.datahub.berkeley.edu). Later in the term, we will discuss installing Jupyter on your own device. The JupyterHub server will have all the packages you need pre-installed.
-    - The class notes and most other materials are available at https://github.com/UCB-stat-159-s22/site
-    - Assignments should be submitted by pull request to your private repository within the class organization https://github.berkeley.edu/stat-159-s21
-    
-+ Git and git workflows
-    - [Introduction to Git](https://github.com/berkeley-scf/tutorial-git-basics/blob/master/git-intro.md). 
-    - [Immersion course](http://gitimmersion.com)
-    - [git-scm guide](https://book.git-scm.com)
-    - [Statlab development git workflow](http://statlab.github.io/permute/dev/index.html)
-    
-+ Continuous integration
-    - [GitHub actions](https://docs.github.com/en/free-pro-team@latest/actions)
-    
-+ Scientific Python, Jupyter
-    - [Lecture notes on scientific python](https://www.scipy-lectures.org/intro/)
-    - [Python for scientific computing](http://fperez.org/py4science/) by Fernando Perez
-    - https://hplgit.github.io/primer.html/doc/pub/half/book.pdf
-    - [Elegant SciPy](http://proquest.safaribooksonline.com/9781491922927), [Stefan van der Walt](https://bids.berkeley.edu/people/st%C3%A9fan-van-der-walt). The [full book](https://github.com/elegant-scipy/elegant-scipy) and all the [notebooks](https://github.com/elegant-scipy/notebooks) are available.
-    - [Getting started with Python for research](https://github.com/TiesdeKok/LearnPythonforResearch), a gentle introduction to Python in data-intensive research.
-    - [An introduction to "Data Science"](https://github.com/stefanv/ds_intro), a collection of Notebooks by BIDS' [Stéfan Van der Walt](https://bids.berkeley.edu/people/st%C3%A9fan-van-der-walt).
-    - [Effective Computation in Physics](http://proquest.safaribooksonline.com/book/physics/9781491901564), by Kathryn D. Huff; Anthony Scopatz. [Notebooks to accompany the book](https://github.com/physics-codes/seminar).
-    - [A Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython/index.html), by Jake VanderPlas.
-    - [Python for Data Analysis, 2nd Edition](http://proquest.safaribooksonline.com/book/programming/python/9781491957653), by  Wes McKinney, creator of Pandas. [Companion Notebooks](https://github.com/wesm/pydata-book)
-    - [Effective Pandas](https://github.com/TomAugspurger/effective-pandas), a book by Tom Augspurger, core Pandas developer.
-
-+ Docker
-    - https://docs.docker.com/get-started/
-    - https://docker-curriculum.com/
-
-+ LaTeX
-    - https://www.tug.org/twg/mactex/tutorials/ltxprimer-1.0.pdf
-
-+ Markdown
-    - https://daringfireball.net/projects/markdown/syntax
-    - https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-    - https://www.markdownguide.org/getting-started/
-    
-+ Pandoc
-    - https://pandoc.org/getting-started.html
-    - https://pandoc.org/MANUAL.pdf
-    
-+ Miscellaneous computing tutorials
-    - [Berkeley Statistical Computing Facility tutorials](http://statistics.berkeley.edu/computing/training/tutorials)

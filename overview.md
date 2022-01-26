@@ -14,6 +14,63 @@ The table of contents on the left pane has links to lectures and labs. The follo
 
 * [Lab 01](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&branch=main&urlpath=lab%2Ftree%2Fsite%2Flab).
 
+### Readings
+
+* #1, due Jan 31, 2022: [Developing open source scientific practice](https://berkeley-stat159-f17.github.io/stat159-f17/_static/ref/millman-perez.pdf).
+
+## Key Resources
+
++ Communication: [class Piazza](https://piazza.com/class/kykqjx3dgbt406).
+
++ Lectures will be recorded and posted in the Kaltura system (visible via bCourses), but attendance is mandatory. (Much of the pedagogical value of the class is in participating in discussions and code reviews).
+
++ Course readings that are not easy to find free on the web or through the UC Berkeley Library will be posted to bCourses.
+
++ Computing resources
+    - We will use Jupyter notebooks. We will start with hosted notebooks on our [Stat 159 JupyterHub](https://stat159.datahub.berkeley.edu). Later in the term, we will discuss installing Jupyter on your own device. The JupyterHub server will have all the packages you need pre-installed.
+    - The sources for class notes and most other materials are available [on github](https://github.com/UCB-stat-159-s22/site), with a rendered version [here](https://ucb-stat-159-s22.github.io/site).
+    - Assignments should be submitted by pull request to your private repositories using the [GitHub Clasroom](https://classroom.github.com/classrooms/95771491-ucb-stat-159-s22-classroom).
+
+
+## Textbook and supporting materials
+
+While not strictly a textbook for this course, we will rely heavily on the excellent, openly licensed: [Research software engineering in Python](https://merely-useful.tech/py-rse).  We will complement it with these other scientific python resources:
+
++ Katy Huff's - [Effective Computation in Physics](http://physics.codes/).
+
++ Jake van der Plas' [A Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython).
+
++ Stefan van der Walt's [Python Survival Pack](https://github.com/stefanv/ds_intro) and [Elegant SciPy Book](https://github.com/elegant-scipy/elegant-scipy). The [full book](https://github.com/elegant-scipy/elegant-scipy) and all the [notebooks](https://github.com/elegant-scipy/notebooks) are available.
+
++ Josh Bloom's [Python for Data Science Berkeley Course](https://github.com/profjsb/python-seminar).
+
++ [Lecture notes on scientific python](https://www.scipy-lectures.org/intro/)
+
++ [Getting started with Python for research](https://github.com/TiesdeKok/LearnPythonforResearch), a gentle introduction to Python in data-intensive research.
+    
++ [Python for Data Analysis, 2nd Edition](http://proquest.safaribooksonline.com/book/programming/python/9781491957653), by  Wes McKinney, creator of Pandas. [Companion Notebooks](https://github.com/wesm/pydata-book)
++ [Effective Pandas](https://github.com/TomAugspurger/effective-pandas), a book by Tom Augspurger, core Pandas developer.
+
++ And we'll use these Earth Science resources for our domain focus:
+
+  - Ryan Abernathey's [research computing for Earth Sciences](https://github.com/rabernat/research_computing).
+
+  - Brain Rose's [Climate Laboratory](https://brian-rose.github.io/ClimateLaboratoryBook/home.html).
+
+  - Lisa Tauxe's [Python for Earth Science Students](https://nbviewer.org/github/ltauxe/Python-for-Earth-Science-Students/blob/master/_TableOfContents.ipynb)
+    
++ Git and git workflows
+    - [Introduction to Git](https://github.com/berkeley-scf/tutorial-git-basics/blob/master/git-intro.md). 
+    - [Immersion course](http://gitimmersion.com)
+    - [git-scm guide](https://book.git-scm.com)
+    - [Statlab development git workflow](http://statlab.github.io/permute/dev/index.html)
+    
++ Continuous integration
+    - [GitHub actions](https://docs.github.com/en/free-pro-team@latest/actions)
+
++ Miscellaneous computing tutorials
+    - [Berkeley Statistical Computing Facility tutorials](http://statistics.berkeley.edu/computing/training/tutorials)
+
 ## Concepts
 
 ### Terms related to reproducibility
@@ -110,7 +167,7 @@ The table of contents on the left pane has links to lectures and labs. The follo
 ## Weaponizing reproducible/open science
 
 + https://int.nyt.com/data/documenttools/transparency-rule/d1fb06c8db2b3d4a/full.pdf
-https://www.nytimes.com/2021/01/04/climate/trump-epa-science.html
++ https://www.nytimes.com/2021/01/04/climate/trump-epa-science.html
 
 ### Key ideas/tools from software engineering that can help improve science
 
@@ -131,111 +188,3 @@ https://www.nytimes.com/2021/01/04/climate/trump-epa-science.html
 + consistency: APIs, calling signatures, object-oriented code
 
 + separating data, computation, presentation
-
-## Hypothesis testing, statistical models, sensitivity/stability
-
-+ It's all about the null hypothesis
-    - null has to let you find sampling distribution of the test
-    - if the null is not appropriate, the test is not appropriate
-        + example: $t$-test for RCTs
-
-+ $P$-values:  $\Pr \{ P \le p || H_0 \} \le p$.
-
-+ Fisher and $P$-values
-    - The Design of Experiments
-
-+ Replicability and $r$-values
-
-+ Multiple testing, multiplicity, multiplicity adjustments
-    - Bonferroni's inequality
-    - Independence
-    - False discovery rate (not covered)
-
-+ The Neyman model for causal inference
-    - potential outcomes
-    - strong null and weak null
-    - non-interference
-    - responses can be distributions
-    - honor the randomization!
-
-+ Permutation tests
-    - nulls that imply invariance of the probability distribution under a group
-    - has to match the real world
-    - generating random permutations
-        + comparison of PRNGs, algorithms for generating random integers, sampling algorithms
-    - simulation to estimate $P$-values; randomized tests to find conservative $P$-values
-    - permutation tests for regression, two-sample test, etc.
-
-+ Randomization tests
-    - probability distribution of statistics induced by how subjects were randomized
-    - sometimes identical to permutation tests
-    - Fisher's Lady Tasting Tea (again)
-    - RCTs
-        + "vanilla"
-        + blocked designs, balance
-        + multi-center designs
-        + "black box" clinical trial software
-
-+ Goodness of fit tests
-    - Kolmogorov-Smirnov
-    - Chi-square statistic
-        + asymptotic tests versus exact tests versus conservative tests
-    - other tests
-        
-+ Intersection-union tests and stratified tests
-    - combining information from different tests
-    - combining functions, including Fisher's combining function
-    - nonparametric combination of tests
-        + "lockstep" permutations
-        + unrolling the loops
-
-+ Fixed-$n$ tests versus sequential tests
-    - Wald's sequential probability ratio test
-    - Martingale-based tests
-        + martingales, supermartingales, submartingales
-        + stopping times
-        + likelihood ratios are nonnegative martingales
-        + Ville's Inequality for nonnegative martingales
-        + Wald's SPRT as an application of Ville's inequality
-        + some martingales useful for inference
-
-+ Models versus response schedules
-    - Response schedules and "physics."
-    - common models
-        + regression
-            - assumptions required to perform OLS
-            - assumptions required for OLS to be unbiased
-            - assumptions required to compute SE
-            - assumptions required for $\hat{\beta}/SE$ to have a t-distribution
-        + linear probability models
-        + logit and probit models 
-        + Poisson regression
-            - MLE for Poisson regression
-    - nonparametric tests for parametric models
-        + 
-
-+ Sensitivity analysis and sensitivity auditing 
-    - Sensitivity analysis:
-        - General technique for assessing qualitative sensitivity to:
-            - data pre-processing
-            - influential observations / outliers
-            - model parametrization
-            - values of external parameters
-            - estimation method
-            - etc.
-    - Sensitivity auditing
-        - consider / catalogue sources of uncertainty
-        - consider how the scientific question is framed; built-in assumptions
-        - data quality
-        - data and model provenance
-        - NUSAP
-    - Post-Normal Science
-        - "facts uncertain, values in dispute, stakes high, decisions urgent"
-        - distinction between theorists' tools and policy tools
-        - importance of asking the right question
-        - examples:
-            + neonicotinoids & bees
-            + nanoparticles
-            + climate change
-            
-
