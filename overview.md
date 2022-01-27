@@ -6,18 +6,6 @@ This course teaches “the why and how” of reproducible and collaborative rese
 
 More details can be found [in the syllabus](syllabus.html).
 
-## Content
-
-The table of contents on the left pane has links to lectures and labs. The following are live executable links that use the [nbgitpuller](https://jupyterhub.github.io/nbgitpuller) service to give you a current copy from git of the given content, ready to be run in the Spring 2022 Berkeley hub. You can use these links in order to run the content conveniently without manual git work.
-
-### Live links for labs on the Berkeley DataHub
-
-* [Lab 01](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&branch=main&urlpath=lab%2Ftree%2Fsite%2Flab).
-
-### Readings
-
-* #1, due Jan 31, 2022: [Developing open source scientific practice](https://berkeley-stat159-f17.github.io/stat159-f17/_static/ref/millman-perez.pdf).
-
 ## Key Resources
 
 + Communication: [class Piazza](https://piazza.com/class/kykqjx3dgbt406).
