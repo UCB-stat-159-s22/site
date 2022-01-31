@@ -13,3 +13,4 @@ parts:
 - caption: Labs
   chapters:
   - file: lab/lab01.ipynb
+  - file: lab/lab02.ipynb
