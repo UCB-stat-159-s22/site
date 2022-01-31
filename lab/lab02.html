@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Seesion 2: GitHub &amp; The Shell &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab01.html">
+   LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lab/lab02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lab/lab02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-always-github">
+   GitHub, always GitHub…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warning-up-with-the-unix-shell">
+   Warning up with the Unix Shell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-push-new-files-to-github">
+   Exercise 1: Push new files to GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-modifying-files">
+   Exercise 2: Modifying files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-dotfiles">
+   Exercise 3: Dotfiles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-more-commands">
+   Exercise 4: More commands
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#congratulations-you-have-completed-the-lab-if-you-want-to-do-some-more-practice-take-a-look-to-the-exercises-at-the-end-of-chapter-2">
+     Congratulations! You have completed the lab! If you want to do some more practice, take a look to the exercises at the end of Chapter 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lab Seesion 2: GitHub & The Shell</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-always-github">
+   GitHub, always GitHub…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#warning-up-with-the-unix-shell">
+   Warning up with the Unix Shell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1-push-new-files-to-github">
+   Exercise 1: Push new files to GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2-modifying-files">
+   Exercise 2: Modifying files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3-dotfiles">
+   Exercise 3: Dotfiles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4-more-commands">
+   Exercise 4: More commands
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#congratulations-you-have-completed-the-lab-if-you-want-to-do-some-more-practice-take-a-look-to-the-exercises-at-the-end-of-chapter-2">
+     Congratulations! You have completed the lab! If you want to do some more practice, take a look to the exercises at the end of Chapter 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-seesion-2-github-the-shell">
+<h1>Lab Seesion 2: GitHub &amp; The Shell<a class="headerlink" href="#lab-seesion-2-github-the-shell" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Statistics 159/259, Spring 2022</strong></p></li>
+<li><p>Prof. F. Pérez and GSI F. Sapienza, Department of Statistics, UC Berkeley.</p></li>
+<li><p>01/31/2022</p></li>
+</ul>
+<p>Menu for today:</p>
+<ol class="simple">
+<li><p><strong>Recap on Lab 01.</strong> Quick overview of how to define functions and write errors and exceptions.</p></li>
+<li><p><strong>Homework No1 Announcement.</strong> You can create a repository template for Homework No1 by following the following link in <a class="reference external" href="https://classroom.github.com/a/11zsNEaq">GitHub Classroom</a>. Also remember to send the two paragraphs for the reading assignment No1 (deadline at 9PM).</p></li>
+<li><p><strong>Playing with the Unix Shell.</strong> We are going to manipulate files and directories in GitHub but using the unit shell.</p></li>
+</ol>
+<p><strong>Learning goals for today</strong>: practicing GitHub and bash commands in the shell. Until now, we have seen (at least) three different ways of manipulating files and directories (including those we have inside a repository):</p>
+<ol class="simple">
+<li><p>Simple manipulation using the files browser in JupyterLab</p></li>
+<li><p>Using the <a class="reference external" href="https://linuxcommand.org/lc3_adv_mc.php">Midnight Commander</a> from the command shell</p></li>
+<li><p>Using Bash as command-line interface (CUI) from the command shell.</p></li>
+</ol>
+<p>The idea is that you get familiar with all these. So, even when you are able to all tasks with at least one of the last three, try to learn how to use the others. For example, the Midnight Commander (<code class="docutils literal notranslate"><span class="pre">mc</span></code> in the terminal) is very handy and fast at the moment of manipulating file,; while for most of the GitHub manipulations we will be using the commands from the shell.</p>
+<p>Useful links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stat159.datahub.berkeley.edu/hub/login?next=%2Fhub%2F">JupyterHub</a></p></li>
+<li><p><a class="reference external" href="https://ucb-stat-159-s22.github.io/site/lab/lab01.html">Lab 01</a></p></li>
+<li><p><a class="reference external" href="https://github.com/fperez/dotfiles">github/fperez/dotfiles</a></p></li>
+<li><p><a class="reference external" href="https://ucb-stat-159-s22.github.io/site/lectures/intro-git/Git-Tutorial.html#convenient-credentials-management">Convenient credentials management</a></p></li>
+</ul>
+<div class="section" id="github-always-github">
+<h2>GitHub, always GitHub…<a class="headerlink" href="#github-always-github" title="Permalink to this headline">¶</a></h2>
+<p>We will be practicing the file and directory commands for manipulations of files inside our <code class="docutils literal notranslate"><span class="pre">test</span></code> repository. Remember, during the lectures we initialize a repository called <code class="docutils literal notranslate"><span class="pre">test</span></code> that we use for practicing some basic git commands (See how to create an empty repository in the <a class="reference external" href="https://github.com/UCB-stat-159-s22/site/blob/main/lectures/intro-git/Git-Tutorial.ipynb">Git Tutorial</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+git init test
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, in order to push the repository to GitHub we need to create a new empty repository page. To do that, we go to our GitHub account, then <code class="docutils literal notranslate"><span class="pre">Repositories</span></code> window and <code class="docutils literal notranslate"><span class="pre">new</span></code>. After we have done this, we will see a list of commands that tell us how to create a new repository from the command line. You may have done some of these steps already. A description of the full process can be found <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-push-an-existing-project-to-github">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+git branch -M main
+git remote add origin &lt;url&gt;   
+git push -u origin main
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="warning-up-with-the-unix-shell">
+<h2>Warning up with the Unix Shell<a class="headerlink" href="#warning-up-with-the-unix-shell" title="Permalink to this headline">¶</a></h2>
+<p>For this section, we are going to follow Chapters 2 &amp; 3 of <a class="reference external" href="https://merely-useful.tech/py-rse/index.html">Research Software Engineering with Python</a>. There we can find a comprehensive explanation about how to use different commands in the command shell. These are some useful commands (for an extensive list of commands, refer to this <a class="reference external" href="https://courses.cs.washington.edu/courses/cse390a/14au/bash.html">Bash Shell Reference</a>)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">whoami</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code>: Print Working Directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code>: Listing</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code>: Change Directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code>: Make Directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span></code>: Move. This command can be also used to rename a file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span></code>: Copy</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span></code>. Remove</p></li>
+</ul>
+<p>Remember that we can always communicate with the Shell on a Jupyter Notebook by adding <code class="docutils literal notranslate"><span class="pre">!</span></code> at the beginning of a line or with the magic command <code class="docutils literal notranslate"><span class="pre">%%bash</span></code> just at the beginning of the cell.
+We can also add <em>flags</em> to these commands to give further information of how do we want the program to be run.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> ls -l
+</pre></div>
+</div>
+</div>
+</div>
+<p>When creating directories and files, try to pick names that avoid confusion with the bash syntax. For example, don’t use spaces and don’t start names with <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
+<p>Now, let’s do our first push to our <code class="docutils literal notranslate"><span class="pre">test</span></code> repository:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### [LIVE DEMOSTRATION]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_student tag_written tag_q_feature docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+git init test
+git add text1.txt
+git commit -m&quot;first commit&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> <span class="nb">echo</span> <span class="s2">&quot;Hello&quot;</span> &gt; text.txt
+<span class="o">!</span> cat text.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> git add text.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> git commit -m<span class="s2">&quot;My first commit&quot;</span>
+<span class="c1">#! git commit</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+
+git branch -M main
+git remote add origin https://github.com/facusapienza21/test2.git
+git push -u origin main
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, there are different variations to the previous protocol… can you think in any?</p>
+</div>
+<div class="section" id="exercise-1-push-new-files-to-github">
+<h2>Exercise 1: Push new files to GitHub<a class="headerlink" href="#exercise-1-push-new-files-to-github" title="Permalink to this headline">¶</a></h2>
+<p>Create a text file with some text inside using just the shell.  Remember the protocol to make push/pull in the Hub!!! In order to this to work, remember to have installed the app for the authentication and that the app has permissions on your repository.</p>
+<p>Until now we were working with simple text files. Create a Jupyter Notebook and add it to your new repository (you can do this using the directly thought JupyterLab).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-2-modifying-files">
+<h2>Exercise 2: Modifying files<a class="headerlink" href="#exercise-2-modifying-files" title="Permalink to this headline">¶</a></h2>
+<p>Make some modifications to one of the files inside your <code class="docutils literal notranslate"><span class="pre">test</span></code> repository. These changes can include modifications in a text file or actual code in a script of Jupyter notebook. Can you open and read such file with the Midnight commander? If so, can you add further modifications to it?</p>
+<p>Try to add your commit message directly using the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m&quot;my</span> <span class="pre">message&quot;</span></code> and by using the <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-use-the-emacs-editor-in-linux">Emacs editor</a> (this will be launched after you enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> without any message). If you made a mistake or want to change your last commit message, you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code> to change it.</p>
+<p><em>Type your answer here, replacing this text.</em></p>
+</div>
+<div class="section" id="exercise-3-dotfiles">
+<h2>Exercise 3: Dotfiles<a class="headerlink" href="#exercise-3-dotfiles" title="Permalink to this headline">¶</a></h2>
+<p>Make more modifications to the files in your repository, but this time do the interaction with GitHub using <code class="docutils literal notranslate"><span class="pre">dotfiles</span></code> instead of <code class="docutils literal notranslate"><span class="pre">git</span></code>. Check the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>, who is doing the modifications in the repository? If your username is no there, you may need to modify your <code class="docutils literal notranslate"><span class="pre">.gitconfig</span></code> file…</p>
+<p><em>Type your answer here, replacing this text.</em></p>
+</div>
+<div class="section" id="exercise-4-more-commands">
+<h2>Exercise 4: More commands<a class="headerlink" href="#exercise-4-more-commands" title="Permalink to this headline">¶</a></h2>
+<p>Now that you are more familiar with GitHub, let’s try to do some more sophisticated commands from the shell. Try to rename and move files inside the repository. Try changing some of them and removing some others. As you are doing this, use at least once each one of the bash commanders enumerated at the beginning of this notebook.</p>
+<div class="section" id="congratulations-you-have-completed-the-lab-if-you-want-to-do-some-more-practice-take-a-look-to-the-exercises-at-the-end-of-chapter-2">
+<h3>Congratulations! You have completed the lab! If you want to do some more practice, take a look to the exercises at the end of <a class="reference external" href="https://merely-useful.tech/py-rse/bash-basics.html">Chapter 2</a><a class="headerlink" href="#congratulations-you-have-completed-the-lab-if-you-want-to-do-some-more-practice-take-a-look-to-the-exercises-at-the-end-of-chapter-2" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lab"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
