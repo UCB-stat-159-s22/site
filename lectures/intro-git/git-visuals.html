@@ -1,0 +1,857 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Visuals &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab01/lab01.html">
+   LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab02/lab02.html">
+   Lab Session 2: GitHub &amp; The Shell
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/intro-git/git-visuals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/intro-git/git-visuals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-tale-of-bubbles-arrows-post-its-and-stickers">
+   A tale of bubbles, arrows, post-its and stickers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initialization">
+   Initialization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-commit">
+   Next commit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducing-tags">
+   Introducing tags
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#new-branches">
+   New branches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parallel-development-in-branches">
+   Parallel development in branches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#back-to-the-main-branch">
+   Back to the main branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#progress-on-the-main-branch">
+   Progress on the main branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continued-work-on-the-main-branch">
+   Continued work on the main branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merging-our-two-branches">
+   Merging our two branches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cleanup-after-merge-delete-dev-branch">
+   Cleanup after merge: delete dev branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-tags">
+   More tags
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#and-the-git-life-continues">
+   And the git life continues…
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Git Visuals</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-tale-of-bubbles-arrows-post-its-and-stickers">
+   A tale of bubbles, arrows, post-its and stickers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initialization">
+   Initialization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-commit">
+   Next commit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducing-tags">
+   Introducing tags
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#new-branches">
+   New branches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parallel-development-in-branches">
+   Parallel development in branches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#back-to-the-main-branch">
+   Back to the main branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#progress-on-the-main-branch">
+   Progress on the main branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continued-work-on-the-main-branch">
+   Continued work on the main branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merging-our-two-branches">
+   Merging our two branches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cleanup-after-merge-delete-dev-branch">
+   Cleanup after merge: delete dev branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-tags">
+   More tags
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#and-the-git-life-continues">
+   And the git life continues…
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="git-visuals">
+<h1>Git Visuals<a class="headerlink" href="#git-visuals" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-tale-of-bubbles-arrows-post-its-and-stickers">
+<h2>A tale of bubbles, arrows, post-its and stickers<a class="headerlink" href="#a-tale-of-bubbles-arrows-post-its-and-stickers" title="Permalink to this headline">¶</a></h2>
+<p>Or, an illustration of key concepts in a daily workflow.</p>
+<p>This is a companion notebook with code to follow <a class="reference external" href="https://docs.google.com/presentation/d/1YlM3boYLE8DwbxGNO3ZVVt3e9gEoBgD1uc9RtItUYCU/edit?usp=sharing">the visuals of this presentation</a>.</p>
+</div>
+<div class="section" id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:7988a3d5-2f3a-447a-91a3-88641a88a2fd.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+rm -rf git-visuals-tmp
+mkdir -p git-visuals-tmp
+cd git-visuals-tmp
+
+git init
+
+echo &quot;first file&quot; &gt; file.md
+git add file.md
+git commit -m&quot;a0: first commit&quot;
+
+echo
+echo &quot;Git Log:&quot;
+git slog2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialized empty Git repository in /Users/fperez/teach/stat159/2022sp/site/lectures/intro-git/git-visuals-tmp/.git/
+[main (root-commit) cab4518] a0: first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.md
+
+Git Log:
+* cab4518 a0: first commit (0 seconds ago)  (HEAD -&gt; main) [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="next-commit">
+<h2>Next commit<a class="headerlink" href="#next-commit" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:d565ff63-ad03-4d7d-bfd4-f1ed545d8059.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+echo &quot;more work&quot; &gt;&gt; file.md
+git commit -am&quot;b1: some new ideas&quot;
+
+echo
+echo &quot;Git Log:&quot;
+git slog2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 73d141a] b1: some new ideas
+ 1 file changed, 1 insertion(+)
+
+Git Log:
+* 73d141a b1: some new ideas (0 seconds ago)  (HEAD -&gt; main) [Fernando Perez]
+* cab4518 a0: first commit (1 second ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="introducing-tags">
+<h2>Introducing tags<a class="headerlink" href="#introducing-tags" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:e3bf95ab-8cf4-4997-bb87-d892918f8993.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+git tag -a ver0 -m&quot;Release version 0&quot;
+
+echo
+echo &quot;Git Log:&quot;
+git slog2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Git Log:
+* 73d141a b1: some new ideas (0 seconds ago)  (HEAD -&gt; main, tag: ver0) [Fernando Perez]
+* cab4518 a0: first commit (1 second ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="new-branches">
+<h2>New branches<a class="headerlink" href="#new-branches" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:2b8bd12b-6c80-4ddc-b3e4-76b81f1ef97d.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+git switch -c dev
+
+echo
+echo &quot;Git Log:&quot;
+git slog2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to a new branch &#39;dev&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Git Log:
+* 73d141a b1: some new ideas (0 seconds ago)  (HEAD -&gt; dev, tag: ver0, main) [Fernando Perez]
+* cab4518 a0: first commit (1 second ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="parallel-development-in-branches">
+<h2>Parallel development in branches<a class="headerlink" href="#parallel-development-in-branches" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:7570e429-bedd-45c4-9873-0b5fae9ae473.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+echo &quot;new development work &quot; &gt; file2.md
+git add file2.md
+git commit -am&quot;c2: a new line of development!&quot;
+
+echo
+echo &quot;Git Log:&quot;
+git slog2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[dev 6e0ee08] c2: a new line of development!
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.md
+
+Git Log:
+* 6e0ee08 c2: a new line of development! (0 seconds ago)  (HEAD -&gt; dev) [Fernando Perez]
+* 73d141a b1: some new ideas (0 seconds ago)  (tag: ver0, main) [Fernando Perez]
+* cab4518 a0: first commit (1 second ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="back-to-the-main-branch">
+<h2>Back to the main branch<a class="headerlink" href="#back-to-the-main-branch" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:b6206b14-1a5c-441e-9706-fa49b65e4515.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+git switch main
+
+echo
+echo &quot;Git Log:&quot;
+git slog2 --all
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Switched to branch &#39;main&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Git Log:
+* 6e0ee08 c2: a new line of development! (0 seconds ago)  (dev) [Fernando Perez]
+* 73d141a b1: some new ideas (0 seconds ago)  (HEAD -&gt; main, tag: ver0) [Fernando Perez]
+* cab4518 a0: first commit (1 second ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="progress-on-the-main-branch">
+<h2>Progress on the main branch<a class="headerlink" href="#progress-on-the-main-branch" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:f298b065-5e7f-43e9-8a4a-1e305eb6eca6.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+echo &quot;More work on main line&quot; &gt;&gt; file.md
+git commit -am&quot;d3: ontinued main work&quot;
+
+echo
+echo &quot;Git Log:&quot;
+git slog2 --all
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 5581513] d3: ontinued main work
+ 1 file changed, 1 insertion(+)
+
+Git Log:
+* 6e0ee08 c2: a new line of development! (0 seconds ago)  (dev) [Fernando Perez]
+| * 5581513 d3: ontinued main work (0 seconds ago)  (HEAD -&gt; main) [Fernando Perez]
+|/  
+* 73d141a b1: some new ideas (0 seconds ago)  (tag: ver0) [Fernando Perez]
+* cab4518 a0: first commit (1 second ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="continued-work-on-the-main-branch">
+<h2>Continued work on the main branch<a class="headerlink" href="#continued-work-on-the-main-branch" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:26846fe4-e466-4c27-9dfe-562559e9c2b8.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+echo &quot;And yet more work on main line&quot; &gt;&gt; file.md
+git commit -am&quot;e4: main work continues&quot;
+
+echo
+echo &quot;Git Log:&quot;
+git slog2 --all
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main 56cad78] e4: main work continues
+ 1 file changed, 1 insertion(+)
+
+Git Log:
+* 6e0ee08 c2: a new line of development! (0 seconds ago)  (dev) [Fernando Perez]
+| * 56cad78 e4: main work continues (0 seconds ago)  (HEAD -&gt; main) [Fernando Perez]
+| * 5581513 d3: ontinued main work (0 seconds ago)  [Fernando Perez]
+|/  
+* 73d141a b1: some new ideas (0 seconds ago)  (tag: ver0) [Fernando Perez]
+* cab4518 a0: first commit (1 second ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="merging-our-two-branches">
+<h2>Merging our two branches<a class="headerlink" href="#merging-our-two-branches" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:a14d46fd-6ca4-4070-a960-ee441346d57d.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+git merge dev -m&quot;f5: merging great new developments&quot;
+
+echo
+echo &quot;Git Log:&quot;
+git slog2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Merge made by the &#39;ort&#39; strategy.
+ file2.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.md
+
+Git Log:
+*   6ea0830 f5: merging great new developments (0 seconds ago)  (HEAD -&gt; main) [Fernando Perez]
+|\  
+| * 6e0ee08 c2: a new line of development! (1 second ago)  (dev) [Fernando Perez]
+* | 56cad78 e4: main work continues (1 second ago)  [Fernando Perez]
+* | 5581513 d3: ontinued main work (1 second ago)  [Fernando Perez]
+|/  
+* 73d141a b1: some new ideas (1 second ago)  (tag: ver0) [Fernando Perez]
+* cab4518 a0: first commit (2 seconds ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cleanup-after-merge-delete-dev-branch">
+<h2>Cleanup after merge: delete dev branch<a class="headerlink" href="#cleanup-after-merge-delete-dev-branch" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:9724535c-bc26-47cf-a843-89743dfe9881.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+git branch --delete dev
+
+echo
+echo &quot;Git Log:&quot;
+git slog2 --all
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Deleted branch dev (was 6e0ee08).
+
+Git Log:
+*   6ea0830 f5: merging great new developments (0 seconds ago)  (HEAD -&gt; main) [Fernando Perez]
+|\  
+| * 6e0ee08 c2: a new line of development! (1 second ago)  [Fernando Perez]
+* | 56cad78 e4: main work continues (1 second ago)  [Fernando Perez]
+* | 5581513 d3: ontinued main work (1 second ago)  [Fernando Perez]
+|/  
+* 73d141a b1: some new ideas (1 second ago)  (tag: ver0) [Fernando Perez]
+* cab4518 a0: first commit (2 seconds ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="more-tags">
+<h2>More tags<a class="headerlink" href="#more-tags" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:85c78e28-235e-4e0f-bb67-99a10cae1d5c.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+git tag -a ver1 -m&quot;Releasing version 1 to the world!&quot;
+
+echo
+echo &quot;Git Log:&quot;
+git slog2 --all
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Git Log:
+*   6ea0830 f5: merging great new developments (0 seconds ago)  (HEAD -&gt; main, tag: ver1) [Fernando Perez]
+|\  
+| * 6e0ee08 c2: a new line of development! (1 second ago)  [Fernando Perez]
+* | 56cad78 e4: main work continues (1 second ago)  [Fernando Perez]
+* | 5581513 d3: ontinued main work (1 second ago)  [Fernando Perez]
+|/  
+* 73d141a b1: some new ideas (1 second ago)  (tag: ver0) [Fernando Perez]
+* cab4518 a0: first commit (2 seconds ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="and-the-git-life-continues">
+<h2>And the git life continues…<a class="headerlink" href="#and-the-git-life-continues" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image.png" src="lectures/intro-git/attachment:cf856d05-f7fe-4eb2-88c6-231c472c61d3.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+echo &quot;More and more work&quot; &gt;&gt; file.md
+git commit -am&quot;a6: our work marches on...&quot;
+
+echo
+echo &quot;Git Log:&quot;
+git slog2 --all
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[main f582848] a6: our work marches on...
+ 1 file changed, 1 insertion(+)
+
+Git Log:
+* f582848 a6: our work marches on... (0 seconds ago)  (HEAD -&gt; main) [Fernando Perez]
+*   6ea0830 f5: merging great new developments (1 second ago)  (tag: ver1) [Fernando Perez]
+|\  
+| * 6e0ee08 c2: a new line of development! (2 seconds ago)  [Fernando Perez]
+* | 56cad78 e4: main work continues (2 seconds ago)  [Fernando Perez]
+* | 5581513 d3: ontinued main work (2 seconds ago)  [Fernando Perez]
+|/  
+* 73d141a b1: some new ideas (2 seconds ago)  (tag: ver0) [Fernando Perez]
+* cab4518 a0: first commit (3 seconds ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A note on the order of the log above: by default, the above is ordered by the topology of the commits, not by the time they were made. We can ask git to show us the same information but sorted by the timestamps of the commits, which will match the way our diagrams were drawn. This is done by using the <code class="docutils literal notranslate"><span class="pre">--author-date-order</span></code> flag to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+cd git-visuals-tmp
+
+echo
+echo &quot;Git Log:&quot;
+git slog2 --all --author-date-order
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Git Log:
+* f582848 a6: our work marches on... (1 second ago)  (HEAD -&gt; main) [Fernando Perez]
+*   6ea0830 f5: merging great new developments (2 seconds ago)  (tag: ver1) [Fernando Perez]
+|\  
+* | 56cad78 e4: main work continues (3 seconds ago)  [Fernando Perez]
+| * 6e0ee08 c2: a new line of development! (3 seconds ago)  [Fernando Perez]
+* | 5581513 d3: ontinued main work (3 seconds ago)  [Fernando Perez]
+|/  
+* 73d141a b1: some new ideas (3 seconds ago)  (tag: ver0) [Fernando Perez]
+* cab4518 a0: first commit (4 seconds ago)  [Fernando Perez]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/intro-git"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
