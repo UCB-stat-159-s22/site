@@ -18,6 +18,7 @@ More details can be found [in the syllabus](syllabus.html).
     - We will use Jupyter notebooks. We will start with hosted notebooks on our [Stat 159 JupyterHub](https://stat159.datahub.berkeley.edu). Later in the term, we will discuss installing Jupyter on your own device. The JupyterHub server will have all the packages you need pre-installed.
     - The sources for class notes and most other materials are available [on github](https://github.com/UCB-stat-159-s22/site), with a rendered version [here](https://ucb-stat-159-s22.github.io/site).
     - Assignments should be submitted by pull request to your private repositories using the [GitHub Clasroom](https://classroom.github.com/classrooms/95771491-ucb-stat-159-s22-classroom).
+    - Whenever you need to work with GitHub, remember to activate GitHub authentication from the JupyterHub, by running the command `github-app-user-auth` at a terminal and following the instructions. If once authenticated you can't push to a given repo, it may be that you forgot to add that repo/org to your setup of the authentication app, go [here](https://github.com/apps/stat159-berkeley-datahub-access) to configure the app's permissions.
 
 + **A note on the Berkeley Library EZProxy:** Some of the resources listed here are scientific articles available only behind journal paywalls. If you haven't already, you should configure your web browser to use the campus [library EZProxy](https://guides.lib.berkeley.edu/ezproxy) so you can access them even if you are working from an off-campus network.
 
