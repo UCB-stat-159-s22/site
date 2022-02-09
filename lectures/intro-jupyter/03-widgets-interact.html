@@ -1,0 +1,873 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widgets without writing widgets: interact &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab01/lab01.html">
+   LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab02/lab02.html">
+   Lab Session 2: GitHub &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab03/lab03.html">
+   Lab Session 3: Solving Conflicts in Git
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/intro-jupyter/03-widgets-interact.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/intro-jupyter/03-widgets-interact.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Widgets without writing widgets: interact
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-interact">
+     Basic
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       interact
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixing-arguments-using-fixed">
+     Fixing arguments using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       fixed
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#widget-abbreviations">
+     Widget abbreviations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       interactive
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-interactive-plot">
+     Basic interactive plot
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disabling-continuous-updates">
+     Disabling continuous updates
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#interact-manual">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         interact_manual
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continuous-update">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         continuous_update
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-more-information">
+   For more information
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Widgets without writing widgets: interact</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Widgets without writing widgets: interact
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-interact">
+     Basic
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       interact
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixing-arguments-using-fixed">
+     Fixing arguments using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       fixed
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#widget-abbreviations">
+     Widget abbreviations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       interactive
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-interactive-plot">
+     Basic interactive plot
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disabling-continuous-updates">
+     Disabling continuous updates
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#interact-manual">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         interact_manual
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#continuous-update">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         continuous_update
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-more-information">
+   For more information
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="widgets-without-writing-widgets-interact">
+<h1>Widgets without writing widgets: interact<a class="headerlink" href="#widgets-without-writing-widgets-interact" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">interact</span></code> function (<code class="docutils literal notranslate"><span class="pre">ipywidgets.interact</span></code>) automatically creates user interface (UI) controls for exploring code and data interactively. It is the easiest way to get started using IPython’s widgets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="basic-interact">
+<h2>Basic <code class="docutils literal notranslate"><span class="pre">interact</span></code><a class="headerlink" href="#basic-interact" title="Permalink to this headline">¶</a></h2>
+<p>At the most basic level, <code class="docutils literal notranslate"><span class="pre">interact</span></code> autogenerates UI controls for function arguments, and then calls the function with those arguments when you manipulate the controls interactively. To use <code class="docutils literal notranslate"><span class="pre">interact</span></code>, you need to define a function that you want to explore. Here is a function that triples its argument, <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you pass this function as the first argument to <code class="docutils literal notranslate"><span class="pre">interact</span></code> along with an integer keyword argument (<code class="docutils literal notranslate"><span class="pre">x=10</span></code>), a slider is generated and bound to the function parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "2c92c682fcba4c718d4ee0421b960b5d", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>When you move the slider, the function is called, and the return value is printed.</p>
+<p>If you pass <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">interact</span></code> will generate a checkbox:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "33ac148f54bd4e8d8cee64e126195153", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>If you pass a string, <code class="docutils literal notranslate"><span class="pre">interact</span></code> will generate a <code class="docutils literal notranslate"><span class="pre">Text</span></code> field.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Hi there!&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "477b62fa37c448479f50e21ff3e21186", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">interact</span></code> can also be used as a decorator. This allows you to define a function and interact with it in a single shot. As this example shows, <code class="docutils literal notranslate"><span class="pre">interact</span></code> also works with functions that have multiple arguments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "2e76a4cdd5344766bbd4a83d2562d195", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="fixing-arguments-using-fixed">
+<h2>Fixing arguments using <code class="docutils literal notranslate"><span class="pre">fixed</span></code><a class="headerlink" href="#fixing-arguments-using-fixed" title="Permalink to this headline">¶</a></h2>
+<p>There are times when you may want to explore a function using <code class="docutils literal notranslate"><span class="pre">interact</span></code>, but fix one or more of its arguments to specific values. This can be accomplished by wrapping values with the <code class="docutils literal notranslate"><span class="pre">fixed</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we call <code class="docutils literal notranslate"><span class="pre">interact</span></code>, we pass <code class="docutils literal notranslate"><span class="pre">fixed(20)</span></code> for q to hold it fixed at a value of <code class="docutils literal notranslate"><span class="pre">20</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="n">fixed</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "7a6e9c9141a145289f36d006011eb3a6", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>Notice that a slider is only produced for <code class="docutils literal notranslate"><span class="pre">p</span></code> as the value of <code class="docutils literal notranslate"><span class="pre">q</span></code> is fixed.</p>
+</div>
+<div class="section" id="widget-abbreviations">
+<h2>Widget abbreviations<a class="headerlink" href="#widget-abbreviations" title="Permalink to this headline">¶</a></h2>
+<p>When you pass an integer-valued keyword argument of <code class="docutils literal notranslate"><span class="pre">10</span></code> (<code class="docutils literal notranslate"><span class="pre">x=10</span></code>) to <code class="docutils literal notranslate"><span class="pre">interact</span></code>, it generates an integer-valued slider control with a range of <code class="docutils literal notranslate"><span class="pre">[-10,+3*10]</span></code>. In this case, <code class="docutils literal notranslate"><span class="pre">10</span></code> is an <em>abbreviation</em> for an actual slider widget:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In fact, we can get the same result if we pass this <code class="docutils literal notranslate"><span class="pre">IntSlider</span></code> as the keyword argument for <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">10</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "9724a6673d2c445490e280c184c18e1b", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>This examples clarifies how <code class="docutils literal notranslate"><span class="pre">interact</span></code> proceses its keyword arguments:</p>
+<ol class="simple">
+<li><p>If the keyword argument is a <code class="docutils literal notranslate"><span class="pre">Widget</span></code> instance with a <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute, that widget is used. Any widget with a <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute can be used, even custom ones.</p></li>
+<li><p>Otherwise, the value is treated as a <em>widget abbreviation</em> that is converted to a widget before it is used.</p></li>
+</ol>
+<p>The following table gives an overview of different widget abbreviations:</p>
+<table class="table table-condensed table-bordered">
+  <tr><td><strong>Keyword argument</strong></td><td><strong>Widget</strong></td></tr>  
+  <tr><td>`True` or `False`</td><td>Checkbox</td></tr>  
+  <tr><td>`'Hi there'`</td><td>Text</td></tr>
+  <tr><td>`value` or `(min,max)` or `(min,max,step)` if integers are passed</td><td>IntSlider</td></tr>
+  <tr><td>`value` or `(min,max)` or `(min,max,step)` if floats are passed</td><td>FloatSlider</td></tr>
+  <tr><td>`['orange','apple']` or `[('one', 1), ('two', 2)]`</td><td>Dropdown</td></tr>
+</table>
+Note that a dropdown is used if a list or a list of tuples is given (signifying discrete choices), and a slider is used if a tuple is given (signifying a range).<p>You have seen how the checkbox and textarea widgets work above. Here, more details about the different abbreviations for sliders and dropdowns are given.</p>
+<p>If a 2-tuple of integers is passed <code class="docutils literal notranslate"><span class="pre">(min,max)</span></code>, an integer-valued slider is produced with those minimum and maximum values (inclusively). In this case, the default step size of <code class="docutils literal notranslate"><span class="pre">1</span></code> is used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "5467a2e0b1564234bc6405ba6f37395f", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">FloatSlider</span></code> is generated if any of the values are floating point. The step size can be changed by passing a third element in the tuple.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "8dfdfa5b8289453a87191d96d95f50d2", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>For both integer and float-valued sliders, you can pick the initial value of the widget by passing a default keyword argument to the underlying Python function. Here we set the initial value of a float slider to <code class="docutils literal notranslate"><span class="pre">5.5</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">5.5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "566f72e2d5a9492cb2d72c39b602cb6f", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>Dropdown menus are constructed by passing a list of strings. In this case, the strings are both used as the names in the dropdown menu UI and passed to the underlying Python function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span><span class="s1">&#39;oranges&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "081cd5378b4a464abead197f260d2c3f", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>If you want a dropdown menu that passes non-string values to the Python function, you can pass a list of tuples of the form <code class="docutils literal notranslate"><span class="pre">('label',</span> <span class="pre">value)</span></code>. The first items are the names in the dropdown menu UI and the second items are values that are the arguments passed to the underlying Python function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "eeb8cb9807de45fcb37ee852d13c3390", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="interactive">
+<h2><code class="docutils literal notranslate"><span class="pre">interactive</span></code><a class="headerlink" href="#interactive" title="Permalink to this headline">¶</a></h2>
+<p>In addition to <code class="docutils literal notranslate"><span class="pre">interact</span></code>, IPython provides another function, <code class="docutils literal notranslate"><span class="pre">interactive</span></code>, that is useful when you want to reuse the widgets that are produced or access the data that is bound to the UI controls.</p>
+<p>Note that unlike <code class="docutils literal notranslate"><span class="pre">interact</span></code>, the return value of the function will not be displayed automatically, but you can display a value inside the function with <code class="docutils literal notranslate"><span class="pre">IPython.display.display</span></code>.</p>
+<p>Here is a function that returns the sum of its two arguments and displays them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">interact</span></code>, <code class="docutils literal notranslate"><span class="pre">interactive</span></code> returns a <code class="docutils literal notranslate"><span class="pre">Widget</span></code> instance rather than immediately displaying the widget.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">interactive</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The widget is an <code class="docutils literal notranslate"><span class="pre">interactive</span></code>, a subclass of <code class="docutils literal notranslate"><span class="pre">VBox</span></code>, which is a container for other widgets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ipywidgets.widgets.interaction.interactive
+</pre></div>
+</div>
+</div>
+</div>
+<p>The children of the <code class="docutils literal notranslate"><span class="pre">interactive</span></code> are two integer-valued sliders and an output widget, produced by the widget abbreviations above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">.</span><span class="n">children</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(IntSlider(value=10, description=&#39;a&#39;, max=30, min=-10),
+ IntSlider(value=20, description=&#39;b&#39;, max=60, min=-20),
+ Output())
+</pre></div>
+</div>
+</div>
+</div>
+<p>To actually display the widgets, you can use IPython’s <code class="docutils literal notranslate"><span class="pre">display</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "681d0d898c1d4333baf1e01a8ed999a7", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>At this point, the UI controls work just like they would if <code class="docutils literal notranslate"><span class="pre">interact</span></code> had been used. You can manipulate them interactively and the function will be called. However, the widget instance returned by <code class="docutils literal notranslate"><span class="pre">interactive</span></code> also gives you access to the current keyword arguments and return value of the underlying Python function.</p>
+<p>Here are the current keyword arguments. If you rerun this cell after manipulating the sliders, the values will have changed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">.</span><span class="n">kwargs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;: 10, &#39;b&#39;: 20}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the current return value of the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">.</span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="basic-interactive-plot">
+<h2>Basic interactive plot<a class="headerlink" href="#basic-interactive-plot" title="Permalink to this headline">¶</a></h2>
+<p>Though the examples so far in this notebook had very basic output, more interesting possibilities are straightforward.</p>
+<p>The function below plots a straight line whose slope and intercept are given by its arguments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># for example</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-widgets-interact_52_0.png" src="../../_images/03-widgets-interact_52_0.png" />
+</div>
+</div>
+<p>The interactive below displays a line whose slope and intercept is set by the sliders. Note that if the variable containing the widget, <code class="docutils literal notranslate"><span class="pre">interactive_plot</span></code>, is the last thing in the cell it is displayed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interactive_plot</span> <span class="o">=</span> <span class="n">interactive</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="n">b</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="n">interactive_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "db1731081f644c76b13d9ff2972ab7d6", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="disabling-continuous-updates">
+<h2>Disabling continuous updates<a class="headerlink" href="#disabling-continuous-updates" title="Permalink to this headline">¶</a></h2>
+<p>When interacting with long running functions, or even with short functions whose results take some to display, realtime feedback is a burden instead of being helpful. You might have noticed the output of some of the widgets above “flickering” as you adjusted the controls. By default, <code class="docutils literal notranslate"><span class="pre">interact</span></code> and <code class="docutils literal notranslate"><span class="pre">interactive</span></code> call the function for every update of the widgets value.</p>
+<p>There are two ways to mitigate this.  You can either only execute on demand, or restrict execution to mouse release events.</p>
+<div class="section" id="interact-manual">
+<h3><code class="docutils literal notranslate"><span class="pre">interact_manual</span></code><a class="headerlink" href="#interact-manual" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">interact_manual</span></code> function provides a variant of interaction that allows you to restrict execution so it is only done on demand.  A button is added to the interact controls that allows you to trigger an execute event.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">slow_function</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sleep for 1 second then print the argument</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sleeping...&#39;</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="n">interact_manual</span><span class="p">(</span><span class="n">slow_function</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">1e4</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">1e4</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "cd2b59c85ba34c83b48ed20b5ed9574f", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>You can do the same thing with <code class="docutils literal notranslate"><span class="pre">interactive</span></code> by using the a <code class="docutils literal notranslate"><span class="pre">dict</span></code> as the second argument, as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="n">interactive</span><span class="p">(</span><span class="n">slow_function</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;manual&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">i</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">1e4</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">1e4</span><span class="p">))</span>
+<span class="n">foo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "f8e31a2efbef456da64da3817c4cc9bd", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="continuous-update">
+<h3><code class="docutils literal notranslate"><span class="pre">continuous_update</span></code><a class="headerlink" href="#continuous-update" title="Permalink to this headline">¶</a></h3>
+<p>If you are using slider widgets, you can set the <code class="docutils literal notranslate"><span class="pre">continuous_update</span></code> kwarg to <code class="docutils literal notranslate"><span class="pre">False</span></code>.  <code class="docutils literal notranslate"><span class="pre">continuous_update</span></code> is a keyword argument of slider widgets that restricts executions to mouse release events.</p>
+<p>In ipywidgets 7, the <code class="docutils literal notranslate"><span class="pre">Text</span></code> and <code class="docutils literal notranslate"><span class="pre">Textarea</span></code> controls also have a <code class="docutils literal notranslate"><span class="pre">continuous_update</span></code> argument.</p>
+<p>The first example below provides the <code class="docutils literal notranslate"><span class="pre">continuous_update</span></code> argument when the widget is created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">slow_function</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">1e4</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">5e4</span><span class="p">,</span> <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="for-more-information">
+<h1>For more information<a class="headerlink" href="#for-more-information" title="Permalink to this headline">¶</a></h1>
+<p>For more extended examples of <code class="docutils literal notranslate"><span class="pre">interact</span></code> and <code class="docutils literal notranslate"><span class="pre">interactive</span></code>, see <a class="reference external" href="https://github.com/jupyter-widgets/ipywidgets/blob/master/docs/source/examples/Index.ipynb">the example in the ipywidgets source repository</a>.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/intro-jupyter"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

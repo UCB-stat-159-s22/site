@@ -5,52 +5,54 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Public website for Berkeley Statistics 159/259, Reproducible and Collaborative Statistical Data Science, Spring 2022 &#8212; Collaborative and Reproducible Data Science</title>
+    <title>An overview of Jupyter tools &#8212; Collaborative and Reproducible Data Science</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)" href="../../lab/lab01/lab01.html" />
+    <link rel="prev" title="Git Visuals" href="../intro-git/git-visuals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -70,26 +72,26 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="../../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="overview.html">
+  <a class="reference internal" href="../../overview.html">
    Statistics 159/259, Spring 2022 Course Summary
   </a>
  </li>
@@ -101,7 +103,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="schedule.html">
+  <a class="reference internal" href="../../schedule.html">
    Statistics 159/259: Weekly Plan
   </a>
  </li>
@@ -113,7 +115,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="syllabus.html">
+  <a class="reference internal" href="../../syllabus.html">
    Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
   </a>
  </li>
@@ -123,19 +125,19 @@
   Lectures
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="lectures/intro-git/Git-Tutorial.html">
+  <a class="reference internal" href="../intro-git/Git-Tutorial.html">
    An interactive Git Tutorial: the tool you didn’t know you needed
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lectures/intro-git/git-visuals.html">
+  <a class="reference internal" href="../intro-git/git-visuals.html">
    Git Visuals
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lectures/intro-jupyter/Index.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    An overview of Jupyter tools
   </a>
  </li>
@@ -147,17 +149,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="lab/lab01/lab01.html">
+  <a class="reference internal" href="../../lab/lab01/lab01.html">
    LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lab/lab02/lab02.html">
+  <a class="reference internal" href="../../lab/lab02/lab02.html">
    Lab Session 2: GitHub &amp; The Shell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lab/lab03/lab03.html">
+  <a class="reference internal" href="../../lab/lab03/lab03.html">
    Lab Session 3: Solving Conflicts in Git
   </a>
  </li>
@@ -202,9 +204,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/README.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lectures/intro-jupyter/Index.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -222,6 +224,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/intro-jupyter/Index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -234,7 +253,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Public  website for Berkeley Statistics 159/259, Reproducible and Collaborative Statistical Data Science, Spring 2022</h1>
+                <h1>An overview of Jupyter tools</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -245,14 +264,14 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="public-website-for-berkeley-statistics-159-259-reproducible-and-collaborative-statistical-data-science-spring-2022">
-<h1>Public  website for Berkeley Statistics 159/259, Reproducible and Collaborative Statistical Data Science, Spring 2022<a class="headerlink" href="#public-website-for-berkeley-statistics-159-259-reproducible-and-collaborative-statistical-data-science-spring-2022" title="Permalink to this headline">¶</a></h1>
-<p>This repository contains all source materials (lecture notes, homework
-assignments, etc.) for the class, and is available as a static website
-<a class="reference external" href="https://ucb-stat-159-s21.github.io/site">here</a>, rendered
-automatically with JupyterBook on any commit to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
-<p>Instructor: <a class="reference external" href="https://fperez.org">Fernando Perez</a></p>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">Creative Commons Attribution-NoDerivatives 4.0 International License</a>.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="an-overview-of-jupyter-tools">
+<h1>An overview of Jupyter tools<a class="headerlink" href="#an-overview-of-jupyter-tools" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p><a class="reference internal" href="01-Intro-Jupyter.html"><span class="doc std std-doc">Intro-Jupyter</span></a></p></li>
+<li><p><a class="reference internal" href="02-Beyond-Plain-Python.html"><span class="doc std std-doc">Beyond-Plain-Python</span></a></p></li>
+<li><p><a class="reference internal" href="03-widgets-interact.html"><span class="doc std std-doc">widgets-interact</span></a></p></li>
+<li><p><a class="reference internal" href="04-Rich-Output.html"><span class="doc std std-doc">Rich Output</span></a></p></li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">
@@ -268,7 +287,7 @@ automatically with JupyterBook on any commit to the <code class="docutils litera
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./lectures/intro-jupyter"
         },
         predefinedOutput: true
     }
@@ -279,7 +298,21 @@ automatically with JupyterBook on any commit to the <code class="docutils litera
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../intro-git/git-visuals.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Git Visuals</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../lab/lab01/lab01.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
@@ -298,7 +331,7 @@ automatically with JupyterBook on any commit to the <code class="docutils litera
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

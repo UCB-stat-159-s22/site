@@ -1,0 +1,1644 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPython: beyond plain Python &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab01/lab01.html">
+   LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab02/lab02.html">
+   Lab Session 2: GitHub &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab03/lab03.html">
+   Lab Session 3: Solving Conflicts in Git
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/intro-jupyter/02-Beyond-Plain-Python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/intro-jupyter/02-Beyond-Plain-Python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-things-first-running-code-getting-help">
+   First things first: running code, getting help
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tab-completion">
+   Tab completion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-the-underlying-operating-system">
+   Accessing the underlying operating system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beyond-python-magic-functions">
+   Beyond Python: magic functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-in-the-notebook">
+   Plotting in the notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-normal-python-code-execution-and-errors">
+   Running normal Python code: execution and errors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-debugging">
+   Basic debugging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-code-in-other-languages-with-special-magics">
+   Running code in other languages with special
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     %%
+    </span>
+   </code>
+   magics
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>IPython: beyond plain Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-things-first-running-code-getting-help">
+   First things first: running code, getting help
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tab-completion">
+   Tab completion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-the-underlying-operating-system">
+   Accessing the underlying operating system
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beyond-python-magic-functions">
+   Beyond Python: magic functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-in-the-notebook">
+   Plotting in the notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-normal-python-code-execution-and-errors">
+   Running normal Python code: execution and errors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-debugging">
+   Basic debugging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-code-in-other-languages-with-special-magics">
+   Running code in other languages with special
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     %%
+    </span>
+   </code>
+   magics
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="ipython-beyond-plain-python">
+<h1>IPython: beyond plain Python<a class="headerlink" href="#ipython-beyond-plain-python" title="Permalink to this headline">¶</a></h1>
+<p>Updated by <a class="reference external" href="https://github.com/espg">&#64;espg</a> from the 2019 ICESat2 Hackweek <a class="reference external" href="https://github.com/ICESAT-2HackWeek/intro-jupyter-git">intro-jupyter-git</a> session, written by <a class="reference external" href="https://github.com/fperez">&#64;fperez</a>.</p>
+<p>When executing code in IPython, all valid Python syntax works as-is, but IPython provides a number of features designed to make the interactive experience more fluid and efficient.</p>
+<div class="section" id="first-things-first-running-code-getting-help">
+<h2>First things first: running code, getting help<a class="headerlink" href="#first-things-first-running-code-getting-help" title="Permalink to this headline">¶</a></h2>
+<p>In the notebook, to run a cell of code, hit <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code>. This executes the cell and puts the cursor in the next cell below, or makes a new one if you are at the end.  Alternately, you can use:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Alt-Enter</span></code> to force the creation of a new cell unconditionally (useful when inserting new content in the middle of an existing notebook).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Control-Enter</span></code> executes the cell and keeps the cursor in the same cell, useful for quick experimentation of snippets that you don’t need to keep permanently.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hi
+</pre></div>
+</div>
+</div>
+</div>
+<p>Getting help:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IPython -- An enhanced Interactive Python
+=========================================
+
+IPython offers a fully compatible replacement for the standard Python
+interpreter, with convenient shell features, special commands, command
+history mechanism and output results caching.
+
+At your system command line, type &#39;ipython -h&#39; to see the command line
+options available. This document only describes interactive features.
+
+GETTING HELP
+------------
+
+Within IPython you have various way to access help:
+
+  ?         -&gt; Introduction and overview of IPython&#39;s features (this screen).
+  object?   -&gt; Details about &#39;object&#39;.
+  object??  -&gt; More detailed, verbose information about &#39;object&#39;.
+  %quickref -&gt; Quick reference of all IPython specific syntax and magics.
+  help      -&gt; Access Python&#39;s own help system.
+
+If you are in terminal IPython you can quit this screen by pressing `q`.
+
+
+MAIN FEATURES
+-------------
+
+* Access to the standard Python help with object docstrings and the Python
+  manuals. Simply type &#39;help&#39; (no quotes) to invoke it.
+
+* Magic commands: type %magic for information on the magic subsystem.
+
+* System command aliases, via the %alias command or the configuration file(s).
+
+* Dynamic object information:
+
+  Typing ?word or word? prints detailed information about an object. Certain
+  long strings (code, etc.) get snipped in the center for brevity.
+
+  Typing ??word or word?? gives access to the full information without
+  snipping long strings. Strings that are longer than the screen are printed
+  through the less pager.
+
+  The ?/?? system gives access to the full source code for any object (if
+  available), shows function prototypes and other useful information.
+
+  If you just want to see an object&#39;s docstring, type &#39;%pdoc object&#39; (without
+  quotes, and without % if you have automagic on).
+
+* Tab completion in the local namespace:
+
+  At any time, hitting tab will complete any available python commands or
+  variable names, and show you a list of the possible completions if there&#39;s
+  no unambiguous one. It will also complete filenames in the current directory.
+
+* Search previous command history in multiple ways:
+
+  - Start typing, and then use arrow keys up/down or (Ctrl-p/Ctrl-n) to search
+    through the history items that match what you&#39;ve typed so far.
+
+  - Hit Ctrl-r: opens a search prompt. Begin typing and the system searches
+    your history for lines that match what you&#39;ve typed so far, completing as
+    much as it can.
+
+  - %hist: search history by index.
+
+* Persistent command history across sessions.
+
+* Logging of input with the ability to save and restore a working session.
+
+* System shell with !. Typing !ls will run &#39;ls&#39; in the current directory.
+
+* The reload command does a &#39;deep&#39; reload of a module: changes made to the
+  module since you imported will actually be available without having to exit.
+
+* Verbose and colored exception traceback printouts. See the magic xmode and
+  xcolor functions for details (just type %magic).
+
+* Input caching system:
+
+  IPython offers numbered prompts (In/Out) with input and output caching. All
+  input is saved and can be retrieved as variables (besides the usual arrow
+  key recall).
+
+  The following GLOBAL variables always exist (so don&#39;t overwrite them!):
+  _i: stores previous input.
+  _ii: next previous.
+  _iii: next-next previous.
+  _ih : a list of all input _ih[n] is the input from line n.
+
+  Additionally, global variables named _i&lt;n&gt; are dynamically created (&lt;n&gt;
+  being the prompt counter), such that _i&lt;n&gt; == _ih[&lt;n&gt;]
+
+  For example, what you typed at prompt 14 is available as _i14 and _ih[14].
+
+  You can create macros which contain multiple input lines from this history,
+  for later re-execution, with the %macro function.
+
+  The history function %hist allows you to see any part of your input history
+  by printing a range of the _i variables. Note that inputs which contain
+  magic functions (%) appear in the history with a prepended comment. This is
+  because they aren&#39;t really valid Python code, so you can&#39;t exec them.
+
+* Output caching system:
+
+  For output that is returned from actions, a system similar to the input
+  cache exists but using _ instead of _i. Only actions that produce a result
+  (NOT assignments, for example) are cached. If you are familiar with
+  Mathematica, IPython&#39;s _ variables behave exactly like Mathematica&#39;s %
+  variables.
+
+  The following GLOBAL variables always exist (so don&#39;t overwrite them!):
+  _ (one underscore): previous output.
+  __ (two underscores): next previous.
+  ___ (three underscores): next-next previous.
+
+  Global variables named _&lt;n&gt; are dynamically created (&lt;n&gt; being the prompt
+  counter), such that the result of output &lt;n&gt; is always available as _&lt;n&gt;.
+
+  Finally, a global dictionary named _oh exists with entries for all lines
+  which generated output.
+
+* Directory history:
+
+  Your history of visited directories is kept in the global list _dh, and the
+  magic %cd command can be used to go to any entry in that list.
+
+* Auto-parentheses and auto-quotes (adapted from Nathan Gray&#39;s LazyPython)
+
+  1. Auto-parentheses
+        
+     Callable objects (i.e. functions, methods, etc) can be invoked like
+     this (notice the commas between the arguments)::
+       
+         In [1]: callable_ob arg1, arg2, arg3
+       
+     and the input will be translated to this::
+       
+         callable_ob(arg1, arg2, arg3)
+       
+     This feature is off by default (in rare cases it can produce
+     undesirable side-effects), but you can activate it at the command-line
+     by starting IPython with `--autocall 1`, set it permanently in your
+     configuration file, or turn on at runtime with `%autocall 1`.
+
+     You can force auto-parentheses by using &#39;/&#39; as the first character
+     of a line.  For example::
+       
+          In [1]: /globals             # becomes &#39;globals()&#39;
+       
+     Note that the &#39;/&#39; MUST be the first character on the line!  This
+     won&#39;t work::
+       
+          In [2]: print /globals    # syntax error
+
+     In most cases the automatic algorithm should work, so you should
+     rarely need to explicitly invoke /. One notable exception is if you
+     are trying to call a function with a list of tuples as arguments (the
+     parenthesis will confuse IPython)::
+       
+          In [1]: zip (1,2,3),(4,5,6)  # won&#39;t work
+       
+     but this will work::
+       
+          In [2]: /zip (1,2,3),(4,5,6)
+          ------&gt; zip ((1,2,3),(4,5,6))
+          Out[2]= [(1, 4), (2, 5), (3, 6)]
+
+     IPython tells you that it has altered your command line by
+     displaying the new command line preceded by --&gt;.  e.g.::
+       
+          In [18]: callable list
+          -------&gt; callable (list)
+
+  2. Auto-Quoting
+    
+     You can force auto-quoting of a function&#39;s arguments by using &#39;,&#39; as
+     the first character of a line.  For example::
+       
+          In [1]: ,my_function /home/me   # becomes my_function(&quot;/home/me&quot;)
+
+     If you use &#39;;&#39; instead, the whole argument is quoted as a single
+     string (while &#39;,&#39; splits on whitespace)::
+       
+          In [2]: ,my_function a b c   # becomes my_function(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)
+          In [3]: ;my_function a b c   # becomes my_function(&quot;a b c&quot;)
+
+     Note that the &#39;,&#39; MUST be the first character on the line!  This
+     won&#39;t work::
+       
+          In [4]: x = ,my_function /home/me    # syntax error
+</pre></div>
+</div>
+</div>
+</div>
+<p>Typing <code class="docutils literal notranslate"><span class="pre">object_name?</span></code> will print all sorts of details about any object, including docstrings, function definition lines (for call arguments) and constructor details for classes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+np.linspace<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span>
+np<span class=" -Color -Color-Blue">.</span>linspace<span class=" -Color -Color-Blue">(</span>
+    start<span class=" -Color -Color-Blue">,</span>
+    stop<span class=" -Color -Color-Blue">,</span>
+    num<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">50</span><span class=" -Color -Color-Blue">,</span>
+    endpoint<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">,</span>
+    retstep<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">,</span>
+    dtype<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">None</span><span class=" -Color -Color-Blue">,</span>
+    axis<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">0</span><span class=" -Color -Color-Blue">,</span>
+<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Return evenly spaced numbers over a specified interval.
+
+Returns `num` evenly spaced samples, calculated over the
+interval [`start`, `stop`].
+
+The endpoint of the interval can optionally be excluded.
+
+.. versionchanged:: 1.16.0
+    Non-scalar `start` and `stop` are now supported.
+
+.. versionchanged:: 1.20.0
+    Values are rounded towards ``-inf`` instead of ``0`` when an
+    integer ``dtype`` is specified. The old behavior can
+    still be obtained with ``np.linspace(start, stop, num).astype(int)``
+
+Parameters
+----------
+start : array_like
+    The starting value of the sequence.
+stop : array_like
+    The end value of the sequence, unless `endpoint` is set to False.
+    In that case, the sequence consists of all but the last of ``num + 1``
+    evenly spaced samples, so that `stop` is excluded.  Note that the step
+    size changes when `endpoint` is False.
+num : int, optional
+    Number of samples to generate. Default is 50. Must be non-negative.
+endpoint : bool, optional
+    If True, `stop` is the last sample. Otherwise, it is not included.
+    Default is True.
+retstep : bool, optional
+    If True, return (`samples`, `step`), where `step` is the spacing
+    between samples.
+dtype : dtype, optional
+    The type of the output array.  If `dtype` is not given, the data type
+    is inferred from `start` and `stop`. The inferred dtype will never be
+    an integer; `float` is chosen even if the arguments would produce an
+    array of integers.
+
+    .. versionadded:: 1.9.0
+
+axis : int, optional
+    The axis in the result to store the samples.  Relevant only if start
+    or stop are array-like.  By default (0), the samples will be along a
+    new axis inserted at the beginning. Use -1 to get an axis at the end.
+
+    .. versionadded:: 1.16.0
+
+Returns
+-------
+samples : ndarray
+    There are `num` equally spaced samples in the closed interval
+    ``[start, stop]`` or the half-open interval ``[start, stop)``
+    (depending on whether `endpoint` is True or False).
+step : float, optional
+    Only returned if `retstep` is True
+
+    Size of spacing between samples.
+
+
+See Also
+--------
+arange : Similar to `linspace`, but uses a step size (instead of the
+         number of samples).
+geomspace : Similar to `linspace`, but with numbers spaced evenly on a log
+            scale (a geometric progression).
+logspace : Similar to `geomspace`, but with the end points specified as
+           logarithms.
+
+Examples
+--------
+&gt;&gt;&gt; np.linspace(2.0, 3.0, num=5)
+array([2.  , 2.25, 2.5 , 2.75, 3.  ])
+&gt;&gt;&gt; np.linspace(2.0, 3.0, num=5, endpoint=False)
+array([2. ,  2.2,  2.4,  2.6,  2.8])
+&gt;&gt;&gt; np.linspace(2.0, 3.0, num=5, retstep=True)
+(array([2.  ,  2.25,  2.5 ,  2.75,  3.  ]), 0.25)
+
+Graphical illustration:
+
+&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; N = 8
+&gt;&gt;&gt; y = np.zeros(N)
+&gt;&gt;&gt; x1 = np.linspace(0, 10, N, endpoint=True)
+&gt;&gt;&gt; x2 = np.linspace(0, 10, N, endpoint=False)
+&gt;&gt;&gt; plt.plot(x1, y, &#39;o&#39;)
+[&lt;matplotlib.lines.Line2D object at 0x...&gt;]
+&gt;&gt;&gt; plt.plot(x2, y + 0.5, &#39;o&#39;)
+[&lt;matplotlib.lines.Line2D object at 0x...&gt;]
+&gt;&gt;&gt; plt.ylim([-0.5, 1])
+(-0.5, 1)
+&gt;&gt;&gt; plt.show()
+<span class=" -Color -Color-Red">File:</span>      ~/local/conda/envs/stat159-s22/lib/python3.9/site-packages/numpy/core/function_base.py
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>np.isclose<span class="o">??</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> np<span class=" -Color -Color-Blue">.</span>isclose<span class=" -Color -Color-Blue">(</span>a<span class=" -Color -Color-Blue">,</span> b<span class=" -Color -Color-Blue">,</span> rtol<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">1e-05</span><span class=" -Color -Color-Blue">,</span> atol<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">1e-08</span><span class=" -Color -Color-Blue">,</span> equal_nan<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Source:</span>   
+<span class=" -Color -Color-Blue">@</span>array_function_dispatch<span class=" -Color -Color-Blue">(</span>_isclose_dispatcher<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Green">def</span> isclose<span class=" -Color -Color-Blue">(</span>a<span class=" -Color -Color-Blue">,</span> b<span class=" -Color -Color-Blue">,</span> rtol<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">1.e-5</span><span class=" -Color -Color-Blue">,</span> atol<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Cyan">1.e-8</span><span class=" -Color -Color-Blue">,</span> equal_nan<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">False</span><span class=" -Color -Color-Blue">):</span>
+    <span class=" -Color -Color-Blue">&quot;&quot;&quot;</span>
+<span class=" -Color -Color-Blue">    Returns a boolean array where two arrays are element-wise equal within a</span>
+<span class=" -Color -Color-Blue">    tolerance.</span>
+
+<span class=" -Color -Color-Blue">    The tolerance values are positive, typically very small numbers.  The</span>
+<span class=" -Color -Color-Blue">    relative difference (`rtol` * abs(`b`)) and the absolute difference</span>
+<span class=" -Color -Color-Blue">    `atol` are added together to compare against the absolute difference</span>
+<span class=" -Color -Color-Blue">    between `a` and `b`.</span>
+
+<span class=" -Color -Color-Blue">    .. warning:: The default `atol` is not appropriate for comparing numbers</span>
+<span class=" -Color -Color-Blue">                 that are much smaller than one (see Notes).</span>
+
+<span class=" -Color -Color-Blue">    Parameters</span>
+<span class=" -Color -Color-Blue">    ----------</span>
+<span class=" -Color -Color-Blue">    a, b : array_like</span>
+<span class=" -Color -Color-Blue">        Input arrays to compare.</span>
+<span class=" -Color -Color-Blue">    rtol : float</span>
+<span class=" -Color -Color-Blue">        The relative tolerance parameter (see Notes).</span>
+<span class=" -Color -Color-Blue">    atol : float</span>
+<span class=" -Color -Color-Blue">        The absolute tolerance parameter (see Notes).</span>
+<span class=" -Color -Color-Blue">    equal_nan : bool</span>
+<span class=" -Color -Color-Blue">        Whether to compare NaN&#39;s as equal.  If True, NaN&#39;s in `a` will be</span>
+<span class=" -Color -Color-Blue">        considered equal to NaN&#39;s in `b` in the output array.</span>
+
+<span class=" -Color -Color-Blue">    Returns</span>
+<span class=" -Color -Color-Blue">    -------</span>
+<span class=" -Color -Color-Blue">    y : array_like</span>
+<span class=" -Color -Color-Blue">        Returns a boolean array of where `a` and `b` are equal within the</span>
+<span class=" -Color -Color-Blue">        given tolerance. If both `a` and `b` are scalars, returns a single</span>
+<span class=" -Color -Color-Blue">        boolean value.</span>
+
+<span class=" -Color -Color-Blue">    See Also</span>
+<span class=" -Color -Color-Blue">    --------</span>
+<span class=" -Color -Color-Blue">    allclose</span>
+<span class=" -Color -Color-Blue">    math.isclose</span>
+
+<span class=" -Color -Color-Blue">    Notes</span>
+<span class=" -Color -Color-Blue">    -----</span>
+<span class=" -Color -Color-Blue">    .. versionadded:: 1.7.0</span>
+
+<span class=" -Color -Color-Blue">    For finite values, isclose uses the following equation to test whether</span>
+<span class=" -Color -Color-Blue">    two floating point values are equivalent.</span>
+
+<span class=" -Color -Color-Blue">     absolute(`a` - `b`) &lt;= (`atol` + `rtol` * absolute(`b`))</span>
+
+<span class=" -Color -Color-Blue">    Unlike the built-in `math.isclose`, the above equation is not symmetric</span>
+<span class=" -Color -Color-Blue">    in `a` and `b` -- it assumes `b` is the reference value -- so that</span>
+<span class=" -Color -Color-Blue">    `isclose(a, b)` might be different from `isclose(b, a)`. Furthermore,</span>
+<span class=" -Color -Color-Blue">    the default value of atol is not zero, and is used to determine what</span>
+<span class=" -Color -Color-Blue">    small values should be considered close to zero. The default value is</span>
+<span class=" -Color -Color-Blue">    appropriate for expected values of order unity: if the expected values</span>
+<span class=" -Color -Color-Blue">    are significantly smaller than one, it can result in false positives.</span>
+<span class=" -Color -Color-Blue">    `atol` should be carefully selected for the use case at hand. A zero value</span>
+<span class=" -Color -Color-Blue">    for `atol` will result in `False` if either `a` or `b` is zero.</span>
+
+<span class=" -Color -Color-Blue">    `isclose` is not defined for non-numeric data types.</span>
+
+<span class=" -Color -Color-Blue">    Examples</span>
+<span class=" -Color -Color-Blue">    --------</span>
+<span class=" -Color -Color-Blue">    &gt;&gt;&gt; np.isclose([1e10,1e-7], [1.00001e10,1e-8])</span>
+<span class=" -Color -Color-Blue">    array([ True, False])</span>
+<span class=" -Color -Color-Blue">    &gt;&gt;&gt; np.isclose([1e10,1e-8], [1.00001e10,1e-9])</span>
+<span class=" -Color -Color-Blue">    array([ True, True])</span>
+<span class=" -Color -Color-Blue">    &gt;&gt;&gt; np.isclose([1e10,1e-8], [1.0001e10,1e-9])</span>
+<span class=" -Color -Color-Blue">    array([False,  True])</span>
+<span class=" -Color -Color-Blue">    &gt;&gt;&gt; np.isclose([1.0, np.nan], [1.0, np.nan])</span>
+<span class=" -Color -Color-Blue">    array([ True, False])</span>
+<span class=" -Color -Color-Blue">    &gt;&gt;&gt; np.isclose([1.0, np.nan], [1.0, np.nan], equal_nan=True)</span>
+<span class=" -Color -Color-Blue">    array([ True, True])</span>
+<span class=" -Color -Color-Blue">    &gt;&gt;&gt; np.isclose([1e-8, 1e-7], [0.0, 0.0])</span>
+<span class=" -Color -Color-Blue">    array([ True, False])</span>
+<span class=" -Color -Color-Blue">    &gt;&gt;&gt; np.isclose([1e-100, 1e-7], [0.0, 0.0], atol=0.0)</span>
+<span class=" -Color -Color-Blue">    array([False, False])</span>
+<span class=" -Color -Color-Blue">    &gt;&gt;&gt; np.isclose([1e-10, 1e-10], [1e-20, 0.0])</span>
+<span class=" -Color -Color-Blue">    array([ True,  True])</span>
+<span class=" -Color -Color-Blue">    &gt;&gt;&gt; np.isclose([1e-10, 1e-10], [1e-20, 0.999999e-10], atol=0.0)</span>
+<span class=" -Color -Color-Blue">    array([False,  True])</span>
+<span class=" -Color -Color-Blue">    &quot;&quot;&quot;</span>
+    <span class=" -Color -Color-Green">def</span> within_tol<span class=" -Color -Color-Blue">(</span>x<span class=" -Color -Color-Blue">,</span> y<span class=" -Color -Color-Blue">,</span> atol<span class=" -Color -Color-Blue">,</span> rtol<span class=" -Color -Color-Blue">):</span>
+        <span class=" -Color -Color-Green">with</span> errstate<span class=" -Color -Color-Blue">(</span>invalid<span class=" -Color -Color-Blue">=&#39;ignore&#39;):</span>
+            <span class=" -Color -Color-Green">return</span> less_equal<span class=" -Color -Color-Blue">(</span>abs<span class=" -Color -Color-Blue">(</span>x<span class=" -Color -Color-Blue">-</span>y<span class=" -Color -Color-Blue">),</span> atol <span class=" -Color -Color-Blue">+</span> rtol <span class=" -Color -Color-Blue">*</span> abs<span class=" -Color -Color-Blue">(</span>y<span class=" -Color -Color-Blue">))</span>
+
+    x <span class=" -Color -Color-Blue">=</span> asanyarray<span class=" -Color -Color-Blue">(</span>a<span class=" -Color -Color-Blue">)</span>
+    y <span class=" -Color -Color-Blue">=</span> asanyarray<span class=" -Color -Color-Blue">(</span>b<span class=" -Color -Color-Blue">)</span>
+
+    <span class=" -Color -Color-Red"># Make sure y is an inexact type to avoid bad behavior on abs(MIN_INT).</span>
+    <span class=" -Color -Color-Red"># This will cause casting of x later. Also, make sure to allow subclasses</span>
+    <span class=" -Color -Color-Red"># (e.g., for numpy.ma).</span>
+    <span class=" -Color -Color-Red"># NOTE: We explicitly allow timedelta, which used to work. This could</span>
+    <span class=" -Color -Color-Red">#       possibly be deprecated. See also gh-18286.</span>
+    <span class=" -Color -Color-Red">#       timedelta works if `atol` is an integer or also a timedelta.</span>
+    <span class=" -Color -Color-Red">#       Although, the default tolerances are unlikely to be useful</span>
+    <span class=" -Color -Color-Green">if</span> y<span class=" -Color -Color-Blue">.</span>dtype<span class=" -Color -Color-Blue">.</span>kind <span class=" -Color -Color-Blue">!=</span> <span class=" -Color -Color-Blue">&quot;m&quot;:</span>
+        dt <span class=" -Color -Color-Blue">=</span> multiarray<span class=" -Color -Color-Blue">.</span>result_type<span class=" -Color -Color-Blue">(</span>y<span class=" -Color -Color-Blue">,</span> <span class=" -Color -Color-Cyan">1.</span><span class=" -Color -Color-Blue">)</span>
+        y <span class=" -Color -Color-Blue">=</span> asanyarray<span class=" -Color -Color-Blue">(</span>y<span class=" -Color -Color-Blue">,</span> dtype<span class=" -Color -Color-Blue">=</span>dt<span class=" -Color -Color-Blue">)</span>
+
+    xfin <span class=" -Color -Color-Blue">=</span> isfinite<span class=" -Color -Color-Blue">(</span>x<span class=" -Color -Color-Blue">)</span>
+    yfin <span class=" -Color -Color-Blue">=</span> isfinite<span class=" -Color -Color-Blue">(</span>y<span class=" -Color -Color-Blue">)</span>
+    <span class=" -Color -Color-Green">if</span> all<span class=" -Color -Color-Blue">(</span>xfin<span class=" -Color -Color-Blue">)</span> <span class=" -Color -Color-Green">and</span> all<span class=" -Color -Color-Blue">(</span>yfin<span class=" -Color -Color-Blue">):</span>
+        <span class=" -Color -Color-Green">return</span> within_tol<span class=" -Color -Color-Blue">(</span>x<span class=" -Color -Color-Blue">,</span> y<span class=" -Color -Color-Blue">,</span> atol<span class=" -Color -Color-Blue">,</span> rtol<span class=" -Color -Color-Blue">)</span>
+    <span class=" -Color -Color-Green">else</span><span class=" -Color -Color-Blue">:</span>
+        finite <span class=" -Color -Color-Blue">=</span> xfin <span class=" -Color -Color-Blue">&amp;</span> yfin
+        cond <span class=" -Color -Color-Blue">=</span> zeros_like<span class=" -Color -Color-Blue">(</span>finite<span class=" -Color -Color-Blue">,</span> subok<span class=" -Color -Color-Blue">=</span><span class=" -Color -Color-Green">True</span><span class=" -Color -Color-Blue">)</span>
+        <span class=" -Color -Color-Red"># Because we&#39;re using boolean indexing, x &amp; y must be the same shape.</span>
+        <span class=" -Color -Color-Red"># Ideally, we&#39;d just do x, y = broadcast_arrays(x, y). It&#39;s in</span>
+        <span class=" -Color -Color-Red"># lib.stride_tricks, though, so we can&#39;t import it here.</span>
+        x <span class=" -Color -Color-Blue">=</span> x <span class=" -Color -Color-Blue">*</span> ones_like<span class=" -Color -Color-Blue">(</span>cond<span class=" -Color -Color-Blue">)</span>
+        y <span class=" -Color -Color-Blue">=</span> y <span class=" -Color -Color-Blue">*</span> ones_like<span class=" -Color -Color-Blue">(</span>cond<span class=" -Color -Color-Blue">)</span>
+        <span class=" -Color -Color-Red"># Avoid subtraction with infinite/nan values...</span>
+        cond<span class=" -Color -Color-Blue">[</span>finite<span class=" -Color -Color-Blue">]</span> <span class=" -Color -Color-Blue">=</span> within_tol<span class=" -Color -Color-Blue">(</span>x<span class=" -Color -Color-Blue">[</span>finite<span class=" -Color -Color-Blue">],</span> y<span class=" -Color -Color-Blue">[</span>finite<span class=" -Color -Color-Blue">],</span> atol<span class=" -Color -Color-Blue">,</span> rtol<span class=" -Color -Color-Blue">)</span>
+        <span class=" -Color -Color-Red"># Check for equality of infinite values...</span>
+        cond<span class=" -Color -Color-Blue">[~</span>finite<span class=" -Color -Color-Blue">]</span> <span class=" -Color -Color-Blue">=</span> <span class=" -Color -Color-Blue">(</span>x<span class=" -Color -Color-Blue">[~</span>finite<span class=" -Color -Color-Blue">]</span> <span class=" -Color -Color-Blue">==</span> y<span class=" -Color -Color-Blue">[~</span>finite<span class=" -Color -Color-Blue">])</span>
+        <span class=" -Color -Color-Green">if</span> equal_nan<span class=" -Color -Color-Blue">:</span>
+            <span class=" -Color -Color-Red"># Make NaN == NaN</span>
+            both_nan <span class=" -Color -Color-Blue">=</span> isnan<span class=" -Color -Color-Blue">(</span>x<span class=" -Color -Color-Blue">)</span> <span class=" -Color -Color-Blue">&amp;</span> isnan<span class=" -Color -Color-Blue">(</span>y<span class=" -Color -Color-Blue">)</span>
+
+            <span class=" -Color -Color-Red"># Needed to treat masked arrays correctly. = True would not work.</span>
+            cond<span class=" -Color -Color-Blue">[</span>both_nan<span class=" -Color -Color-Blue">]</span> <span class=" -Color -Color-Blue">=</span> both_nan<span class=" -Color -Color-Blue">[</span>both_nan<span class=" -Color -Color-Blue">]</span>
+
+        <span class=" -Color -Color-Green">return</span> cond<span class=" -Color -Color-Blue">[()]</span>  <span class=" -Color -Color-Red"># Flatten 0d arrays to scalars</span>
+<span class=" -Color -Color-Red">File:</span>      ~/local/conda/envs/stat159-s22/lib/python3.9/site-packages/numpy/core/numeric.py
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>*int*<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FloatingPointError
+breakpoint
+int
+print
+</pre></div>
+</div>
+</div>
+</div>
+<p>An IPython quick reference card:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">quickref</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IPython -- An enhanced Interactive Python - Quick Reference Card
+================================================================
+
+obj?, obj??      : Get help, or more help for object (also works as
+                   ?obj, ??obj).
+?foo.*abc*       : List names in &#39;foo&#39; containing &#39;abc&#39; in them.
+%magic           : Information about IPython&#39;s &#39;magic&#39; % functions.
+
+Magic functions are prefixed by % or %%, and typically take their arguments
+without parentheses, quotes or even commas for convenience.  Line magics take a
+single % and cell magics are prefixed with two %%.
+
+Example magic function calls:
+
+%alias d ls -F   : &#39;d&#39; is now an alias for &#39;ls -F&#39;
+alias d ls -F    : Works if &#39;alias&#39; not a python name
+alist = %alias   : Get list of aliases to &#39;alist&#39;
+cd /usr/share    : Obvious. cd -&lt;tab&gt; to choose from visited dirs.
+%cd??            : See help AND source for magic %cd
+%timeit x=10     : time the &#39;x=10&#39; statement with high precision.
+%%timeit x=2**100
+x**100           : time &#39;x**100&#39; with a setup of &#39;x=2**100&#39;; setup code is not
+                   counted.  This is an example of a cell magic.
+
+System commands:
+
+!cp a.txt b/     : System command escape, calls os.system()
+cp a.txt b/      : after %rehashx, most system commands work without !
+cp ${f}.txt $bar : Variable expansion in magics and system commands
+files = !ls /usr : Capture system command output
+files.s, files.l, files.n: &quot;a b c&quot;, [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;], &#39;a\nb\nc&#39;
+
+History:
+
+_i, _ii, _iii    : Previous, next previous, next next previous input
+_i4, _ih[2:5]    : Input history line 4, lines 2-4
+exec(_i81)       : Execute input history line #81 again
+%rep 81          : Edit input history line #81
+_, __, ___       : previous, next previous, next next previous output
+_dh              : Directory history
+_oh              : Output history
+%hist            : Command history of current session.
+%hist -g foo     : Search command history of (almost) all sessions for &#39;foo&#39;.
+%hist -g         : Command history of (almost) all sessions.
+%hist 1/2-8      : Command history containing lines 2-8 of session 1.
+%hist 1/ ~2/     : Command history of session 1 and 2 sessions before current.
+%hist ~8/1-~6/5  : Command history from line 1 of 8 sessions ago to
+                   line 5 of 6 sessions ago.
+%edit 0/         : Open editor to execute code with history of current session.
+
+Autocall:
+
+f 1,2            : f(1,2)  # Off by default, enable with %autocall magic.
+/f 1,2           : f(1,2) (forced autoparen)
+,f 1 2           : f(&quot;1&quot;,&quot;2&quot;)
+;f 1 2           : f(&quot;1 2&quot;)
+
+Remember: TAB completion works in many contexts, not just file names
+or python names.
+
+The following magic functions are currently available:
+
+%alias:
+    Define an alias for a system command.
+%alias_magic:
+    ::
+%autoawait:
+    
+%autocall:
+    Make functions callable without having to type parentheses.
+%automagic:
+    Make magic functions callable without having to type the initial %.
+%autosave:
+    Set the autosave interval in the notebook (in seconds).
+%bookmark:
+    Manage IPython&#39;s bookmark system.
+%cat:
+    Alias for `!cat`
+%cd:
+    Change the current working directory.
+%cl:
+    Alias for `!clear`
+%clear:
+    Clear the terminal.
+%colors:
+    Switch color scheme for prompts, info system and exception handlers.
+%conda:
+    Run the conda package manager within the current kernel.
+%config:
+    configure IPython
+%connect_info:
+    Print information for connecting other clients to this kernel
+%cp:
+    Alias for `!cp`
+%d:
+    Alias for `!pwd; ls -o`
+%dd:
+    Alias for `!pwd; ls -o | grep /$`
+%debug:
+    ::
+%dhist:
+    Print your history of visited directories.
+%dirs:
+    Return the current directory stack.
+%dl:
+    Alias for `!pwd; ls -o | grep ^l`
+%doctest_mode:
+    Toggle doctest mode on and off.
+%dp:
+    Alias for `!pwd; ls -o | grep ^-..x`
+%dus:
+    Alias for `!du -s * . | sort -n`
+%dx:
+    Alias for `!pwd; ls -o | grep ^-..x`
+%ed:
+    Alias for `%edit`.
+%edit:
+    Bring up an editor and execute the resulting code.
+%env:
+    Get, set, or list environment variables.
+%gui:
+    Enable or disable IPython GUI event loop integration.
+%hist:
+    Alias for `%history`.
+%history:
+    ::
+%killbgscripts:
+    Kill all BG processes started by %%script and its family.
+%ldir:
+    Alias for `!ls -F -G -l %l | grep /$`
+%less:
+    Show a file through the pager.
+%lf:
+    Alias for `!ls -F -l -G %l | grep ^-`
+%lk:
+    Alias for `!ls -F -l -G %l | grep ^l`
+%ll:
+    Alias for `!ls -F -l -G`
+%load:
+    Load code into the current frontend.
+%load_ext:
+    Load an IPython extension by its module name.
+%loadpy:
+    Alias of `%load`
+%logoff:
+    Temporarily stop logging.
+%logon:
+    Restart logging.
+%logstart:
+    Start logging anywhere in a session.
+%logstate:
+    Print the status of the logging system.
+%logstop:
+    Fully stop logging and close log file.
+%ls:
+    Alias for `!ls -F -G`
+%lsmagic:
+    List currently available magic functions.
+%lx:
+    Alias for `!ls -F -l -G %l | grep ^-..x`
+%macro:
+    Define a macro for future re-execution. It accepts ranges of history,
+%magic:
+    Print information about the magic function system.
+%man:
+    Find the man page for the given command and display in pager.
+%matplotlib:
+    ::
+%mkdir:
+    Alias for `!mkdir`
+%more:
+    Show a file through the pager.
+%mv:
+    Alias for `!mv`
+%notebook:
+    ::
+%page:
+    Pretty print the object and display it through a pager.
+%pastebin:
+    Upload code to dpaste.com, returning the URL.
+%pdb:
+    Control the automatic calling of the pdb interactive debugger.
+%pdef:
+    Print the call signature for any callable object.
+%pdoc:
+    Print the docstring for an object.
+%pfile:
+    Print (or run through pager) the file where an object is defined.
+%pinfo:
+    Provide detailed information about an object.
+%pinfo2:
+    Provide extra detailed information about an object.
+%pip:
+    Run the pip package manager within the current kernel.
+%popd:
+    Change to directory popped off the top of the stack.
+%pprint:
+    Toggle pretty printing on/off.
+%precision:
+    Set floating point precision for pretty printing.
+%prun:
+    Run a statement through the python code profiler.
+%psearch:
+    Search for object in namespaces by wildcard.
+%psource:
+    Print (or run through pager) the source code for an object.
+%pushd:
+    Place the current dir on stack and change directory.
+%pwd:
+    Return the current working directory path.
+%pycat:
+    Show a syntax-highlighted file through a pager.
+%pylab:
+    ::
+%qtconsole:
+    Open a qtconsole connected to this kernel.
+%quickref:
+    Show a quick reference sheet 
+%recall:
+    Repeat a command, or get command to input line for editing.
+%rehashx:
+    Update the alias table with all executable files in $PATH.
+%reload_ext:
+    Reload an IPython extension by its module name.
+%rep:
+    Alias for `%recall`.
+%rerun:
+    Re-run previous input
+%reset:
+    Resets the namespace by removing all names defined by the user, if
+%reset_selective:
+    Resets the namespace by removing names defined by the user.
+%rm:
+    Alias for `!rm`
+%rmdir:
+    Alias for `!rmdir`
+%run:
+    Run the named file inside IPython as a program.
+%save:
+    Save a set of lines or a macro to a given filename.
+%sc:
+    Shell capture - run shell command and capture output (DEPRECATED use !).
+%set_env:
+    Set environment variables.  Assumptions are that either &quot;val&quot; is a
+%store:
+    Lightweight persistence for python variables.
+%sx:
+    Shell execute - run shell command and capture output (!! is short-hand).
+%system:
+    Shell execute - run shell command and capture output (!! is short-hand).
+%tb:
+    Print the last traceback.
+%time:
+    Time execution of a Python statement or expression.
+%timeit:
+    Time execution of a Python statement or expression
+%unalias:
+    Remove an alias
+%unload_ext:
+    Unload an IPython extension by its module name.
+%who:
+    Print all interactive variables, with some minimal formatting.
+%who_ls:
+    Return a sorted list of all interactive variables.
+%whos:
+    Like %who, but gives some extra information about each variable.
+%xdel:
+    Delete a variable, trying to clear it from anywhere that
+%xmode:
+    Switch modes for the exception handlers.
+%%!:
+    Shell execute - run shell command and capture output (!! is short-hand).
+%%HTML:
+    Alias for `%%html`.
+%%SVG:
+    Alias for `%%svg`.
+%%bash:
+    %%bash script magic
+%%capture:
+    ::
+%%debug:
+    ::
+%%file:
+    Alias for `%%writefile`.
+%%html:
+    ::
+%%javascript:
+    Run the cell block of Javascript code
+%%js:
+    Run the cell block of Javascript code
+%%latex:
+    Render the cell as a block of LaTeX
+%%markdown:
+    Render the cell as Markdown text block
+%%perl:
+    %%perl script magic
+%%prun:
+    Run a statement through the python code profiler.
+%%pypy:
+    %%pypy script magic
+%%python:
+    %%python script magic
+%%python2:
+    %%python2 script magic
+%%python3:
+    %%python3 script magic
+%%ruby:
+    %%ruby script magic
+%%script:
+    ::
+%%sh:
+    %%sh script magic
+%%svg:
+    Render the cell as an SVG literal
+%%sx:
+    Shell execute - run shell command and capture output (!! is short-hand).
+%%system:
+    Shell execute - run shell command and capture output (!! is short-hand).
+%%time:
+    Time execution of a Python statement or expression.
+%%timeit:
+    Time execution of a Python statement or expression
+%%writefile:
+    ::
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tab-completion">
+<h2>Tab completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">¶</a></h2>
+<p>Tab completion, especially for attributes, is a convenient way to explore the structure of any object you’re dealing with. Simply type <code class="docutils literal notranslate"><span class="pre">object_name.&lt;TAB&gt;</span></code> to view the object’s attributes. Besides Python objects and keywords, tab completion also works on file and directory names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+    <span class="n">np</span><span class="o">.</span>
+       <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tab completion also works for accessing documentation. Using <code class="docutils literal notranslate"><span class="pre">Shift-TAB</span></code> after the parens will display the function or class signature:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.], dtype=float16)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can suppress the storage and rendering of output if you append <code class="docutils literal notranslate"><span class="pre">;</span></code> to the last cell (this comes in handy when plotting with matplotlib, for example):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="o">+</span><span class="mi">20</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-the-underlying-operating-system">
+<h2>Accessing the underlying operating system<a class="headerlink" href="#accessing-the-underlying-operating-system" title="Permalink to this headline">¶</a></h2>
+<p>You can invoke the command line from within the notebook by prepending the “bang” ( <code class="docutils literal notranslate"><span class="pre">!</span></code> ) operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pwd
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some of the most common shell commands will work without prepending:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>…but others require the bang operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">du</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>du
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s best practice to use the operator in all cases, since it makes it more explicit when you are calling the shell</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="o">!</span>ls 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;files this directory:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="nv">$files</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="o">{</span>files<span class="o">[</span><span class="m">0</span><span class="o">]</span>.upper<span class="o">()}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that all this is available even in multiline blocks:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;ipynb&#39;</span><span class="p">):</span>
+        <span class="o">!</span><span class="nb">echo</span> <span class="o">{</span><span class="s2">&quot;%02d&quot;</span> % i<span class="o">}</span> - <span class="s2">&quot;{os.path.splitext(f)[0]}&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="beyond-python-magic-functions">
+<h2>Beyond Python: magic functions<a class="headerlink" href="#beyond-python-magic-functions" title="Permalink to this headline">¶</a></h2>
+<p>The IPython ‘magic’ functions are a set of commands, invoked by prepending one or two <code class="docutils literal notranslate"><span class="pre">%</span></code> signs to their name, that live in a namespace separate from your normal Python variables and provide a more command-like interface.  They take flags with <code class="docutils literal notranslate"><span class="pre">--</span></code> and arguments without quotes, parentheses or commas. The motivation behind this system is two-fold:</p>
+<ul class="simple">
+<li><p>To provide an namespace for controlling IPython itself and exposing other system-oriented functionality that is separate from your Python variables and functions.  This lets you have a <code class="docutils literal notranslate"><span class="pre">cd</span></code> command accessible as a magic regardless of whether you have a Python <code class="docutils literal notranslate"><span class="pre">cd</span></code> variable.</p></li>
+<li><p>To expose a calling mode that requires minimal verbosity and typing while working interactively.  Thus the inspiration taken from the classic Unix shell style for commands.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">magic</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Line vs cell magics:</p>
+<p>Magics can be applied at the single-line level or to entire cells. Line magics are identified with a single <code class="docutils literal notranslate"><span class="pre">%</span></code> prefix, while cell magics use <code class="docutils literal notranslate"><span class="pre">%%</span></code> and can only be used as the first line of the cell (since they apply to the entire cell). Some magics, like the convenient <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> that ships built-in with IPython, can be called in either mode, while others may be line- or cell-only (you can see all magics with <code class="docutils literal notranslate"><span class="pre">%lsmagic</span></code>).</p>
+<p>Let’s see this with some <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> list(range(1000))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="c1"># comment here</span>
+
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Line magics can be used even inside code blocks:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">100</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size:&#39;</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="o">%</span><span class="k">timeit</span> list(range(size))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Magics can do anything they want with their input, so it doesn’t have to be valid Python (note that the below may not work on a Windows machine, depending on how you are running Jupyter on it):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+echo &quot;My shell is:&quot; $SHELL
+echo &quot;My disk usage is:&quot;
+df -h
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another interesting cell magic: create any file you want locally from the notebook:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%writefile test.txt
+This is a test file!
+It can contain anything I want...
+
+And more...
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat test.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see what other magics are currently defined in the system:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">lsmagic</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-in-the-notebook">
+<h2>Plotting in the notebook<a class="headerlink" href="#plotting-in-the-notebook" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;A little chirp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;A little chirp&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/02-Beyond-Plain-Python_49_1.png" src="../../_images/02-Beyond-Plain-Python_49_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="running-normal-python-code-execution-and-errors">
+<h2>Running normal Python code: execution and errors<a class="headerlink" href="#running-normal-python-code-execution-and-errors" title="Permalink to this headline">¶</a></h2>
+<p>Not only can you input normal Python code, you can even paste straight from a Python or IPython shell session:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="c1"># Fibonacci series:</span>
+<span class="o">...</span> <span class="c1"># the sum of two elements defines the next</span>
+<span class="o">...</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="o">...</span>     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1
+2
+3
+5
+8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+   <span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+   <span class="o">...</span><span class="p">:</span>     
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 2 3 4 5 6 7 8 9 
+</pre></div>
+</div>
+</div>
+</div>
+<p>And when your code produces errors, you can control how they are displayed with the <code class="docutils literal notranslate"><span class="pre">%xmode</span></code> magic:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> mod.py
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing mod.py
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s call the function <code class="docutils literal notranslate"><span class="pre">g</span></code> with an argument that would produce an error:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mod</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">g</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">mod</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">mod</span><span class="o">.</span><span class="n">g</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">File ~/teach/stat159/2022sp/site/lectures/intro-jupyter/mod.py:6,</span> in <span class="ni">g</span><span class="nt">(y)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nn">File ~/teach/stat159/2022sp/site/lectures/intro-jupyter/mod.py:3,</span> in <span class="ni">f</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">return</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">ZeroDivisionError</span>: float division by zero
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="basic-debugging">
+<h2>Basic debugging<a class="headerlink" href="#basic-debugging" title="Permalink to this headline">¶</a></h2>
+<p>When running code interactively, it can be tricky to figure out how to debug…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">debug</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; <span class=" -Color -Color-Green">/Users/fperez/teach/stat159/2022sp/site/lectures/intro-jupyter/mod.py</span>(3)<span class=" -Color -Color-Cyan">f</span><span class=" -Color -Color-Blue">()</span>
+<span class=" -Color -Color-Green">      1 </span>
+<span class=" -Color -Color-Green">      2 def</span> f<span class=" -Color -Color-Blue">(</span>x<span class=" -Color -Color-Blue">):</span>
+<span class=" -Color -Color-Green">----&gt; 3 </span><span class=" -Color -Color-Red">    </span><span class=" -Color -Color-Green">return</span> <span class=" -Color -Color-Cyan">1.0</span><span class=" -Color -Color-Blue">/(</span>x<span class=" -Color -Color-Blue">-</span><span class=" -Color -Color-Cyan">1</span><span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Green">      4 </span>
+<span class=" -Color -Color-Green">      5 def</span> g<span class=" -Color -Color-Blue">(</span>y<span class=" -Color -Color-Blue">):</span>
+
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ipdb&gt;  q
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enjoy</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Are you enjoying this tutorial? &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;enjoy is:&#39;</span><span class="p">,</span> <span class="n">enjoy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Are you enjoying this tutorial?  q
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>enjoy is: q
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="running-code-in-other-languages-with-special-magics">
+<h2>Running code in other languages with special <code class="docutils literal notranslate"><span class="pre">%%</span></code> magics<a class="headerlink" href="#running-code-in-other-languages-with-special-magics" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%perl</span>
+<span class="nv">@months</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;July&quot;</span><span class="p">,</span> <span class="s">&quot;August&quot;</span><span class="p">,</span> <span class="s">&quot;September&quot;</span><span class="p">);</span>
+<span class="k">print</span> <span class="nv">$months</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>July
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/intro-jupyter"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
