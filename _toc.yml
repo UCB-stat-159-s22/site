@@ -10,6 +10,8 @@ parts:
 - caption: Lectures
   chapters:
   - file: lectures/intro-git/Git-Tutorial
+  - file: lectures/intro-git/git-visuals
+  - file: lectures/intro-jupyter/Index
 - caption: Labs
   chapters:
   - file: lab/lab01/lab01.ipynb
