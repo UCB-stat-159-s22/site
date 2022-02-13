@@ -379,6 +379,27 @@
 <li><p><a class="reference external" href="https://stat159.datahub.berkeley.edu/hub/login?next=%2Fhub%2F">JupyterHub</a></p></li>
 <li><p><a class="reference external" href="https://ucb-stat-159-s22.github.io/site/lectures/intro-git/Git-Tutorial.html#convenient-credentials-management">Convenient credentials management</a></p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;Hello, my name is </span><span class="si">{n}</span><span class="s2"> and I am </span><span class="si">{a}</span><span class="s2"> year old&quot;</span>
+<span class="n">sent</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="s2">&quot;facu&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">27</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, my name is facu and I am 27 year old
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sent</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="branching">
 <h2>1. Branching<a class="headerlink" href="#branching" title="Permalink to this headline">¶</a></h2>
 <p>Let’s start with some basic warm up. This is something we have seen along the lectures, but now is your turn of doing it. We are going to emulate two programmers working in different branches of the same repository and then merging them.</p>
@@ -388,7 +409,7 @@
 <p>We are working in our <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of our repository and then we want to try some new experiments in a new branch. If everything goes well with our experiment, we may wish to merge it to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
 <ol class="simple">
 <li><p>Create a new branch, for example by using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">switch</span> <span class="pre">-</span> <span class="pre">c</span> <span class="pre">&lt;branchname&gt;</span></code>. You can also create a new branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">&lt;branchname&gt;</span></code> and move to the new branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;branchname&gt;</span></code>.</p></li>
-<li><p>Push to remote from a new branch: push a new file in that branch to the remote repository. What happens when you do this? If you try to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> changes in a new branch that you just created, you will receive the following message error <code class="docutils literal notranslate"><span class="pre">fatal:</span> <span class="pre">The</span> <span class="pre">current</span> <span class="pre">branch</span> <span class="pre">&lt;branch</span> <span class="pre">name&gt;</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">upstream</span> <span class="pre">branch</span></code>. This is because you have just created the branch in local and no in remote. Instead, the first time you push a file to a new branch you have to do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">&lt;branch</span> <span class="pre">name&gt;</span></code> (See <a class="reference external" href="https://careerkarma.com/blog/git-no-upstream-branch/">here</a> for more information).</p></li>
+<li><p>Push to remote from a new branch: push a new file in that branch to the remote repository. What happens when you do this? If you try to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> changes in a new branch that you just created, you will receive the following message error <code class="docutils literal notranslate"><span class="pre">fatal:</span> <span class="pre">The</span> <span class="pre">current</span> <span class="pre">branch</span> <span class="pre">&lt;branch</span> <span class="pre">name&gt;</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">upstream</span> <span class="pre">branch</span></code>. This is because you have just created the branch in local and no in remote. Instead, the first time you push a file to a new branch you have to do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">&lt;branch</span> <span class="pre">name&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">-u</span></code> is just a shortcut for <code class="docutils literal notranslate"><span class="pre">--set-upstream</span></code>).</p></li>
 <li><p>Switch to <code class="docutils literal notranslate"><span class="pre">main</span></code> again and make changes in a different file.</p></li>
 <li><p>Merge both branches. Notice that you can merge directly on GitHub. If you go to the remote repository in your GitHub account, you will see the option for <code class="docutils literal notranslate"><span class="pre">compare</span> <span class="pre">and</span> <span class="pre">pull</span> <span class="pre">request</span></code>  .</p></li>
 <li><p>Delete the old branch (See more info <a class="reference external" href="https://www.freecodecamp.org/news/git-delete-branch-how-to-remove-a-local-or-remote-branch/">here</a>):</p>
