@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Session 4: Version control with Jupytext &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Lab Session 3: Solving Conflicts in Git" href="../lab03/lab03.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab01/lab01.html">
+   LAB Session No1 - STAT 159/259 Collaborative and Reproducible Data Science (Spring 2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab02/lab02.html">
+   Lab Session 2: GitHub &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab03/lab03.html">
+   Lab Session 3: Solving Conflicts in Git
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab Session 4: Version control with Jupytext
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lab/lab04/lab04.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lab/lab04/lab04.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-common-mistakes-when-working-with-git">
+   Some common mistakes when working with Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupytext">
+   Jupytext
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupytext-solo">
+   1. Jupytext Solo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternative-ways-of-creating-paired-notebooks">
+     Alternative ways of creating paired notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-in-git">
+   2. Now in Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collaborative-jupytext-the-return-of-alice-and-bob">
+   3. Collaborative Jupytext: The return of Alice and Bob
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lab Session 4: Version control with Jupytext</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-common-mistakes-when-working-with-git">
+   Some common mistakes when working with Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupytext">
+   Jupytext
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupytext-solo">
+   1. Jupytext Solo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternative-ways-of-creating-paired-notebooks">
+     Alternative ways of creating paired notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-in-git">
+   2. Now in Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collaborative-jupytext-the-return-of-alice-and-bob">
+   3. Collaborative Jupytext: The return of Alice and Bob
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-session-4-version-control-with-jupytext">
+<h1>Lab Session 4: Version control with Jupytext<a class="headerlink" href="#lab-session-4-version-control-with-jupytext" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Statistics 159/259, Spring 2022</strong></p></li>
+<li><p>Prof. F. Pérez and GSI F. Sapienza, Department of Statistics, UC Berkeley.</p></li>
+<li><p>02/14/2022</p></li>
+</ul>
+<p>Useful links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/mwouts/jupytext/blob/main/README.md">Jupytext Repository</a></p></li>
+<li><p><a class="reference external" href="https://stat159.datahub.berkeley.edu/hub/login?next=%2Fhub%2F">JupyterHub</a></p></li>
+<li><p><a class="reference external" href="https://ucb-stat-159-s22.github.io/site/lectures/intro-git/Git-Tutorial.html#convenient-credentials-management">Convenient credentials management</a></p></li>
+</ul>
+<div class="section" id="some-common-mistakes-when-working-with-git">
+<h2>Some common mistakes when working with Git<a class="headerlink" href="#some-common-mistakes-when-working-with-git" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>As a general rule, never create or clone new repositories inside an old repository. Unless you do this very carefully, git won’t know a priori which repository are you trying to manipulate. Can you think in an example where we can manipulate two repositories at the same time or an example where one repository has being clone inside another?</p></li>
+<li><p>When you create a new repository, if you don’t give permision to that repository to be manipulated with the <a class="reference external" href="https://ucb-stat-159-s22.github.io/site/lectures/intro-git/Git-Tutorial.html#convenient-credentials-management">authentication app</a> then you won’t be able to push to that repository. In this case, you would see the following error message:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">remote</span><span class="p">:</span> <span class="n">Write</span> <span class="n">access</span> <span class="n">to</span> <span class="n">repository</span> <span class="ow">not</span> <span class="n">granted</span><span class="o">.</span>
+<span class="n">fatal</span><span class="p">:</span> <span class="n">unable</span> <span class="n">to</span> <span class="n">access</span> <span class="s1">&#39;https://github.com/facusapienza21/test.git/&#39;</span><span class="p">:</span> <span class="n">The</span> <span class="n">requested</span> <span class="n">URL</span> <span class="n">returned</span> <span class="n">error</span><span class="p">:</span> <span class="mi">403</span>
+</pre></div>
+</div>
+<p>In this case, you need to go to <code class="docutils literal notranslate"><span class="pre">configure</span></code> in the <a class="reference external" href="https://github.com/apps/stat159-berkeley-datahub-access">stat159 Berkeley DataHub access app</a>.</p>
+<ol class="simple">
+<li><p>If the authentitication app still don’t work for you, try again to run the command</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git config -f $HOME/.gitconfig.local credential.helper &quot;store --file=/tmp/github-app-git-credentials&quot;
+</pre></div>
+</div>
+<p>Even if you are able to push changes to your repository using your token and this is the way in which you can use GitHub when working in your local machine, we highly recommend you to use the authentication app.</p>
+</div>
+<div class="section" id="jupytext">
+<h2>Jupytext<a class="headerlink" href="#jupytext" title="Permalink to this headline">¶</a></h2>
+<p>A common problem when working with Jupyter notebooks is how to do version control. Even a small change in a Jupyter notebook can produce multiple changes in the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file. Besides, Jupyter notebooks are written on JSON, which could be difficult to read but also problematic at the moment of solving conflicts in git given that we need to manually decide which changes we want to keep or remove during a merge conflict.</p>
+<p>In the course, we are going to explore two different ways of performing version control in Jupyter notebooks. Today we will focus in the first one, Jupytext.</p>
+<img src=https://raw.githubusercontent.com/mwouts/jupytext/main/docs/logo_large.png width="500">
+<p>For a short but very complete presentation of all the capabilities of Jupytext, we recommend you watching Marc Wouts’s talk in JupyterCon 2020:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.lib.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;SDYdeVfMh48&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/SDYdeVfMh48"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<p>In the JupyterHub for the course we already have installed <code class="docutils literal notranslate"><span class="pre">jupytext</span></code> and also the extension for JupyterLab. We can check all the packages we have installed by executing either <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">list</span></code> in bash. We can also search for specific packages by using</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+#pip show jupytext
+conda list | grep jupytext
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jupytext                  1.11.5             pyhd0ecf6b_0    conda-forge
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ideally, we would like to see something similar as what we see when we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> after we had made changes to a text file. How does Jupytext manage to do this? The idea is to pair the notebook with a more simple or readable file format. As it is very well explained in the <a class="reference external" href="https://github.com/mwouts/jupytext/blob/main/README.md">Jupytext documentation</a>, there are many ways to pair a notebook with a secondary file. For today’s lab, we are going to practice</p>
+<ol class="simple">
+<li><p>Using the commands in JupyterLab</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jupytext</span></code> at the terminal line</p></li>
+</ol>
+<p>We can also decide the <a class="reference external" href="https://github.com/mwouts/jupytext/blob/main/docs/formats.md">format</a> of the paired notebook, depending what is the content in the notebook.</p>
+<p><strong>Take your time to read the documentation!</strong> The Jupytext team made an excellent job in explaining the different ways of how you can pair notebooks and the different formats you can use for the Jupyter notebook companion:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://github.com/mwouts/jupytext/blob/main/README.md">README</a> provides a general description of how Jupytext works.</p></li>
+<li><p><a class="reference external" href="https://github.com/mwouts/jupytext/blob/main/docs/paired-notebooks.md">Paired Notebooks</a></p></li>
+<li><p><a class="reference external" href="https://github.com/mwouts/jupytext/blob/main/docs/paired-notebooks.md">Formats</a></p></li>
+</ol>
+<p>Notice that in the <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/user/commands.html#access-palette">command palette</a> in 3.0+ versions of JupyterLab has moved to a modal window. You can enter it by <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Active</span> <span class="pre">Commnad</span> <span class="pre">Palette</span></code> or with the shortcut <code class="docutils literal notranslate"><span class="pre">Command/Ctrl</span> <span class="pre">Shift</span> <span class="pre">C</span></code>.</p>
+</div>
+<div class="section" id="jupytext-solo">
+<h2>1. Jupytext Solo<a class="headerlink" href="#jupytext-solo" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start by creating file-notebooks pairs.</p>
+<ol class="simple">
+<li><p>Create a notebook with some simple Python code in your repository.</p></li>
+<li><p>Pair the notebook using the commands in JupyterLab (enter the Command Palette and search <code class="docutils literal notranslate"><span class="pre">jupytext</span></code>). Which format do you think is more convenient for pairing your notebook?</p></li>
+<li><p>Make some experiments:</p>
+<ol class="simple">
+<li><p>What happens when you change the content in the notebook? are these changes reflected in the paired file?</p></li>
+<li><p>What happens when you instead modify the text file?</p></li>
+</ol>
+</li>
+<li><p>If you don’t change the default configuration, Jupyter notebooks will autosave and this could generate a conflict if you are making modifications in both paired files. You can keep the default configuration, but then you should be careful about which one is the updated version of the notebook. You can remove the autosave configuration from the same command palette (Autosave Documents).</p></li>
+<li><p>By default, the companion file will be open with the text editor. However, notice you can open it as a Jupyter notebook (<code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">With</span> <span class="pre">&gt;</span> <span class="pre">Notebook</span></code>).</p></li>
+<li><p>What happens when you delete the companion file? Remember: until you don’t save the notebook again you won’t see the changes.</p></li>
+<li><p>Explore some of the other formats that Jupytext offers to pair your notebook. Try to imagine in which context would you use each one of them</p>
+<ul class="simple">
+<li><p>markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">light</span></code> format</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">percent</span></code> format</p></li>
+</ul>
+</li>
+</ol>
+<div class="section" id="alternative-ways-of-creating-paired-notebooks">
+<h3>Alternative ways of creating paired notebooks<a class="headerlink" href="#alternative-ways-of-creating-paired-notebooks" title="Permalink to this headline">¶</a></h3>
+<p>As we mentioned before, this is not the only way of creating paired notebooks. Notice that we have a Jupytext reference / FAQ option in the command palette.</p>
+<p><strong>From the terminal</strong></p>
+<ol class="simple">
+<li><p>You can use jupytext to converse between different formats. See the <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/using-cli.html">documentation</a> to get the exact steps. For example, You can convert a notebook to a markdown file using <code class="docutils literal notranslate"><span class="pre">jupytext</span> <span class="pre">--to</span> <span class="pre">markdown</span> <span class="pre">&lt;notebook</span> <span class="pre">name&gt;</span></code>.</p></li>
+<li><p>Are the paired files synchronized? This last step just creates a copy of the notebook in a different format. In order to create a paired notebook, you have to execute the sync command <code class="docutils literal notranslate"><span class="pre">jupytext</span> <span class="pre">--set-formats</span> <span class="pre">ipynb,&lt;format&gt;</span> <span class="pre">&lt;notebook</span> <span class="pre">name&gt;</span></code>.</p></li>
+<li><p>How do you unpair a notebook from the terminal?</p></li>
+</ol>
+<p>You can also explore how to make a <strong>Global configuration in a <code class="docutils literal notranslate"><span class="pre">jupytext.toml</span></code> file</strong>.</p>
+</div>
+</div>
+<div class="section" id="now-in-git">
+<h2>2. Now in Git<a class="headerlink" href="#now-in-git" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Create a paired notebook inside a Git repository. For example, you can use the <code class="docutils literal notranslate"><span class="pre">test</span></code> repository we were using during the last labs.</p></li>
+<li><p>Make a first commit to both paired notebook and companion file. Then, make small changes in one of them (be sure those changes are being reflected in the second file).</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">diff</span></code> command in git to explore changes in the both files. What can you observe? More specifically, modify different elements of the notebook and see how these are reflected in the paired file. These could include:</p>
+<ol class="simple">
+<li><p>Changes in markdown or commented text</p></li>
+<li><p>Changes in the code inside cells</p></li>
+<li><p>Changes in the output of a cell (for example, an image)</p></li>
+<li><p>Changes in iPython commands (for example, magic commands).</p></li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="collaborative-jupytext-the-return-of-alice-and-bob">
+<h2>3. Collaborative Jupytext: The return of Alice and Bob<a class="headerlink" href="#collaborative-jupytext-the-return-of-alice-and-bob" title="Permalink to this headline">¶</a></h2>
+<p>As we did in the Lab 03, we are going to simulate the situation of more than one person collaborating in the same repository. We are going to set up a shared collaboration with one partner (the person sitting next to you).
+This will show the basic workflow of collaborating on a project with a small team where everyone has write privileges to the same repository. We will start with the same basic steps we did last time, but now on notebooks!</p>
+<ol class="simple">
+<li><p>Alice creates a repository. She has being working in a Jupyter notebook. After she has learn how to use Jupytext, she need to decide whether include in the repository:</p>
+<ul class="simple">
+<li><p>The Jupyter notebook alone</p></li>
+<li><p>The companion file alone</p></li>
+<li><p>Both paired files</p></li>
+</ul>
+</li>
+<li><p>What would you think is the best idea??? You can try more than one option and see how it goes.</p></li>
+<li><p>Bob clones Alice’s repository.</p></li>
+<li><p>Bob wants to make changes to one of the notebook-style files from Alice (that is, a <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> file or a companion file with the information to recreate a Jupyter notebook). How should he proceed? Does he need to configure Jupytext in his own computer too? Bob makes changes to a file and commits them <strong>locally</strong>.</p></li>
+<li><p>Embracing chaos: let’s generate a conflict… now Alice continues making changes to notebook and pushes his changes to Github.</p></li>
+<li><p>As we did in the last class, when Bob try to push his new changes to GitHub, he creates a commit message that conflicts with the last version from Alice. This forced Bob to make the changes in his local machine, by doing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> and solving the merge problem (remember that a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> + <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>). Does Jupytext help Bob to solve the conflict??? How should he proceed in order to solve the conflict?</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lab/lab04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../lab03/lab03.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab Session 3: Solving Conflicts in Git</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
