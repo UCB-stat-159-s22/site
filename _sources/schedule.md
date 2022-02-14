@@ -13,7 +13,11 @@ The table of contents on the left pane has links to lectures and labs. The follo
 
 * [Lab 01](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&branch=main&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab01).
 
-* [Lab 02](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&branch=main&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab02)
+* [Lab 02](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&branch=main&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab02).
+
+* [Lab 03](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab03%2Flab03.ipynb&branch=main).
+
+* [Lab 04](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab04%2Flab04.ipynb&branch=main)
 
 ### Assigned Readings
 
