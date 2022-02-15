@@ -75,7 +75,7 @@ For each assigned reading, you will submit a brief, 2 paragraph report by 21:00 
 ### Graduate Student Instructor
 + [Facu Sapienza](mailto:fsapienza@berkeley.edu)
 + Labs: Monday 11AM-1PM & 2-4PM (342 Evans Hall). If you need to attend the lab virtually, please send an email and a Zoom link will be provided. 
-+ Office hours: Tuesdays 10AM-11AM & Thursday 2PM-3PM (428 Evans Hall). If you need to attend office hours virtually, please send an email and a Zoom link will be provided.
++ Office hours: Tuesdays 10AM-11AM & Friday 12PM-1PM (428 Evans Hall). If you need to attend office hours virtually, please send an email and a Zoom link will be provided.
 
 ### Communication
 
