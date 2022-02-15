@@ -30,7 +30,7 @@ When an assignment consists of multiple articles, you should submit a summary pa
     - [2012, 60 minutes segment about Duke Clinical Trials](https://www.youtube.com/watch?v=W5sZTNPMQRM) (also [available on vimeo](https://vimeo.com/165142857)).
     - [2018, The Importance of Reproducible Research in High-Throughput Biology, talk at UW](https://www.youtube.com/watch?v=8QJfNS7XXwA).
 
-* #3, due Feb 21: Earth and Climate Science in the Cloud
+* #3, due Feb 22: Earth and Climate Science in the Cloud
     - [Perspectives on Data Reproducibility and Replicability in Paleoclimate and Climate Science](https://hdsr.mitpress.mit.edu/pub/dijwtzza/release/1).
     - [Gentemann et al. 2021, Science Storms the Cloud](https://www.essoar.org/doi/10.1002/essoar.10506344.2).
     - Gentemann et al. "[Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave.](https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016GL071039)".  For this paper, start thinking about reproducibility issues with it. The lead author, [Dr. Chelle Gentemann](), will be our guest lecturer on Feb 23, and she will discuss aspects of this work. Later we will follow up with a reproducibility attempt around this paper.
