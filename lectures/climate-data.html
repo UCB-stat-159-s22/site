@@ -1,0 +1,970 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate, oceans and data &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab/lab01/lab01.html">
+   Lab Session 1 - Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab/lab02/lab02.html">
+   Lab Session 2: GitHub &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab/lab03/lab03.html">
+   Lab Session 3: Solving Conflicts in Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab/lab04/lab04.html">
+   Lab Session 4: Version control with Jupytext
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lectures/climate-data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/climate-data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculate-e-in-e-out">
+   Calculate E
+   <span class="math notranslate nohighlight">
+    \(_{in}\)
+   </span>
+   = E
+   <span class="math notranslate nohighlight">
+    \(_{out}\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-greenhouse-effect">
+     calculate greenhouse effect
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experiment">
+   Experiment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-what-a-change-in-the-greenhouse-effect-does-to-temperature">
+     calculate what a change in the greenhouse effect does to temperature
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-xarray-to-explore-era5-data">
+   using xarray to explore era5 data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isel-versus-sel">
+   .isel versus .sel
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Climate, oceans and data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculate-e-in-e-out">
+   Calculate E
+   <span class="math notranslate nohighlight">
+    \(_{in}\)
+   </span>
+   = E
+   <span class="math notranslate nohighlight">
+    \(_{out}\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-greenhouse-effect">
+     calculate greenhouse effect
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experiment">
+   Experiment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-what-a-change-in-the-greenhouse-effect-does-to-temperature">
+     calculate what a change in the greenhouse effect does to temperature
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-xarray-to-explore-era5-data">
+   using xarray to explore era5 data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isel-versus-sel">
+   .isel versus .sel
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="climate-oceans-and-data">
+<h1>Climate, oceans and data<a class="headerlink" href="#climate-oceans-and-data" title="Permalink to this headline">¶</a></h1>
+<p>Author: <a class="reference external" href="https://cgentemann.github.io">Dr. Chelle Gentemann</a>.</p>
+<p>This notebook accompanies a lecture for Berkeley’s Data 100 that covers the fundamental physical mechanisms behind global warming and analyzes CO2 and ocean temperature data.</p>
+<p>The original resides in <a class="reference external" href="https://github.com/cgentemann/d100_gentemann">this github repository</a>, this is a copy kept as part of the class materials.</p>
+<p>Copyright (c) 2021 Chelle Gentemann, <a class="reference external" href="https://opensource.org/licenses/MIT">MIT Licensed</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Small style adjustments for more readable plots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;seaborn-whitegrid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="calculate-e-in-e-out">
+<h2>Calculate E<span class="math notranslate nohighlight">\(_{in}\)</span> = E<span class="math notranslate nohighlight">\(_{out}\)</span><a class="headerlink" href="#calculate-e-in-e-out" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solve for T (slide 15)</span>
+<span class="n">Ω</span> <span class="o">=</span> <span class="mi">1372</span>  <span class="c1"># W/m2 incoming solar</span>
+<span class="n">σ</span> <span class="o">=</span> <span class="mf">5.67e-8</span>  <span class="c1"># stephan boltzman constant W/m2/K4</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">T</span> <span class="o">=</span> <span class="p">((</span><span class="n">Ω</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">A</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">σ</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temperature =&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">T</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="calculate-greenhouse-effect">
+<h3>calculate greenhouse effect<a class="headerlink" href="#calculate-greenhouse-effect" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>bonus points for greek letters</p></li>
+<li><p>to get a sigma type ‘\sigma’ then hit tab</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># standard values</span>
+<span class="n">Ω</span> <span class="o">=</span> <span class="mi">1372</span>  <span class="c1"># W/m2 incoming solar</span>
+<span class="n">σ</span> <span class="o">=</span> <span class="mf">5.67e-8</span>  <span class="c1"># stephan boltzman constant W/m2/K4</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">288</span>  <span class="c1"># temperature K</span>
+<span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="n">T</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="n">σ</span> <span class="o">-</span> <span class="p">(</span><span class="n">Ω</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">A</span><span class="p">))</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;greenhouse effect:&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">E</span><span class="p">,</span> <span class="s2">&quot;W m-2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="experiment">
+<h2>Experiment<a class="headerlink" href="#experiment" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Solve for the temperature, so that you can see how changes in albedo and greenhouse effect impact T</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solve for T, including the greenhouse effect</span>
+<span class="n">Tnew</span> <span class="o">=</span> <span class="p">(((</span><span class="n">Ω</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">A</span><span class="p">))</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">E</span><span class="p">)</span> <span class="o">/</span> <span class="n">σ</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;temperature =&quot;</span><span class="p">,</span> <span class="n">Tnew</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="calculate-what-a-change-in-the-greenhouse-effect-does-to-temperature">
+<h3>calculate what a change in the greenhouse effect does to temperature<a class="headerlink" href="#calculate-what-a-change-in-the-greenhouse-effect-does-to-temperature" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>what if you increase E by 10%</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Enew</span> <span class="o">=</span> <span class="n">E</span> <span class="o">*</span> <span class="mf">1.1</span>
+<span class="n">Tnew</span> <span class="o">=</span> <span class="p">(((</span><span class="n">Ω</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">))</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">Enew</span><span class="p">)</span> <span class="o">/</span> <span class="n">σ</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;temperature =&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">Tnew</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;10</span><span class="si">% i</span><span class="s2">ncrease in E leads to &quot;</span><span class="p">,</span>
+    <span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">Tnew</span> <span class="o">-</span> <span class="n">T</span><span class="p">),</span>
+    <span class="s2">&quot; degree K increase in temperature&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;10</span><span class="si">% i</span><span class="s2">ncrease in E leads to &quot;</span><span class="p">,</span>
+    <span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="p">((</span><span class="n">Tnew</span> <span class="o">-</span> <span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="n">T</span><span class="p">)),</span>
+    <span class="s2">&quot;</span><span class="si">% i</span><span class="s2">ncrease in temperature&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read in data and print some</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span><span class="o">/</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;shared/climate-data&#39;</span><span class="p">)</span>
+
+<span class="n">monthly_2deg_path</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;era5_monthly_2deg_aws_v20210920.nc&quot;</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;monthly_in_situ_co2_mlo_cleaned.csv&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the CO2, note the -99 values you see above showing up in the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;fraction_date&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;c02&quot;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get rid of missing values that are set to -99.99</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;monthly_in_situ_co2_mlo_cleaned.csv&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=-</span><span class="mf">99.99</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the data again</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;fraction_date&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;c02&quot;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the CO2 in the equation given in class to calculate the greenhouse effect</span>
+<span class="c1"># then calculate the increase in temperature in deg C rather than K</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mf">133.26</span> <span class="o">+</span> <span class="mf">0.044</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;c02&quot;</span><span class="p">]</span>
+<span class="c1"># calculate new temperature</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;Tnew&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(((</span><span class="n">Ω</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.3</span><span class="p">))</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">E</span><span class="p">)</span> <span class="o">/</span> <span class="n">σ</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.25</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;fraction_date&quot;</span><span class="p">],</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Tnew&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">)</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperature (C)&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># explore the different data provided in the dataset, what are they?</span>
+<span class="c1"># can you guess from the names and explain how they were calulated?</span>
+<span class="c1"># can you re-calculate them? can you re-make the figure in the talk?</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;fraction_date&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;data_filled&quot;</span><span class="p">],</span> <span class="s2">&quot;r.&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;fraction_date&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;data_adjusted_seasonally_fit&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CO2 fraction in dry air (ppm)&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the annual cycle using groupby</span>
+<span class="n">annual</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">annual</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the anomaly</span>
+<span class="n">anomaly</span> <span class="o">=</span> <span class="n">annual</span> <span class="o">-</span> <span class="n">annual</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;fraction_date&quot;</span><span class="p">,</span> <span class="s2">&quot;data_filled&quot;</span><span class="p">,</span> <span class="s2">&quot;r.&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;fraction_date&quot;</span><span class="p">,</span> <span class="s2">&quot;data_adjusted_seasonally_fit&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;CO2 fraction in dry air (ppm)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Monthly Mean CO2&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">axin1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">inset_axes</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">])</span>
+<span class="n">axin1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">anomaly</span><span class="o">.</span><span class="n">c02</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="n">axin1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">anomaly</span><span class="o">.</span><span class="n">c02</span><span class="p">,</span> <span class="s2">&quot;r.&quot;</span><span class="p">)</span>
+<span class="n">axin1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Seasonal Anomaly&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reading the C02 data from the base file rather than the cleaned up one.</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;monthly_in_situ_co2_mlo.csv&quot;</span>
+<span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;year&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;month&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;date_index&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fraction_date&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;c02&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_adjusted_season&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_fit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_adjusted_seasonally_fit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_filled&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_adjusted_seasonally_filed&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">56</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">column_names</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-xarray-to-explore-era5-data">
+<h2>using xarray to explore era5 data<a class="headerlink" href="#using-xarray-to-explore-era5-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;era5_monthly_2deg_aws_v20210920.nc&quot;</span><span class="p">)</span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">dims</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">coords</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># two ways to print out the data for temperature at 2m</span>
+<span class="n">ds</span><span class="p">[</span><span class="s2">&quot;air_temperature_at_2_metres&quot;</span><span class="p">]</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># different ways to access the data using index, isel, sel</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">119</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="mi">63</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mi">119</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;1979-01&quot;</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="mf">37.125</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mf">238.875</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">latitude</span><span class="p">[</span><span class="mi">63</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">longitude</span><span class="p">[</span><span class="mi">119</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="isel-versus-sel">
+<h2>.isel versus .sel<a class="headerlink" href="#isel-versus-sel" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>.isel is endpoint EXclusive</p></li>
+<li><p>.sel is endpoint INclusive</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span>
+<span class="n">point1</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="mi">63</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mi">119</span><span class="p">)</span>
+<span class="n">point2</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;1979-01&quot;</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="mf">37.125</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mf">238.875</span><span class="p">)</span>
+<span class="n">area1</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">63</span><span class="p">,</span> <span class="mi">65</span><span class="p">),</span> <span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">119</span><span class="p">,</span> <span class="mi">125</span><span class="p">))</span>
+<span class="n">area2</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
+    <span class="n">time</span><span class="o">=</span><span class="s2">&quot;1979-01&quot;</span><span class="p">,</span>
+    <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">latitude</span><span class="p">[</span><span class="mi">63</span><span class="p">],</span> <span class="n">temp</span><span class="o">.</span><span class="n">latitude</span><span class="p">[</span><span class="mi">65</span><span class="p">]),</span>
+    <span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">longitude</span><span class="p">[</span><span class="mi">119</span><span class="p">],</span> <span class="n">temp</span><span class="o">.</span><span class="n">longitude</span><span class="p">[</span><span class="mi">125</span><span class="p">]),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;area1 uses isel&quot;</span><span class="p">)</span>
+<span class="c1"># print(area1.dims)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area1</span><span class="o">.</span><span class="n">latitude</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area1</span><span class="o">.</span><span class="n">longitude</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;area2 uses sel&quot;</span><span class="p">)</span>
+<span class="c1"># print(area2.dims)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area2</span><span class="o">.</span><span class="n">latitude</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area2</span><span class="o">.</span><span class="n">longitude</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;1979-01&quot;</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="mf">37.125</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mf">238.875</span><span class="p">)</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
+    <span class="n">time</span><span class="o">=</span><span class="s2">&quot;1979-01&quot;</span><span class="p">,</span>
+    <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">latitude</span><span class="p">[</span><span class="mi">63</span><span class="p">],</span> <span class="n">temp</span><span class="o">.</span><span class="n">latitude</span><span class="p">[</span><span class="mi">65</span><span class="p">]),</span>
+    <span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">longitude</span><span class="p">[</span><span class="mi">119</span><span class="p">],</span> <span class="n">temp</span><span class="o">.</span><span class="n">longitude</span><span class="p">[</span><span class="mi">125</span><span class="p">]),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;1979-01&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mf">37.125</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mf">238.875</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ds.air_temperature_at_2_metres.mean(&quot;time&quot;).plot()</span>
+<span class="n">mean_map</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>  <span class="c1"># takes the mean across all variables in ds</span>
+<span class="n">mean_map</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate a map of the mean values across all time</span>
+<span class="n">ave</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">))</span>
+<span class="n">ave</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate a map of the mean values across all time</span>
+<span class="n">ave</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">ave</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate a map of the mean values across all time</span>
+<span class="n">ave</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">))</span>
+<span class="n">ave</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ave</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">keep_attrs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ave</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">))</span>
+<span class="n">weights</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;weights&quot;</span>
+<span class="n">weights</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_weighted</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+<span class="n">weighted_mean</span> <span class="o">=</span> <span class="n">ds_weighted</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">weighted_mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_weighted</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+<span class="n">weighted_mean</span> <span class="o">=</span> <span class="n">ds_weighted</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">))</span>
+<span class="n">weighted_mean</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the annual cycle</span>
+<span class="n">annual_cycle</span> <span class="o">=</span> <span class="n">weighted_mean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;time.month&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">annual_cycle</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the annual cycle at a point</span>
+<span class="n">weighted_trend</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">weighted_mean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;time.month&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">annual_cycle</span> <span class="o">+</span> <span class="n">annual_cycle</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weighted_mean</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">weighted_trend</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">284</span><span class="p">,</span> <span class="mi">291</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">weighted_mean</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s2">&quot;1980&quot;</span><span class="p">,</span> <span class="s2">&quot;2000&quot;</span><span class="p">)),</span>
+    <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+    <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">weighted_mean</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s2">&quot;2000&quot;</span><span class="p">,</span> <span class="s2">&quot;2020&quot;</span><span class="p">)),</span>
+    <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+    <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Probability Density (/K)&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pfit</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pfit</span><span class="o">.</span><span class="n">polyfit_coefficients</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">3.154000000101e16</span>  <span class="c1"># go from nanosecond to year</span>
+<span class="n">pfit</span><span class="o">.</span><span class="n">polyfit_coefficients</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cbar_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;trend deg/yr&quot;</span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+<span class="c1"># /np.timedelta64(1,&#39;s&#39;).data</span>
+<span class="n">pfit</span><span class="o">.</span><span class="n">polyfit_coefficients</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="mf">3.154000000101e16</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pfit</span><span class="o">.</span><span class="n">polyfit_coefficients</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">subplot_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Orthographic</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">),</span>
+    <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+    <span class="n">cbar_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;trend deg/yr&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">coastlines</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Subset all variables to just the Arctic</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arctic_ds_weighted</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span><span class="mi">90</span><span class="p">))</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+<span class="n">arctic_weighted_mean</span> <span class="o">=</span> <span class="n">arctic_ds_weighted</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">))</span>
+<span class="n">arctic_annual_cycle</span> <span class="o">=</span> <span class="n">arctic_weighted_mean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;time.month&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">arctic_weighted_trend</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">arctic_weighted_mean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;time.month&quot;</span><span class="p">)</span> <span class="o">-</span> <span class="n">arctic_annual_cycle</span> <span class="o">+</span> <span class="n">arctic_annual_cycle</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arctic_weighted_mean</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">arctic_weighted_trend</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear_trend</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">pf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">arctic_weighted_mean</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">arctic_weighted_mean</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span>
+<span class="n">arctic_trend</span> <span class="o">=</span> <span class="n">linear_trend</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">weighted_mean</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">weighted_mean</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span>
+<span class="n">trend</span> <span class="o">=</span> <span class="n">linear_trend</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;linear trend: global=&#39;</span><span class="p">,</span><span class="n">trend</span><span class="p">,</span><span class="s1">&#39;arctic&#39;</span><span class="p">,</span> <span class="n">arctic_trend</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">245</span><span class="p">,</span> <span class="mi">280</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">arctic_weighted_mean</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s2">&quot;1980&quot;</span><span class="p">,</span> <span class="s2">&quot;2000&quot;</span><span class="p">)),</span>
+    <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+    <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">xr</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">arctic_weighted_mean</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s2">&quot;2000&quot;</span><span class="p">,</span> <span class="s2">&quot;2020&quot;</span><span class="p">)),</span>
+    <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+    <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Probability Density (/K)&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
