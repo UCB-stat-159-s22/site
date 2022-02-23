@@ -12,9 +12,11 @@ parts:
   - file: lectures/intro-git/Git-Tutorial
   - file: lectures/intro-git/git-visuals
   - file: lectures/intro-jupyter/Index
+  - file: lectures/intro-jupyter/West_Coast_HeatWave_Basic.ipynb
 - caption: Labs
   chapters:
   - file: lab/lab01/lab01.ipynb
   - file: lab/lab02/lab02.ipynb
   - file: lab/lab03/lab03.ipynb
   - file: lab/lab04/lab04.ipynb
+  
