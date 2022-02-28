@@ -19,6 +19,8 @@ The table of contents on the left pane has links to lectures and labs. The follo
 
 * [Lab 04](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab04%2Flab04.ipynb&branch=main)
 
+* [lab 05](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab05%2Flab05.ipynb&branch=main)
+
 ### Assigned Readings
 
 When an assignment consists of multiple articles, you should submit a summary paragraph and idea highlight paragraph _per each separate article_.
