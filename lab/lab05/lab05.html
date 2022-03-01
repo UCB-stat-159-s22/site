@@ -561,7 +561,7 @@
 
 <span class="p">([</span><span class="n">xloc</span><span class="p">,</span> <span class="n">yloc</span><span class="p">])</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">distance2</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">distance2</span><span class="p">))</span>
 
-<span class="n">my_temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;1979-01&quot;</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">xloc</span><span class="p">],</span> <span class="n">longitude</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">longitude</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">yloc</span><span class="p">])</span>
+<span class="n">temp</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;1979-01&quot;</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">xloc</span><span class="p">],</span> <span class="n">longitude</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">longitude</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">yloc</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -631,7 +631,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fcb428cd8b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fa28153de80&gt;
 </pre></div>
 </div>
 <img alt="../../_images/lab05_25_1.png" src="../../_images/lab05_25_1.png" />
@@ -655,7 +655,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fcb42829b80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fa2811cdc40&gt;
 </pre></div>
 </div>
 <img alt="../../_images/lab05_28_1.png" src="../../_images/lab05_28_1.png" />
@@ -665,13 +665,19 @@
 <div class="section" id="question-1">
 <h3>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h3>
 <p>Plot the average temperature as a function of the latitude:</p>
-<div class="cell docutils container">
+<div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BEGIN SOLUTION</span>
-<span class="o">...</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="c1"># END SOLUTION</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa2811b93a0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/lab05_30_1.png" src="../../_images/lab05_30_1.png" />
 </div>
 </div>
 </div>
@@ -704,13 +710,21 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BEGIN SOLUTION</span>
-<span class="o">...</span>
+<span class="n">ds_weighted</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Weighted&quot;</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">air_temperature_at_2_metres</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;non-weighted&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="c1"># END SOLUTION</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa28b04c700&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lab05_34_1.png" src="../../_images/lab05_34_1.png" />
 </div>
 </div>
 </div>
@@ -743,39 +757,64 @@
 <h3>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h3>
 <p>Let’s look at the snow across the globe in February and August, which are roughly the peaks of the summer/winter seasons.</p>
 <p>Recreate the following figure, along with a corresponding one for August 1980:</p>
-<img src="snow-distribution-1980-02.png" width="500px" /><div class="cell docutils container">
+<img src="snow-distribution-1980-02.png" width="500px" /><div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BEGIN SOLUTION</span>
-<span class="o">...</span>
+<span class="n">snow</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;1980-02&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 <span class="c1"># END SOLUTION</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lab05_40_0.png" src="../../_images/lab05_40_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="question-4">
 <h3>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h3>
 <p>Let’s now find the peaks in the northern and southern hemispheres. Plot a time series of density of ice coverage for both the north and south hemisphere.</p>
-<div class="cell docutils container">
+<div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BEGIN SOLUTION</span>
-<span class="o">...</span>
+
+<span class="n">ds_south</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">ds_north</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">))</span>
+
+<span class="n">weights_south</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds_south</span><span class="o">.</span><span class="n">latitude</span><span class="p">))</span>
+<span class="n">weights_north</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds_north</span><span class="o">.</span><span class="n">latitude</span><span class="p">))</span>
+
+<span class="n">ds_south_weigthed</span> <span class="o">=</span> <span class="n">ds_south</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">weights_south</span><span class="p">)</span>
+<span class="n">ds_north_weigthed</span> <span class="o">=</span> <span class="n">ds_north</span><span class="o">.</span><span class="n">weighted</span><span class="p">(</span><span class="n">weights_north</span><span class="p">)</span>
+
+<span class="c1">#t_snow_south = snow.sel(latitude=slice(-90,0)).mean((&#39;latitude&#39;, &#39;longitude&#39;)) # this is without weights</span>
+<span class="n">t_snow_south</span> <span class="o">=</span> <span class="n">ds_south_weigthed</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">snow_density</span>
+<span class="n">t_snow_south</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+
+<span class="c1">#t_snow_north = snow.sel(latitude=slice(0,90)).mean((&#39;latitude&#39;, &#39;longitude&#39;))  # this is without weigths</span>
+<span class="n">t_snow_north</span> <span class="o">=</span> <span class="n">ds_north_weigthed</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">snow_density</span>
+<span class="n">t_snow_north</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 <span class="c1"># END SOLUTION</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lab05_42_0.png" src="../../_images/lab05_42_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="question-5">
 <h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h3>
 <p>Let’s look for example at what the cycle in the northern hemisphere looks like for the year 1979. You need to replicate this figure:</p>
-<img src="snow-cycle-1979.png" width="500px" /><div class="cell docutils container">
+<img src="snow-cycle-1979.png" width="500px" /><div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BEGIN SOLUTION</span>
-<span class="o">...</span>
+<span class="n">t_snow_north</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">t_snow_north</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">==</span><span class="mi">1979</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 <span class="c1"># END SOLUTION</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lab05_44_0.png" src="../../_images/lab05_44_0.png" />
 </div>
 </div>
 </div>
@@ -796,17 +835,41 @@
 <li><p>Amplitude is <code class="docutils literal notranslate"><span class="pre">max</span> <span class="pre">-</span> <span class="pre">min</span></code></p></li>
 <li><p>You may want to use <code class="docutils literal notranslate"><span class="pre">x.values.item</span></code> to extract information from the datetime objects.</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
-<span class="o">...</span>
-<span class="c1">### END SOLUTION</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extract_peaks</span><span class="p">(</span><span class="n">snow_data</span><span class="p">):</span>
+    <span class="c1"># BEGIN SOLUTION</span>
+    <span class="n">yy</span> <span class="o">=</span> <span class="n">snow_data</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+    <span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span> <span class="o">=</span> <span class="n">yy</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="c1"># END SOLUTION</span>
+    <span class="n">years</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">min_y</span><span class="p">,</span> <span class="n">max_y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># SOLUTION</span>
+    <span class="n">peaks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+    <span class="c1"># BEGIN SOLUTION</span>
+        <span class="n">snow_year</span> <span class="o">=</span> <span class="n">snow_data</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="n">snow_data</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">min_d</span><span class="p">,</span> <span class="n">max_d</span> <span class="o">=</span> <span class="n">snow_year</span><span class="o">.</span><span class="n">idxmin</span><span class="p">(),</span> <span class="n">snow_year</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+        <span class="n">min_v</span><span class="p">,</span> <span class="n">max_v</span> <span class="o">=</span> <span class="n">snow_year</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="n">min_d</span><span class="p">),</span> <span class="n">snow_year</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="n">max_d</span><span class="p">)</span>
+        <span class="n">min_day</span><span class="p">,</span> <span class="n">max_day</span> <span class="o">=</span> <span class="n">min_d</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofyear</span><span class="p">,</span> <span class="n">max_d</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofyear</span>
+    <span class="c1"># END SOLUTION</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="n">min_day</span><span class="p">,</span> <span class="n">max_day</span><span class="p">,</span> <span class="n">min_v</span><span class="p">,</span> <span class="n">max_v</span><span class="p">,</span> <span class="p">(</span><span class="n">max_v</span><span class="o">-</span><span class="n">min_v</span><span class="p">)]]</span> <span class="c1"># SOLUTION</span>
+    <span class="c1"># BEGIN SOLUTION</span>
+        <span class="n">peaks</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">y</span><span class="p">,</span> <span class="n">min_d</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">max_d</span><span class="o">.</span><span class="n">values</span><span class="p">]</span> <span class="o">+</span> <span class="n">vals</span><span class="p">)</span>
+    <span class="c1"># END SOLUTION</span>
+
+    <span class="n">snow_peaks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">peaks</span><span class="p">,</span> 
+                              <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;min_date&#39;</span><span class="p">,</span> <span class="s1">&#39;max_date&#39;</span><span class="p">,</span>
+                                         <span class="s1">&#39;min_dayofyear&#39;</span><span class="p">,</span> <span class="s1">&#39;max_dayofyear&#39;</span><span class="p">,</span>
+                                         <span class="s1">&#39;min_snow&#39;</span><span class="p">,</span> <span class="s1">&#39;max_snow&#39;</span><span class="p">,</span> <span class="s1">&#39;amplitude&#39;</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">snow_peaks</span>
+
+<span class="n">peaks_north</span> <span class="o">=</span> <span class="n">extract_peaks</span><span class="p">(</span><span class="n">t_snow_north</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>With this data, we can now quickly explore several questions. For example, during what day of the year do the min and max happen?</p>
-<div class="cell docutils container">
+<div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;min_dayofyear&#39;</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">peaks_north</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;max_dayofyear&#39;</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">peaks_north</span><span class="p">);</span>
@@ -819,7 +882,7 @@
 </div>
 </div>
 <p>What is the min and max amount of snow at those times?</p>
-<div class="cell docutils container">
+<div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;min_snow&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">peaks_north</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;max_snow&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">peaks_north</span><span class="p">);</span>
@@ -832,7 +895,7 @@
 </div>
 </div>
 <p>Given the difference in scales, it’s a bit easier to see what is happening if we plot the min and max separately:</p>
-<div class="cell docutils container">
+<div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;min_snow&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">peaks_north</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;min_snow&#39;</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">peaks_north</span><span class="p">);</span>
@@ -844,7 +907,7 @@
 <img alt="../../_images/lab05_53_0.png" src="../../_images/lab05_53_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;max_snow&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">peaks_north</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;max_snow&#39;</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">peaks_north</span><span class="p">);</span>
