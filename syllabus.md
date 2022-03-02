@@ -94,9 +94,28 @@ The weight of each assignment will be announced with the assignment; the overall
 + 85%: from approximately 8 computational assignments, some individual and some collaborative.
 + 15%: reading assignments (weekly, on average).
 
-_Submitting assignments:_ Submit written assignments by making a pull request
+In case of medical exception, submit in Piazza a private note to the instructors with a medical proof showing that you are unable to complete the assignment. We will grant extra 48hrs to the reading assignment/homework to be submitted, unless more time is required.
+
+
+#### Homework assignments 
+ 
+ - Homeworks deadlines will be posted immediately after the homework is released. 
+ - We will accept late homework assignments until 24hrs after the deadline of the homework. However, in those cases a 25% penalty will be applied to the final score. 
+ - For group homework projects, you will include a statement in your repository acknowledging the contribution of each team member. Unless there is a major, unfair imbalance in the amount of work done by each team member, the same grade will be assigned to all team members.
+ - _Submitting assignments:_ Submit written assignments by making a pull request
 to your private repository within the Berkeley GitHub organization for the class,
 https://github.berkeley.edu/stat-159-s22, using the [GitHub Classroom](https://classroom.github.com/classrooms/95771491-ucb-stat-159-s22-classroom) (you will practice all this, don't worry).
+
+
+#### Reading assignments 
+
+ - These will be posted on the course website under Assigned Readings. For each paper/reading in the weekly list, you should submit a summary paragraph and idea highlight paragraph. You will submit your reading assignments in bCourses.
+
+ - Reading assignments will be due every Monday at 9pm. No later reading assignments will be accepted unless there is a medical exception. In that case, you will need to submit in Piazza a private note to the instructors with a medical proof showing that you are unable to complete the assignment. 
+
+- You can drop two readings without need of justification. Notice that this applies to INDIVIDUAL readings. For example, if the weekly reading consists of 4 papers, you can drop a maximum of two of them. If you drop two readings in one week, you cannot drop any other one without penalty. 
+
+ - Each paragraph per reading assignment gives 1 point (a total of 2 per reading). The final points for the reading assignments is the sum of all the readings. Notice that this means that the maximum credit you can obtain per week depends on the number of readings that week.
 
 
 ### Code of conduct; attribution of work
