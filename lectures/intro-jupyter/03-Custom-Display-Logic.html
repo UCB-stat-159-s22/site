@@ -373,8 +373,7 @@
 <p>Parts of this notebook need the matplotlib inline backend:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
@@ -507,9 +506,8 @@ It is important to note a subtle different between <code>display</code> and <cod
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomial([ 1.,  2.,  3.], [-10.,  10.], [-1,  1])
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[x \mapsto \text{1.0} + \text{2.0}\,\left(\text{0.1}x\right) + \text{3.0}\,\left(\text{0.1}x\right)^{2}\]</div>
 </div>
 </div>
 <p>Next, define a function that pretty-prints a polynomial as a LaTeX string:</p>
@@ -573,16 +571,16 @@ It is important to note a subtle different between <code>display</code> and <cod
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               image/png : PNGFormatter
-         application/pdf : PDFFormatter
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              text/plain : PlainTextFormatter
                text/html : HTMLFormatter
-              image/jpeg : JPEGFormatter
-              text/plain : PlainTextFormatter
            text/markdown : MarkdownFormatter
+           image/svg+xml : SVGFormatter
+               image/png : PNGFormatter
+         application/pdf : PDFFormatter
+              image/jpeg : JPEGFormatter
+              text/latex : LatexFormatter
         application/json : JSONFormatter
   application/javascript : JavascriptFormatter
-              text/latex : LatexFormatter
-           image/svg+xml : SVGFormatter
 </pre></div>
 </div>
 </div>
@@ -610,16 +608,17 @@ for_type(typ, func=None) method of IPython.core.formatters.LatexFormatter instan
     Add a format function for a given type.
     
     Parameters
-    -----------
+    ----------
     typ : type or &#39;__module__.__name__&#39; string for a type
         The class of the object that will be formatted using `func`.
+    
     func : callable
         A callable for computing the format data.
         `func` will be called with the object to be formatted,
         and will return the raw data in this formatter&#39;s format.
         Subclasses may use a different call signature for the
         `func` argument.
-        
+    
         If `func` is None or not specified, there will be no change,
         only returning the current value.
     
@@ -651,15 +650,17 @@ for_type_by_name(type_module, type_name, func=None) method of IPython.core.forma
     type_module : str
         The full dotted name of the module the type is defined in, like
         ``numpy``.
+    
     type_name : str
         The name of the type (the class name), like ``dtype``
+    
     func : callable
         A callable for computing the format data.
         `func` will be called with the object to be formatted,
         and will return the raw data in this formatter&#39;s format.
         Subclasses may use a different call signature for the
         `func` argument.
-        
+    
         If `func` is None or unspecified, there will be no change,
         only returning the current value.
     
@@ -750,11 +751,11 @@ for_type_by_name(type_module, type_name, func=None) method of IPython.core.forma
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="4ad544ff-a161-4493-ba2c-f99531e317bd" style="height: 300px; width:80%;"></div></div><script type="application/javascript">
+<div class="output text_html"><div id="347a7f61-3857-4715-bb49-fb93e7498397" style="height: 300px; width:80%;"></div></div><script type="application/javascript">
         require(["//cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"], function() {
-          var line = JSON.parse("[[0.0, 0.0], [0.20408163265306123, 0.20266793654820095], [0.40816326530612246, 0.39692414892492234], [0.6122448979591837, 0.5747060412161791], [0.8163265306122449, 0.7286347834693503], [1.0204081632653061, 0.8523215697196184], [1.2244897959183674, 0.9406327851124867], [1.4285714285714286, 0.9899030763721239], [1.6326530612244898, 0.9980874821347183], [1.836734693877551, 0.9648463089837632], [2.0408163265306123, 0.8915592304110037], [2.2448979591836737, 0.7812680235262639], [2.4489795918367347, 0.6385503202266021], [2.6530612244897958, 0.469329612777201], [2.857142857142857, 0.28062939951435684], [3.0612244897959187, 0.0802816748428135], [3.2653061224489797, -0.12339813736217871], [3.4693877551020407, -0.3219563150726187], [3.673469387755102, -0.5071517094845144], [3.8775510204081636, -0.6712977935519321], [4.081632653061225, -0.8075816909683364], [4.285714285714286, -0.9103469443107828], [4.4897959183673475, -0.9753282860670456], [4.6938775510204085, -0.9998286683840896], [4.8979591836734695, -0.9828312039256306], [5.1020408163265305, -0.9250413717382029], [5.3061224489795915, -0.8288577363730427], [5.510204081632653, -0.6982723955653996], [5.714285714285714, -0.5387052883861563], [5.918367346938775, -0.35677924089893803], [6.122448979591837, -0.16004508604325057], [6.326530612244898, 0.04333173336868346], [6.530612244897959, 0.2449100710119793], [6.73469387755102, 0.4363234264718193], [6.938775510204081, 0.6096271964908323], [7.142857142857143, 0.7576284153927202], [7.346938775510204, 0.8741842988197335], [7.551020408163265, 0.9544571997387519], [7.755102040816327, 0.9951153947776636], [7.959183673469388, 0.9944713672636168], [8.16326530612245, 0.9525518475314604], [8.36734693877551, 0.8710967034823207], [8.571428571428571, 0.7534867274396376], [8.775510204081632, 0.6046033165061543], [8.979591836734695, 0.43062587038273736], [9.183673469387756, 0.23877531564403087], [9.387755102040817, 0.03701440148506237], [9.591836734693878, -0.1662827938487564], [9.795918367346939, -0.3626784288265488], [10.0, -0.5440211108893699]]");
+          var line = JSON.parse("[[0.0, 0.0], [0.20408163265306123, 0.20266793654820095], [0.40816326530612246, 0.39692414892492234], [0.6122448979591837, 0.5747060412161792], [0.8163265306122449, 0.7286347834693504], [1.0204081632653061, 0.8523215697196184], [1.2244897959183674, 0.9406327851124867], [1.4285714285714286, 0.9899030763721239], [1.6326530612244898, 0.9980874821347183], [1.836734693877551, 0.9648463089837632], [2.0408163265306123, 0.8915592304110037], [2.2448979591836737, 0.7812680235262638], [2.4489795918367347, 0.6385503202266021], [2.6530612244897958, 0.469329612777201], [2.857142857142857, 0.28062939951435684], [3.0612244897959187, 0.0802816748428135], [3.2653061224489797, -0.12339813736217871], [3.4693877551020407, -0.3219563150726187], [3.673469387755102, -0.5071517094845144], [3.8775510204081636, -0.6712977935519321], [4.081632653061225, -0.8075816909683363], [4.285714285714286, -0.9103469443107828], [4.4897959183673475, -0.9753282860670456], [4.6938775510204085, -0.9998286683840896], [4.8979591836734695, -0.9828312039256306], [5.1020408163265305, -0.9250413717382029], [5.3061224489795915, -0.8288577363730427], [5.510204081632653, -0.6982723955653996], [5.714285714285714, -0.5387052883861563], [5.918367346938775, -0.3567792408989381], [6.122448979591837, -0.16004508604325057], [6.326530612244898, 0.04333173336868346], [6.530612244897959, 0.2449100710119793], [6.73469387755102, 0.4363234264718193], [6.938775510204081, 0.6096271964908323], [7.142857142857143, 0.7576284153927202], [7.346938775510204, 0.8741842988197335], [7.551020408163265, 0.9544571997387519], [7.755102040816327, 0.9951153947776636], [7.959183673469388, 0.9944713672636168], [8.16326530612245, 0.9525518475314604], [8.36734693877551, 0.8710967034823207], [8.571428571428571, 0.7534867274396376], [8.775510204081632, 0.6046033165061543], [8.979591836734695, 0.4306258703827373], [9.183673469387756, 0.23877531564403087], [9.387755102040817, 0.03701440148506237], [9.591836734693878, -0.1662827938487564], [9.795918367346939, -0.3626784288265488], [10.0, -0.5440211108893698]]");
           console.log(line);
-          $.plot("#4ad544ff-a161-4493-ba2c-f99531e317bd", [line]);
+          $.plot("#347a7f61-3857-4715-bb49-fb93e7498397", [line]);
         });
         </script></div>
 </div>
