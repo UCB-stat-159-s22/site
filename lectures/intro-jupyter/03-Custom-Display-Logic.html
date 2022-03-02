@@ -1,0 +1,810 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Display Logic &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab01/lab01.html">
+   Lab Session 1 - Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab02/lab02.html">
+   Lab Session 2: GitHub &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab03/lab03.html">
+   Lab Session 3: Solving Conflicts in Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab04/lab04.html">
+   Lab Session 4: Version control with Jupytext
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab05/lab05.html">
+   Lab Session 5: Climate data and xarray
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/intro-jupyter/03-Custom-Display-Logic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/intro-jupyter/03-Custom-Display-Logic.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#special-display-methods">
+   Special display methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-ipython-display-support-to-existing-objects">
+   Adding IPython display support to existing objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-complex-display-with-ipython-display">
+   More complex display with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     _ipython_display_
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Custom Display Logic</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#special-display-methods">
+   Special display methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-ipython-display-support-to-existing-objects">
+   Adding IPython display support to existing objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-complex-display-with-ipython-display">
+   More complex display with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     _ipython_display_
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="custom-display-logic">
+<h1>Custom Display Logic<a class="headerlink" href="#custom-display-logic" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>As described in the <span class="xref myst">Rich Output</span> tutorial, the IPython display system can display rich representations of objects in the following formats:</p>
+<ul class="simple">
+<li><p>JavaScript</p></li>
+<li><p>HTML</p></li>
+<li><p>PNG</p></li>
+<li><p>JPEG</p></li>
+<li><p>SVG</p></li>
+<li><p>LaTeX</p></li>
+<li><p>PDF</p></li>
+</ul>
+<p>This Notebook shows how you can add custom display logic to your own classes, so that they can be displayed using these rich representations. There are two ways of accomplishing this:</p>
+<ol class="simple">
+<li><p>Implementing special display methods such as <code class="docutils literal notranslate"><span class="pre">_repr_html_</span></code> when you define your class.</p></li>
+<li><p>Registering a display function for a particular existing class.</p></li>
+</ol>
+<p>This Notebook describes and illustrates both approaches.</p>
+<p>Import the IPython display functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">display</span><span class="p">,</span> <span class="n">display_html</span><span class="p">,</span> <span class="n">display_png</span><span class="p">,</span> <span class="n">display_svg</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Parts of this notebook need the matplotlib inline backend:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="special-display-methods">
+<h2>Special display methods<a class="headerlink" href="#special-display-methods" title="Permalink to this headline">¶</a></h2>
+<p>The main idea of the first approach is that you have to implement special display methods when you define your class, one for each representation you want to use. Here is a list of the names of the special methods and the values they must return:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">_repr_html_</span></code>: return raw HTML as a string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_repr_json_</span></code>: return a JSONable dict</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_repr_jpeg_</span></code>: return raw JPEG data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_repr_png_</span></code>: return raw PNG data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_repr_svg_</span></code>: return raw SVG data as a string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_repr_latex_</span></code>: return LaTeX commands in a string surrounded by “$”.</p></li>
+</ul>
+<p>As an illustration, we build a class that holds data generated by sampling a Gaussian distribution with given mean and standard deviation. Here is the definition of the <code class="docutils literal notranslate"><span class="pre">Gaussian</span></code> class, which has a custom PNG and LaTeX representation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.pylabtools</span> <span class="kn">import</span> <span class="n">print_figure</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">SVG</span><span class="p">,</span> <span class="n">Math</span>
+
+<span class="k">class</span> <span class="nc">Gaussian</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A simple object holding data sampled from a Gaussian distribution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mean</span> <span class="o">=</span> <span class="n">mean</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">std</span> <span class="o">=</span> <span class="n">std</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+        <span class="c1"># For caching plots that may be expensive to compute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_png_data</span> <span class="o">=</span> <span class="kc">None</span>
+        
+    <span class="k">def</span> <span class="nf">_figure_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_repr_latex_</span><span class="p">())</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">10.0</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">print_figure</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+        <span class="c1"># We MUST close the figure, otherwise IPython&#39;s display machinery</span>
+        <span class="c1"># will pick it up and send it as output, resulting in a double display</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span>
+        
+    <span class="k">def</span> <span class="nf">_repr_png_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_png_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_png_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_figure_data</span><span class="p">(</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_png_data</span>
+    
+    <span class="k">def</span> <span class="nf">_repr_latex_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">r</span><span class="s1">&#39;$\mathcal</span><span class="si">{N}</span><span class="s1">(\mu=</span><span class="si">%.2g</span><span class="s1">, \sigma=</span><span class="si">%.2g</span><span class="s1">),\ N=</span><span class="si">%d</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span>
+                                                                 <span class="bp">self</span><span class="o">.</span><span class="n">std</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create an instance of the Gaussian distribution and return it to display the default representation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">Gaussian</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Custom-Display-Logic_12_0.png" src="../../_images/03-Custom-Display-Logic_12_0.png" />
+</div>
+</div>
+<p>You can also pass the object to the <code class="docutils literal notranslate"><span class="pre">display</span></code> function to display the default representation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Custom-Display-Logic_14_0.png" src="../../_images/03-Custom-Display-Logic_14_0.png" />
+</div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">display_png</span></code> to view the PNG representation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_png</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Custom-Display-Logic_16_0.png" src="../../_images/03-Custom-Display-Logic_16_0.png" />
+</div>
+</div>
+<div class="alert alert-success">
+It is important to note a subtle different between <code>display</code> and <code>display_png</code>. The former computes <em>all</em> representations of the object, and lets the notebook UI decide which to display. The later only computes the PNG representation.
+</div><p>Create a new Gaussian with different parameters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">Gaussian</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="n">x2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Custom-Display-Logic_19_0.png" src="../../_images/03-Custom-Display-Logic_19_0.png" />
+</div>
+</div>
+<p>You can then compare the two Gaussians by displaying their histograms:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display_png</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">display_png</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03-Custom-Display-Logic_21_0.png" src="../../_images/03-Custom-Display-Logic_21_0.png" />
+<img alt="../../_images/03-Custom-Display-Logic_21_1.png" src="../../_images/03-Custom-Display-Logic_21_1.png" />
+</div>
+</div>
+<p>Note that like <code class="docutils literal notranslate"><span class="pre">print</span></code>, you can call any of the <code class="docutils literal notranslate"><span class="pre">display</span></code> functions multiple times in a cell.</p>
+</div>
+<div class="section" id="adding-ipython-display-support-to-existing-objects">
+<h2>Adding IPython display support to existing objects<a class="headerlink" href="#adding-ipython-display-support-to-existing-objects" title="Permalink to this headline">¶</a></h2>
+<p>When you are directly writing your own classes, you can adapt them for display in IPython by following the above approach.  But in practice, you often need to work with existing classes that you can’t easily modify. We now illustrate how to add rich output capabilities to existing objects. We will use the NumPy polynomials and change their default representation to be a formatted LaTeX expression.</p>
+<p>First, consider how a NumPy polynomial object renders by default:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">Polynomial</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polynomial([ 1.,  2.,  3.], [-10.,  10.], [-1,  1])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, define a function that pretty-prints a polynomial as a LaTeX string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">poly_to_latex</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">terms</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%.2g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">p</span><span class="o">.</span><span class="n">coef</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">term</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">coef</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">c</span><span class="o">!=</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">term</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2g</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="n">term</span>
+        <span class="n">terms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">term</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)):</span>
+            <span class="n">term</span> <span class="o">=</span> <span class="s1">&#39;x^</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">coef</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">c</span><span class="o">!=</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">term</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2g</span><span class="s1"> &#39;</span> <span class="o">%</span> <span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="n">term</span>
+            <span class="n">terms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">term</span><span class="p">)</span>
+    <span class="n">px</span> <span class="o">=</span> <span class="s1">&#39;$P(x)=</span><span class="si">%s</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+    <span class="n">dom</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;, $x \in [</span><span class="si">%.2g</span><span class="s1">,\ </span><span class="si">%.2g</span><span class="s1">]$&#39;</span> <span class="o">%</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">domain</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">px</span><span class="o">+</span><span class="n">dom</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This produces, on our polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code>, the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_to_latex</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;$P(x)=1+2 x+3 x^2$, $x \\in [-10,\\ 10]$&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can render this string using the <code class="docutils literal notranslate"><span class="pre">Latex</span></code> class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Latex</span>
+<span class="n">Latex</span><span class="p">(</span><span class="n">poly_to_latex</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[P(x)=1+2 x+3 x^2$, $x \in [-10,\ 10]\]</div>
+</div>
+</div>
+<p>However, you can configure IPython to do this automatically by registering the <code class="docutils literal notranslate"><span class="pre">Polynomial</span></code> class and the <code class="docutils literal notranslate"><span class="pre">poly_to_latex</span></code> function with an IPython display formatter. Let’s look at the default formatters provided by IPython:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">mime</span><span class="p">,</span> <span class="n">formatter</span> <span class="ow">in</span> <span class="n">ip</span><span class="o">.</span><span class="n">display_formatter</span><span class="o">.</span><span class="n">formatters</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%24s</span><span class="s1"> : </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mime</span><span class="p">,</span> <span class="n">formatter</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               image/png : PNGFormatter
+         application/pdf : PDFFormatter
+               text/html : HTMLFormatter
+              image/jpeg : JPEGFormatter
+              text/plain : PlainTextFormatter
+           text/markdown : MarkdownFormatter
+        application/json : JSONFormatter
+  application/javascript : JavascriptFormatter
+              text/latex : LatexFormatter
+           image/svg+xml : SVGFormatter
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">formatters</span></code> attribute is a dictionary keyed by MIME types. To define a custom LaTeX display function, you want a handle on the <code class="docutils literal notranslate"><span class="pre">text/latex</span></code> formatter:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+<span class="n">latex_f</span> <span class="o">=</span> <span class="n">ip</span><span class="o">.</span><span class="n">display_formatter</span><span class="o">.</span><span class="n">formatters</span><span class="p">[</span><span class="s1">&#39;text/latex&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The formatter object has a couple of methods for registering custom display functions for existing types.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">latex_f</span><span class="o">.</span><span class="n">for_type</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method for_type in module IPython.core.formatters:
+
+for_type(typ, func=None) method of IPython.core.formatters.LatexFormatter instance
+    Add a format function for a given type.
+    
+    Parameters
+    -----------
+    typ : type or &#39;__module__.__name__&#39; string for a type
+        The class of the object that will be formatted using `func`.
+    func : callable
+        A callable for computing the format data.
+        `func` will be called with the object to be formatted,
+        and will return the raw data in this formatter&#39;s format.
+        Subclasses may use a different call signature for the
+        `func` argument.
+        
+        If `func` is None or not specified, there will be no change,
+        only returning the current value.
+    
+    Returns
+    -------
+    oldfunc : callable
+        The currently registered callable.
+        If you are registering a new formatter,
+        this will be the previous value (to enable restoring later).
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">latex_f</span><span class="o">.</span><span class="n">for_type_by_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on method for_type_by_name in module IPython.core.formatters:
+
+for_type_by_name(type_module, type_name, func=None) method of IPython.core.formatters.LatexFormatter instance
+    Add a format function for a type specified by the full dotted
+    module and name of the type, rather than the type of the object.
+    
+    Parameters
+    ----------
+    type_module : str
+        The full dotted name of the module the type is defined in, like
+        ``numpy``.
+    type_name : str
+        The name of the type (the class name), like ``dtype``
+    func : callable
+        A callable for computing the format data.
+        `func` will be called with the object to be formatted,
+        and will return the raw data in this formatter&#39;s format.
+        Subclasses may use a different call signature for the
+        `func` argument.
+        
+        If `func` is None or unspecified, there will be no change,
+        only returning the current value.
+    
+    Returns
+    -------
+    oldfunc : callable
+        The currently registered callable.
+        If you are registering a new formatter,
+        this will be the previous value (to enable restoring later).
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, we will use <code class="docutils literal notranslate"><span class="pre">for_type_by_name</span></code> to register <code class="docutils literal notranslate"><span class="pre">poly_to_latex</span></code> as the display function for the <code class="docutils literal notranslate"><span class="pre">Polynomial</span></code> type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latex_f</span><span class="o">.</span><span class="n">for_type_by_name</span><span class="p">(</span><span class="s1">&#39;numpy.polynomial.polynomial&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;Polynomial&#39;</span><span class="p">,</span> <span class="n">poly_to_latex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once the custom display function has been registered, all NumPy <code class="docutils literal notranslate"><span class="pre">Polynomial</span></code> instances will be represented by their LaTeX form instead:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[P(x)=1+2 x+3 x^2$, $x \in [-10,\ 10]\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">Polynomial</span><span class="p">([</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">p2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[P(x)=-20+71 x+-15 x^2+x^3$, $x \in [-1,\ 1]\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="more-complex-display-with-ipython-display">
+<h2>More complex display with <code class="docutils literal notranslate"><span class="pre">_ipython_display_</span></code><a class="headerlink" href="#more-complex-display-with-ipython-display" title="Permalink to this headline">¶</a></h2>
+<p>Rich output special methods and functions can only display one object or MIME type at a time. Sometimes this is not enough if you want to display multiple objects or MIME types at once. An example of this would be to use an HTML representation to put some HTML elements in the DOM and then use a JavaScript representation to add events to those elements.</p>
+<p><strong>IPython 2.0</strong> recognizes another display method, <code class="docutils literal notranslate"><span class="pre">_ipython_display_</span></code>, which allows your objects to take complete control of displaying themselves. If this method is defined, IPython will call it, and make no effort to display the object using the above described <code class="docutils literal notranslate"><span class="pre">_repr_*_</span></code> methods for custom display functions. It’s a way for you to say “Back off, IPython, I can display this myself.” Most importantly, your <code class="docutils literal notranslate"><span class="pre">_ipython_display_</span></code> method can make multiple calls to the top-level <code class="docutils literal notranslate"><span class="pre">display</span></code> functions to accomplish its goals.</p>
+<p>Here is an object that uses <code class="docutils literal notranslate"><span class="pre">display_html</span></code> and <code class="docutils literal notranslate"><span class="pre">display_javascript</span></code> to make a plot using the <a class="reference external" href="http://www.flotcharts.org/">Flot</a> JavaScript plotting library:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_javascript</span><span class="p">,</span> <span class="n">display_html</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="k">class</span> <span class="nc">FlotPlot</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+    
+    <span class="k">def</span> <span class="nf">_ipython_display_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)))</span>
+        <span class="n">display_html</span><span class="p">(</span><span class="s1">&#39;&lt;div id=&quot;</span><span class="si">{}</span><span class="s1">&quot; style=&quot;height: 300px; width:80%;&quot;&gt;&lt;/div&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">),</span>
+            <span class="n">raw</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">display_javascript</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        require([&quot;//cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js&quot;], function() {</span>
+<span class="s2">          var line = JSON.parse(&quot;</span><span class="si">%s</span><span class="s2">&quot;);</span>
+<span class="s2">          console.log(line);</span>
+<span class="s2">          $.plot(&quot;#</span><span class="si">%s</span><span class="s2">&quot;, [line]);</span>
+<span class="s2">        });</span>
+<span class="s2">        &quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">json_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">),</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">FlotPlot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="4ad544ff-a161-4493-ba2c-f99531e317bd" style="height: 300px; width:80%;"></div></div><script type="application/javascript">
+        require(["//cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"], function() {
+          var line = JSON.parse("[[0.0, 0.0], [0.20408163265306123, 0.20266793654820095], [0.40816326530612246, 0.39692414892492234], [0.6122448979591837, 0.5747060412161791], [0.8163265306122449, 0.7286347834693503], [1.0204081632653061, 0.8523215697196184], [1.2244897959183674, 0.9406327851124867], [1.4285714285714286, 0.9899030763721239], [1.6326530612244898, 0.9980874821347183], [1.836734693877551, 0.9648463089837632], [2.0408163265306123, 0.8915592304110037], [2.2448979591836737, 0.7812680235262639], [2.4489795918367347, 0.6385503202266021], [2.6530612244897958, 0.469329612777201], [2.857142857142857, 0.28062939951435684], [3.0612244897959187, 0.0802816748428135], [3.2653061224489797, -0.12339813736217871], [3.4693877551020407, -0.3219563150726187], [3.673469387755102, -0.5071517094845144], [3.8775510204081636, -0.6712977935519321], [4.081632653061225, -0.8075816909683364], [4.285714285714286, -0.9103469443107828], [4.4897959183673475, -0.9753282860670456], [4.6938775510204085, -0.9998286683840896], [4.8979591836734695, -0.9828312039256306], [5.1020408163265305, -0.9250413717382029], [5.3061224489795915, -0.8288577363730427], [5.510204081632653, -0.6982723955653996], [5.714285714285714, -0.5387052883861563], [5.918367346938775, -0.35677924089893803], [6.122448979591837, -0.16004508604325057], [6.326530612244898, 0.04333173336868346], [6.530612244897959, 0.2449100710119793], [6.73469387755102, 0.4363234264718193], [6.938775510204081, 0.6096271964908323], [7.142857142857143, 0.7576284153927202], [7.346938775510204, 0.8741842988197335], [7.551020408163265, 0.9544571997387519], [7.755102040816327, 0.9951153947776636], [7.959183673469388, 0.9944713672636168], [8.16326530612245, 0.9525518475314604], [8.36734693877551, 0.8710967034823207], [8.571428571428571, 0.7534867274396376], [8.775510204081632, 0.6046033165061543], [8.979591836734695, 0.43062587038273736], [9.183673469387756, 0.23877531564403087], [9.387755102040817, 0.03701440148506237], [9.591836734693878, -0.1662827938487564], [9.795918367346939, -0.3626784288265488], [10.0, -0.5440211108893699]]");
+          console.log(line);
+          $.plot("#4ad544ff-a161-4493-ba2c-f99531e317bd", [line]);
+        });
+        </script></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/intro-jupyter"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

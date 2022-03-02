@@ -284,6 +284,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#javascript">
+   JavaScript
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#latex">
    LaTeX
   </a>
@@ -304,8 +309,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#links-to-local-files">
+   Links to local files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rich-output-and-security">
    Rich output and security
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rich-output-and-nbviewer">
+   Rich output and nbviewer
   </a>
  </li>
 </ul>
@@ -351,6 +366,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#javascript">
+   JavaScript
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#latex">
    LaTeX
   </a>
@@ -371,8 +391,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#links-to-local-files">
+   Links to local files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rich-output-and-security">
    Rich output and security
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rich-output-and-nbviewer">
+   Rich output and nbviewer
   </a>
  </li>
 </ul>
@@ -401,8 +431,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">display</span></code> function is a general purpose tool for displaying different representations of objects. Think of it as <code class="docutils literal notranslate"><span class="pre">print</span></code> for these rich representations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display is injected in default namespace, but it&#39;s a good idea to be explicit.</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
 </pre></div>
 </div>
 </div>
@@ -437,7 +466,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./images/ipython-logo.png&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;images/ipython-logo.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -478,7 +507,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">SVG</span>
-<span class="n">SVG</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./images/python-logo.svg&#39;</span><span class="p">)</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;images/python_logo.svg&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -501,6 +530,222 @@
 
 <span class="c1"># In each case, embed can be specified explicitly with the `embed` kwarg</span>
 <span class="c1"># ForceEmbed = Image(url=img_url, embed=True)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">SSLCertVerificationError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:1346,</span> in <span class="ni">AbstractHTTPHandler.do_open</span><span class="nt">(self, http_class, req, **http_conn_args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1345</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1346</span>     <span class="n">h</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">(),</span> <span class="n">req</span><span class="o">.</span><span class="n">selector</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1347</span>               <span class="n">encode_chunked</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">has_header</span><span class="p">(</span><span class="s1">&#39;Transfer-encoding&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1348</span> <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> <span class="c1"># timeout error</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/http/client.py:1285,</span> in <span class="ni">HTTPConnection.request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1284</span> <span class="sd">&quot;&quot;&quot;Send a complete request to the server.&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1285</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/http/client.py:1331,</span> in <span class="ni">HTTPConnection._send_request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1330</span>     <span class="n">body</span> <span class="o">=</span> <span class="n">_encode</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1331</span> <span class="bp">self</span><span class="o">.</span><span class="n">endheaders</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="o">=</span><span class="n">encode_chunked</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/http/client.py:1280,</span> in <span class="ni">HTTPConnection.endheaders</span><span class="nt">(self, message_body, encode_chunked)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span>     <span class="k">raise</span> <span class="n">CannotSendHeader</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">1280</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_output</span><span class="p">(</span><span class="n">message_body</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="o">=</span><span class="n">encode_chunked</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/http/client.py:1040,</span> in <span class="ni">HTTPConnection._send_output</span><span class="nt">(self, message_body, encode_chunked)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1039</span> <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span><span class="p">[:]</span>
+<span class="ne">-&gt; </span><span class="mi">1040</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1042</span> <span class="k">if</span> <span class="n">message_body</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1043</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1044</span>     <span class="c1"># create a consistent interface to message_body</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/http/client.py:980,</span> in <span class="ni">HTTPConnection.send</span><span class="nt">(self, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">979</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auto_open</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">980</span>     <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">981</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/http/client.py:1454,</span> in <span class="ni">HTTPSConnection.connect</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span>     <span class="n">server_hostname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span>
+<span class="ne">-&gt; </span><span class="mi">1454</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="o">.</span><span class="n">wrap_socket</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1455</span>                                       <span class="n">server_hostname</span><span class="o">=</span><span class="n">server_hostname</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/ssl.py:500,</span> in <span class="ni">SSLContext.wrap_socket</span><span class="nt">(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="k">def</span> <span class="nf">wrap_socket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sock</span><span class="p">,</span> <span class="n">server_side</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>                 <span class="n">do_handshake_on_connect</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>                 <span class="n">suppress_ragged_eofs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">497</span>                 <span class="n">server_hostname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span>     <span class="c1"># SSLSocket class handles server_hostname encoding before it calls</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span>     <span class="c1"># ctx._wrap_socket()</span>
+<span class="ne">--&gt; </span><span class="mi">500</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sslsocket_class</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="n">sock</span><span class="o">=</span><span class="n">sock</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="n">server_side</span><span class="o">=</span><span class="n">server_side</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span>         <span class="n">do_handshake_on_connect</span><span class="o">=</span><span class="n">do_handshake_on_connect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">suppress_ragged_eofs</span><span class="o">=</span><span class="n">suppress_ragged_eofs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">server_hostname</span><span class="o">=</span><span class="n">server_hostname</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>         <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span>         <span class="n">session</span><span class="o">=</span><span class="n">session</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span>     <span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/ssl.py:1040,</span> in <span class="ni">SSLSocket._create</span><span class="nt">(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1039</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;do_handshake_on_connect should not be specified for non-blocking sockets&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1040</span>         <span class="bp">self</span><span class="o">.</span><span class="n">do_handshake</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1041</span> <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/ssl.py:1309,</span> in <span class="ni">SSLSocket.do_handshake</span><span class="nt">(self, block)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1308</span>         <span class="bp">self</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1309</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">do_handshake</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1310</span> <span class="k">finally</span><span class="p">:</span>
+
+<span class="ne">SSLCertVerificationError</span>: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">URLError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">img_url</span> <span class="o">=</span> <span class="s1">&#39;http://www.lawrencehallofscience.org/static/scienceview/scienceview.berkeley.edu/html/view/view_assets/images/newview.jpg&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># by default Image data are embedded</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">Embed</span>      <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">img_url</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># if kwarg `url` is given, the embedding is assumed to be false</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">SoftLinked</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">img_url</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/display.py:952,</span> in <span class="ni">Image.__init__</span><span class="nt">(self, data, url, filename, format, embed, width, height, retina, unconfined, metadata, alt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span> <span class="bp">self</span><span class="o">.</span><span class="n">unconfined</span> <span class="o">=</span> <span class="n">unconfined</span>
+<span class="g g-Whitespace">    </span><span class="mi">951</span> <span class="bp">self</span><span class="o">.</span><span class="n">alt</span> <span class="o">=</span> <span class="n">alt</span>
+<span class="ne">--&gt; </span><span class="mi">952</span> <span class="nb">super</span><span class="p">(</span><span class="n">Image</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span>         <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span> <span class="p">{}):</span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span>     <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">]</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/display.py:327,</span> in <span class="ni">DisplayObject.__init__</span><span class="nt">(self, data, url, filename, metadata)</span>
+<span class="g g-Whitespace">    </span><span class="mi">324</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span>     <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">--&gt; </span><span class="mi">327</span> <span class="bp">self</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_data</span><span class="p">()</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/display.py:987,</span> in <span class="ni">Image.reload</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">985</span> <span class="sd">&quot;&quot;&quot;Reload the raw data from file or URL.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">986</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">987</span>     <span class="nb">super</span><span class="p">(</span><span class="n">Image</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">988</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">retina</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_retina_shape</span><span class="p">()</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/IPython/core/display.py:357,</span> in <span class="ni">DisplayObject.reload</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span>     <span class="c1"># Deferred import</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span>     <span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="ne">--&gt; </span><span class="mi">357</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>     <span class="c1"># extract encoding from header, if there is one:</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:214,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
+<span class="ne">--&gt; </span><span class="mi">214</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:523,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span> <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
+<span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">523</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:632,</span> in <span class="ni">HTTPErrorProcessor.http_response</span><span class="nt">(self, request, response)</span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span> <span class="c1"># According to RFC 2616, &quot;2xx&quot; code indicates that the client&#39;s</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="c1"># request was successfully received, understood, and accepted.</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">632</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span>         <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:555,</span> in <span class="ni">OpenerDirector.error</span><span class="nt">(self, proto, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span>     <span class="n">http_err</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span> <span class="o">+</span> <span class="n">args</span>
+<span class="ne">--&gt; </span><span class="mi">555</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span> <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span>     <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:494,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:747,</span> in <span class="ni">HTTPRedirectHandler.http_error_302</span><span class="nt">(self, req, fp, code, msg, headers)</span>
+<span class="g g-Whitespace">    </span><span class="mi">744</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">745</span> <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">747</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">new</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:523,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span> <span class="k">for</span> <span class="n">processor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="p">[]):</span>
+<span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">523</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:632,</span> in <span class="ni">HTTPErrorProcessor.http_response</span><span class="nt">(self, request, response)</span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span> <span class="c1"># According to RFC 2616, &quot;2xx&quot; code indicates that the client&#39;s</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="c1"># request was successfully received, understood, and accepted.</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">632</span>     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span>         <span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">hdrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:555,</span> in <span class="ni">OpenerDirector.error</span><span class="nt">(self, proto, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span>     <span class="n">http_err</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span> <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span> <span class="o">+</span> <span class="n">args</span>
+<span class="ne">--&gt; </span><span class="mi">555</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span> <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span>     <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:494,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:747,</span> in <span class="ni">HTTPRedirectHandler.http_error_302</span><span class="nt">(self, req, fp, code, msg, headers)</span>
+<span class="g g-Whitespace">    </span><span class="mi">744</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">745</span> <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">747</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">new</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:517,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>     <span class="n">req</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">516</span> <span class="n">sys</span><span class="o">.</span><span class="n">audit</span><span class="p">(</span><span class="s1">&#39;urllib.Request&#39;</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">())</span>
+<span class="ne">--&gt; </span><span class="mi">517</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">519</span> <span class="c1"># post-process response</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span> <span class="n">meth_name</span> <span class="o">=</span> <span class="n">protocol</span><span class="o">+</span><span class="s2">&quot;_response&quot;</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:534,</span> in <span class="ni">OpenerDirector._open</span><span class="nt">(self, req, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span> <span class="n">protocol</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">type</span>
+<span class="ne">--&gt; </span><span class="mi">534</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_open</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">protocol</span> <span class="o">+</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span>                           <span class="s1">&#39;_open&#39;</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span> <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span>     <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:494,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:1389,</span> in <span class="ni">HTTPSHandler.https_open</span><span class="nt">(self, req)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span> <span class="k">def</span> <span class="nf">https_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_open</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1390</span>         <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">check_hostname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_check_hostname</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/urllib/request.py:1349,</span> in <span class="ni">AbstractHTTPHandler.do_open</span><span class="nt">(self, http_class, req, **http_conn_args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1346</span>         <span class="n">h</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">(),</span> <span class="n">req</span><span class="o">.</span><span class="n">selector</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1347</span>                   <span class="n">encode_chunked</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">has_header</span><span class="p">(</span><span class="s1">&#39;Transfer-encoding&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1348</span>     <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> <span class="c1"># timeout error</span>
+<span class="ne">-&gt; </span><span class="mi">1349</span>         <span class="k">raise</span> <span class="n">URLError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1350</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1351</span> <span class="k">except</span><span class="p">:</span>
+
+<span class="ne">URLError</span>: &lt;urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)&gt;
 </pre></div>
 </div>
 </div>
@@ -627,6 +872,48 @@
 </div></div>
 </div>
 </div>
+<div class="section" id="javascript">
+<h2>JavaScript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h2>
+<p>The Notebook also enables objects to declare a JavaScript representation. At first, this may seem odd as  output is inherently visual and JavaScript is a programming language. However, this opens the door for rich output that leverages the full power of JavaScript and associated libraries such as <a class="reference external" href="http://d3js.org">d3.js</a> for output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Javascript</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pass a string of JavaScript source code to the <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> object and then display it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">js</span> <span class="o">=</span> <span class="n">Javascript</span><span class="p">(</span><span class="s1">&#39;alert(&quot;hi&quot;)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">js</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">alert("hi")</script></div>
+</div>
+<p>The same thing can be accomplished using the <code class="docutils literal notranslate"><span class="pre">%%javascript</span></code> cell magic:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%javascript</span>
+
+<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+alert("hi");
+</script></div>
+</div>
+</div>
 <div class="section" id="latex">
 <h2>LaTeX<a class="headerlink" href="#latex" title="Permalink to this headline">¶</a></h2>
 <p>The IPython display system also has builtin support for the display of mathematical expressions typeset in LaTeX, which is rendered in the browser using <a class="reference external" href="http://mathjax.org">MathJax</a>.</p>
@@ -656,6 +943,15 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} &amp; = 0 
+\end{eqnarray}\end{split}\]</div>
+</div>
 </div>
 <p>Or you can enter LaTeX directly with the <code class="docutils literal notranslate"><span class="pre">%%latex</span></code> cell magic:</p>
 <div class="cell docutils container">
@@ -669,6 +965,15 @@
 <span class="k">\end</span><span class="nb">{</span>align<span class="nb">}</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} &amp; = 0
+\end{align}\end{split}\]</div>
 </div>
 </div>
 </div>
@@ -698,9 +1003,9 @@
 <span class="n">max_time</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">f1</span> <span class="o">=</span> <span class="mf">220.0</span>
 <span class="n">f2</span> <span class="o">=</span> <span class="mf">224.0</span>
-<span class="n">rate</span> <span class="o">=</span> <span class="mi">8000</span>
+<span class="n">rate</span> <span class="o">=</span> <span class="mf">8000.0</span>
 <span class="n">L</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">rate</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">rate</span><span class="o">*</span><span class="n">L</span><span class="p">))</span>
 <span class="n">signal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">times</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">times</span><span class="p">)</span>
 
 <span class="n">Audio</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">signal</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">rate</span><span class="p">)</span>
@@ -734,6 +1039,7 @@
     src="https://www.youtube.com/embed/sjfsUzECqK0"
     frameborder="0"
     allowfullscreen
+
 ></iframe>
 </div></div>
 </div>
@@ -744,7 +1050,7 @@ we will continue testing this and looking for ways to make it more robust.</p>
 transport, and uses the HTML5 video tag to load it. On Chrome 15 it works correctly, displaying a control bar at the bottom with a play/pause button and a location slider.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Video</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 <span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64encode</span>
 <span class="n">video</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;images/animation.m4v&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">video_encoded</span> <span class="o">=</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">video</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
@@ -756,17 +1062,6 @@ transport, and uses the HTML5 video tag to load it. On Chrome 15 it works correc
 <div class="cell_output docutils container">
 <div class="output text_html"><video controls alt="test" src="data:video/x-m4v;base64,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"></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Video</span><span class="p">(</span><span class="s1">&#39;images/animation.m4v&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><video src="images/animation.m4v" controls  >
-      Your browser does not support the <code>video</code> element.
-    </video></div></div>
-</div>
 </div>
 <div class="section" id="external-sites">
 <h2>External sites<a class="headerlink" href="#external-sites" title="Permalink to this headline">¶</a></h2>
@@ -775,7 +1070,7 @@ page for mobile users:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
-<span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;http://jupyter.org&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">350</span><span class="p">)</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://jupyter.org&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">350</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -784,11 +1079,64 @@ page for mobile users:</p>
 <iframe
     width="100%"
     height="350"
-    src="http://jupyter.org"
+    src="https://jupyter.org"
     frameborder="0"
     allowfullscreen
+
 ></iframe>
 </div></div>
+</div>
+</div>
+<div class="section" id="links-to-local-files">
+<h2>Links to local files<a class="headerlink" href="#links-to-local-files" title="Permalink to this headline">¶</a></h2>
+<p>IPython provides builtin display classes for generating links to local files. Create a link to a single file using the <code class="docutils literal notranslate"><span class="pre">FileLink</span></code> object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">FileLink</span><span class="p">,</span> <span class="n">FileLinks</span>
+<span class="n">FileLink</span><span class="p">(</span><span class="s1">&#39;01-Intro-Jupyter.ipynb&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><a href='01-Intro-Jupyter.ipynb' target='_blank'>01-Intro-Jupyter.ipynb</a><br></div></div>
+</div>
+<p>Alternatively, to generate links to all of the files in a directory, use the <code class="docutils literal notranslate"><span class="pre">FileLinks</span></code> object, passing <code class="docutils literal notranslate"><span class="pre">'.'</span></code> to indicate that we want links generated for the current working directory. Note that if there were other directories under the current directory, <code class="docutils literal notranslate"><span class="pre">FileLinks</span></code> would work in a recursive manner creating links to files in all sub-directories as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FileLinks</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">./<br>
+&nbsp;&nbsp;<a href='./03-widgets-interact.ipynb' target='_blank'>03-widgets-interact.ipynb</a><br>
+&nbsp;&nbsp;<a href='./Index.ipynb' target='_blank'>Index.ipynb</a><br>
+&nbsp;&nbsp;<a href='./01-Intro-Jupyter.ipynb' target='_blank'>01-Intro-Jupyter.ipynb</a><br>
+&nbsp;&nbsp;<a href='./02-Beyond-Plain-Python.ipynb' target='_blank'>02-Beyond-Plain-Python.ipynb</a><br>
+&nbsp;&nbsp;<a href='./04-Rich-Output.ipynb' target='_blank'>04-Rich-Output.ipynb</a><br>
+&nbsp;&nbsp;<a href='./Rich Output.ipynb' target='_blank'>Rich Output.ipynb</a><br>
+./.ipynb_checkpoints/<br>
+&nbsp;&nbsp;<a href='./.ipynb_checkpoints/foo-checkpoint.py' target='_blank'>foo-checkpoint.py</a><br>
+&nbsp;&nbsp;<a href='./.ipynb_checkpoints/04-Rich-Output-checkpoint.ipynb' target='_blank'>04-Rich-Output-checkpoint.ipynb</a><br>
+&nbsp;&nbsp;<a href='./.ipynb_checkpoints/Rich Output-checkpoint.ipynb' target='_blank'>Rich Output-checkpoint.ipynb</a><br>
+./images/<br>
+&nbsp;&nbsp;<a href='./images/Binary_Star_Sim.png' target='_blank'>Binary_Star_Sim.png</a><br>
+&nbsp;&nbsp;<a href='./images/HEAD_testing.png' target='_blank'>HEAD_testing.png</a><br>
+&nbsp;&nbsp;<a href='./images/WidgetModelView.png' target='_blank'>WidgetModelView.png</a><br>
+&nbsp;&nbsp;<a href='./images/branchcommit.png' target='_blank'>branchcommit.png</a><br>
+&nbsp;&nbsp;<a href='./images/cell_types.png' target='_blank'>cell_types.png</a><br>
+&nbsp;&nbsp;<a href='./images/command_mode.png' target='_blank'>command_mode.png</a><br>
+&nbsp;&nbsp;<a href='./images/commit_anatomy.png' target='_blank'>commit_anatomy.png</a><br>
+&nbsp;&nbsp;<a href='./images/edit_mode.png' target='_blank'>edit_mode.png</a><br>
+&nbsp;&nbsp;<a href='./images/indefero_projects1.png' target='_blank'>indefero_projects1.png</a><br>
+&nbsp;&nbsp;<a href='./images/indefero_projects_notes.png' target='_blank'>indefero_projects_notes.png</a><br>
+&nbsp;&nbsp;<a href='./images/ipython-logo.png' target='_blank'>ipython-logo.png</a><br>
+&nbsp;&nbsp;<a href='./images/masterbranch.png' target='_blank'>masterbranch.png</a><br>
+&nbsp;&nbsp;<a href='./images/mergeaftermath.png' target='_blank'>mergeaftermath.png</a><br>
+&nbsp;&nbsp;<a href='./images/mergescenario.png' target='_blank'>mergescenario.png</a><br>
+&nbsp;&nbsp;<a href='./images/threecommits.png' target='_blank'>threecommits.png</a><br>
+&nbsp;&nbsp;<a href='./images/animation.m4v' target='_blank'>animation.m4v</a><br>
+&nbsp;&nbsp;<a href='./images/python_logo.svg' target='_blank'>python_logo.svg</a><br></div></div>
 </div>
 </div>
 <div class="section" id="rich-output-and-security">
@@ -801,6 +1149,10 @@ page for mobile users:</p>
 <li><p>… or if you have trusted a notebook, all rich output will run upon opening it.</p></li>
 </ul>
 <p>A full description of the IPython security model can be found on <a class="reference external" href="http://ipython.org/ipython-doc/dev/notebook/security.html">this page</a>.</p>
+</div>
+<div class="section" id="rich-output-and-nbviewer">
+<h2>Rich output and nbviewer<a class="headerlink" href="#rich-output-and-nbviewer" title="Permalink to this headline">¶</a></h2>
+<p>Much of the power of the Notebook is that it enables users to share notebooks with each other using http://nbviewer.ipython.org, without installing IPython locally. As of IPython 2.0, notebooks rendered on nbviewer will display all output, including HTML and JavaScript.</p>
 </div>
 </div>
 
