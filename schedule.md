@@ -41,12 +41,12 @@ When an assignment consists of multiple articles, you should submit a summary pa
     - [Barba 2018, Terminologies for Reproducible Research](https://arxiv.org/abs/1802.03311)
     - [Reproducibility and Replicability in Science](https://www.ncbi.nlm.nih.gov/books/NBK547537), chapter 2 (SCIENTIFIC METHODS AND KNOWLEDGE).
 
-**NOTE: the selections below are still subject to change**
-
 * #5, due Mar 7: Foundational classics
     - [Schwab, M., Karrenbach, N., Claerbout, J. (2000) Making scientific computations reproducible, Comp. Sci. Eng. 2(6):61–67, doi: 10.1109/5992.881708](https://ieeexplore.ieee.org/document/881708).
     - [Reproducible Research, by the Yale Law School Roundtable on Data and Code Sharing, Comp. Sci. Eng. 12(5): 8–13 (Sept.-Oct. 2010), doi:10.1109/mcse.2010.113](https://ieeexplore.ieee.org/document/5562471).
 
+
+**NOTE: the selections below are still subject to change**
 
 * #6, due Mar 14:  Jupyter in Computational Research
     - [Granger and Pérez 2021, Jupyter: Thinking and Storytelling With Code and Data](https://ieeexplore.ieee.org/document/9387490).
