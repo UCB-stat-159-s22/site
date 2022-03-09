@@ -1,15 +1,12 @@
 # Statistics 159/259: Weekly Plan
-## Prof. Pérez and GSI Sapienza , Department of Statistics, UC Berkeley
 
-Below is our current plan for the course.
-**This is not a contract:** it is a _plan_, and it may change substantially as the
-semester unfolds, especially given extra uncertainties due to COVID-19.
+**Prof. Pérez and GSI Sapienza , Department of Statistics, UC Berkeley**
 
-## Content
+Below is our current plan for the course. **This is not a contract:** it is a _plan_, and it may change substantially as the semester unfolds, especially given extra uncertainties due to COVID-19.
 
 The table of contents on the left pane has links to lectures and labs. The following are live executable links that use the [nbgitpuller](https://jupyterhub.github.io/nbgitpuller) service to give you a current copy from git of the given content, ready to be run in the Spring 2022 Berkeley hub. You can use these links in order to run the content conveniently without manual git work.
 
-### Live links for labs on the Berkeley DataHub
+## Live links for labs on the Berkeley DataHub
 
 * [Lab 01](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&branch=main&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab01).
 
@@ -21,7 +18,7 @@ The table of contents on the left pane has links to lectures and labs. The follo
 
 * [Lab 05](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab05%2Flab05.ipynb&branch=main)
 
-### Assigned Readings
+## Assigned Readings
 
 When an assignment consists of multiple articles, you should submit a summary paragraph and idea highlight paragraph _per each separate article_.
 
@@ -93,3 +90,16 @@ When an assignment consists of multiple articles, you should submit a summary pa
     - [Feulner 2016, Science under Societal Scrutiny: Reproducibility in Climate Science](https://onlinelibrary.wiley.com/doi/10.1002/9781118865064.ch12).
     - [Geyer et al. 2021, Limits of reproducibility and hydrodynamic noise in atmospheric regional modelling](https://www.nature.com/articles/s43247-020-00085-4).
     - [Hoffimann et al. 2021, Geostatistical Learning: Challenges and Opportunities](https://arxiv.org/abs/2102.08791)
+
+## Lectures
+
+Note that all lecture videos are posted on the [bCourses "Lectures" playlist for the course](https://bcourses.berkeley.edu/courses/1512961/external_tools/78985) (this link is accessible only to Berkeley personnel).
+
+1. Jan 19. Logistics and intro to Git.
+2. Jan 26. JupyterHub, JupyterLab and its various tools, dotfiles for reproducible personal configuration.
+3. Feb 2. Github, Git tutorial continued. (_Note:_ this lecture has damaged audio for the 2nd half).
+4. Feb 9. Git visuals, an overview of Project Jupyter. IPython - beyond plain Python.
+5. Feb 16. Rich output in Jupyter, VNC and virtual desktops in JupyterLab. Introduction to nbdime.
+6. Feb 23. Climate data, xarray and open science at NASA. Guest lecture by Dr. Chelle Gentemann.
+7. March 2. Merge conflicts with nbdime ([sample repo](https://github.com/UCB-stat-159-s22/nbconflicts-demo)). Custom display logic in Jupyter. (_Note:_ this lecture has damaged audio for the last ~ 45 minutes).
+8. March 9. [Automation and Make](https://swcarpentry.github.io/make-novice), based on the Carpentries' tutorial.
