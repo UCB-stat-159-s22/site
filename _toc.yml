@@ -20,4 +20,4 @@ parts:
   - file: lab/lab03/lab03.ipynb
   - file: lab/lab04/lab04.ipynb
   - file: lab/lab05/lab05.ipynb
-  
+  - file: lab/lab06/lab06.ipynb  
