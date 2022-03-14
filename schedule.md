@@ -33,6 +33,8 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 
 * [Lab 05](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab05%2Flab05.ipynb&branch=main)
 
+* [Lab 06](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab06%2Flab06.ipynb&branch=main)
+
 
 
 ## Assigned Readings
