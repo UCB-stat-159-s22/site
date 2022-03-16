@@ -19,6 +19,7 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 6. Feb 23. Climate data, xarray and open science at NASA. Guest lecture by Dr. Chelle Gentemann.
 7. March 2. Merge conflicts with nbdime ([sample repo](https://github.com/UCB-stat-159-s22/nbconflicts-demo)). Custom display logic in Jupyter. (_Note:_ this lecture has damaged audio for the last ~ 45 minutes).
 8. March 9. [Automation and Make](https://swcarpentry.github.io/make-novice), based on the Carpentries' tutorial.
+9. March 16. [Python Testing and Continuous Integration](https://carpentries-incubator.github.io/python-testing), based on the Carpentries' tutorial.
 
 
 ## Live links for labs on the Berkeley DataHub
