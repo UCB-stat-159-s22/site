@@ -20,13 +20,15 @@ The first step to create new environments you can access later is to put them in
 mkdir $HOME/envs
 ```
 
-so that from now on, all new environments you create will live in `~/envs`. To tell conda that this is the case, create a file named `.condarc` in your home directory (or edit it if it's there already)
+so that from now on, all new environments you create will live in `~/envs`. To tell conda that this is where you want to use your environments, create a file named `.condarc` in your home directory (or edit it if it's there already)
 
 ```
 envs_dirs:
   - ~/envs
   - ~/shared/envs 
 ```
+
+The second path, `~/shared/envs` is there in case we (the instructors) create new environments for you in addition to the system default one.
 
 ```{tip}
 You should add, if you don't have it already, `.condarc` to your `.dotfiles` repo!
@@ -82,7 +84,9 @@ mamba env update --file environment.yml --prune
 
 ## Using an environment in your notebooks
 
-So far, our simple `mytestenv` environment can only be used at the command-line, but it will not be available for your notebooks. For that to work, you need to add to the environment the `ipykernel` package. The following `environment.yml` file would give you a kernel you can use in the Hub (albeit with only the `tqdm` package, obviously):
+So far, our simple `mytestenv` environment can only be used at the command-line, but it will not be available for your notebooks. For that to work, you need to complete two additional steps.
+
+First, you must install in this environment the `ipykernel` package. The following `environment.yml` file would give you a kernel you can use in the Hub (albeit with only the `tqdm` package, obviously):
 
 ```yaml
 name: mytestenv
@@ -92,7 +96,7 @@ dependencies:
   - tqdm=4.62.3
 ```
 
-And once `ipykernel` is installed in the environment, you need to add it to the Jupyter configuration with the command:
+Second, you need to let Jupyter know that you want to use this environment's kernel, by installing the environment's ipykernel into Jupyter:
 
 ```
 python -m ipykernel install --user --name mytestenv --display-name "IPython - mytestenv"
@@ -100,9 +104,10 @@ python -m ipykernel install --user --name mytestenv --display-name "IPython - my
 
 In the above, the `--name` value is used internally by Jupyter and can be anything, while you should make the `--display-name` be descriptive, as that's what is shown in the Launcher icons.
 
+The above command will write a set of files into `~/.local/share/jupyter/kernels/mytestenv` with the information about how to run the kernel, its logo, etc.
+
 After completing these steps, when you click on the launcher in JupyterLab you should see something like the following:
 
 ![](launcher-kernels.png)
 
 You can now use these same techniques to manage as many environments as you need for your new projects.
-
