@@ -16,7 +16,7 @@ For the remaining of the course, you may need for some of your projects to insta
 
 The first step to create new environments you can access later is to put them in a persistent location. You should create a folder for all your new environments, I recommend using:
 
-```{bash}
+```bash
 mkdir $HOME/envs
 ```
 
