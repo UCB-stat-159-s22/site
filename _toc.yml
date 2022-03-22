@@ -12,7 +12,8 @@ parts:
   - file: lectures/intro-git/Git-Tutorial
   - file: lectures/intro-git/git-visuals
   - file: lectures/intro-jupyter/Index
-  - file: lectures/intro-jupyter/West_Coast_HeatWave_Basic.ipynb
+  - file: lectures/West_Coast_HeatWave_Basic.ipynb
+  - file: lectures/environments/conda-envs.md
 - caption: Labs
   chapters:
   - file: lab/lab01/lab01.ipynb
