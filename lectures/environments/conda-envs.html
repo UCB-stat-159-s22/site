@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A quick guide to conda environments on our JupyterHub &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab Session 1 - Introduction to Python" href="../../lab/lab01/lab01.html" />
+    <link rel="prev" title="Satellite sea surface temperatures along the West Coast of the United States" href="../West_Coast_HeatWave_Basic.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro-jupyter/Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../West_Coast_HeatWave_Basic.html">
+   Satellite sea surface temperatures along the West Coast of the United States
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   A quick guide to conda environments on our JupyterHub
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab01/lab01.html">
+   Lab Session 1 - Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab02/lab02.html">
+   Lab Session 2: GitHub &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab03/lab03.html">
+   Lab Session 3: Solving Conflicts in Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab04/lab04.html">
+   Lab Session 4: Version control with Jupytext
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab05/lab05.html">
+   Lab Session 5: Climate data and xarray
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lab/lab06/lab06.html">
+   Lab Session 6: Automation and Make
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/environments/conda-envs.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#storing-your-environments-in-a-persistent-location">
+   Storing your environments in a persistent location
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-new-environment-in-that-location">
+   Creating a new environment in that location
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-your-environment-with-new-packages">
+   Updating your environment with new packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-an-environment-in-your-notebooks">
+   Using an environment in your notebooks
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>A quick guide to conda environments on our JupyterHub</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#storing-your-environments-in-a-persistent-location">
+   Storing your environments in a persistent location
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-new-environment-in-that-location">
+   Creating a new environment in that location
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-your-environment-with-new-packages">
+   Updating your environment with new packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-an-environment-in-your-notebooks">
+   Using an environment in your notebooks
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="a-quick-guide-to-conda-environments-on-our-jupyterhub">
+<h1>A quick guide to conda environments on our JupyterHub<a class="headerlink" href="#a-quick-guide-to-conda-environments-on-our-jupyterhub" title="Permalink to this headline">¶</a></h1>
+<p>In our next lecture we will take a deeper dive into the details of environments for reproducible computation. This is a quick, practical guide to using environments in our JupyterHub installation. For the purposes of this discussion (the term ‘environment’ has multiple uses), a <em>conda</em> environment is a directory containing a collection of packages you have installed and can use (full documentation is <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html">available here</a>). Environments are accessed by name, and you can switch between environments by <em>activating</em> and <em>deactivating</em> them.</p>
+<p>An environment can be built by hand, simply by installing packages into it. But by explicitly declaring in a file the packages that make an environment, the concept becomes key to reproducibility.  That file can then be used to re-create the environment with the same list of packages (and potentially the same versions and even the exact same builds) on a different system.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This type of environment is associated with the <code class="docutils literal notranslate"><span class="pre">conda</span></code> tool linked above, but in practice we have two nearly equivalent commands we can use to manage them: <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">mamba</span></code>. The latter is a newer implementation of the same ideas that has a number of performance advantages. While we will continue referring to “conda environments,” in practice we will use the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command for some tasks. In particular, we will always use mamba to install packages, as it can be much, <em>much</em> faster than conda.</p>
+</div>
+<p>On our hub, when running notebooks by default they use the kernel and packages associated with the <code class="docutils literal notranslate"><span class="pre">notebook</span></code> environment. When starting a new terminal, you may find yourself in the <code class="docutils literal notranslate"><span class="pre">base</span></code> environment that has no other packages, and may need to switch to the <code class="docutils literal notranslate"><span class="pre">notebook</span></code> environment if you want to access the same packages that you do from the notebook.</p>
+<p>For the remaining of the course, you may need for some of your projects to install custom packages, and you will want to do that in a way that makes it possible for others (your teammates, instructors, etc) to have the same packages installed.</p>
+<div class="section" id="storing-your-environments-in-a-persistent-location">
+<h2>Storing your environments in a persistent location<a class="headerlink" href="#storing-your-environments-in-a-persistent-location" title="Permalink to this headline">¶</a></h2>
+<p>The first step to create new environments you can access later is to put them in a persistent location. You should create a folder for all your new environments, I recommend using:</p>
+<p>so that from now on, all new environments you create will live in <code class="docutils literal notranslate"><span class="pre">~/envs</span></code>. To tell conda that this is the case, create a file named <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> in your home directory (or edit it if it’s there already)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">envs_dirs</span><span class="p">:</span>
+  <span class="o">-</span> <span class="o">~/</span><span class="n">envs</span>
+  <span class="o">-</span> <span class="o">~/</span><span class="n">shared</span><span class="o">/</span><span class="n">envs</span> 
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You should add, if you don’t have it already, <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> to your <code class="docutils literal notranslate"><span class="pre">.dotfiles</span></code> repo!</p>
+</div>
+</div>
+<div class="section" id="creating-a-new-environment-in-that-location">
+<h2>Creating a new environment in that location<a class="headerlink" href="#creating-a-new-environment-in-that-location" title="Permalink to this headline">¶</a></h2>
+<p>Next, you will define the packages you want to install in your environment by using a file called <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> such as this one (you can find more details in the <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually">documentation</a>):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mytestenv</span><span class="w"></span>
+<span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python=3.9</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tqdm=4.62.3</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This file defines an environment with only Python 3.9 and the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> package installed in it. Once you have this file, you can create this environment with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">envs</span><span class="o">/</span><span class="n">mytestenv</span>
+</pre></div>
+</div>
+<p>After it runs through the installation process, you should be able to see it listed along with the system-wide environments with the command <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">env</span> <span class="pre">list</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> <span class="o">(</span>main<span class="o">)</span>jupyter-fernando-2eperez<span class="o">[</span>environments<span class="o">]</span>&gt; mamba env list
+<span class="c1"># conda environments:</span>
+<span class="c1">#</span>
+mytestenv                /home/jovyan/envs/mytestenv
+base                  *  /srv/conda
+notebook                 /srv/conda/envs/notebook
+</pre></div>
+</div>
+<p>You can now use it by typing  <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">mytestenv</span></code>, and stop using it with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that we use <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <em>not</em> <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to activate/deactivate environments.  This may change in the future.</p>
+</div>
+</div>
+<div class="section" id="updating-your-environment-with-new-packages">
+<h2>Updating your environment with new packages<a class="headerlink" href="#updating-your-environment-with-new-packages" title="Permalink to this headline">¶</a></h2>
+<p>While you can then install new packages in the environment at the command line by using <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">install</span> <span class="pre">&lt;package-name&gt;</span></code>, you should always record which packages you mean to install in the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file so you can reproduce later the same environment or share it with colleagues.</p>
+<p>For your homework projects, the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file should obviously go into the git repository, so that every team member (and your instructors) can also create the environment in the same fashion.</p>
+<p>If you have new packages listed in your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file (because you edited it or changes were made to it by a colleague and you got these changes over git, for example), you can apply these updates with this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba env update --file environment.yml --prune
+</pre></div>
+</div>
+<p>(the <code class="docutils literal notranslate"><span class="pre">--prune</span></code> option removes packages that may have been deleted from the file, if any, and is not strictly necessary though recommended to keep your environment in sync with the specification in the file).</p>
+</div>
+<div class="section" id="using-an-environment-in-your-notebooks">
+<h2>Using an environment in your notebooks<a class="headerlink" href="#using-an-environment-in-your-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>So far, our simple <code class="docutils literal notranslate"><span class="pre">mytestenv</span></code> environment can only be used at the command-line, but it will not be available for your notebooks. For that to work, you need to add to the environment the <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> package. The following <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file would give you a kernel you can use in the Hub (albeit with only the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> package, obviously):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mytestenv</span><span class="w"></span>
+<span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ipykernel=6.7.0</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python=3.9</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tqdm=4.62.3</span><span class="w"></span>
+</pre></div>
+</div>
+<p>And once <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> is installed in the environment, you need to add it to the Jupyter configuration with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span> <span class="n">mytestenv</span> <span class="o">--</span><span class="n">display</span><span class="o">-</span><span class="n">name</span> <span class="s2">&quot;IPython - mytestenv&quot;</span>
+</pre></div>
+</div>
+<p>In the above, the <code class="docutils literal notranslate"><span class="pre">--name</span></code> value is used internally by Jupyter and can be anything, while you should make the <code class="docutils literal notranslate"><span class="pre">--display-name</span></code> be descriptive, as that’s what is shown in the Launcher icons.</p>
+<p>After completing these steps, when you click on the launcher in JupyterLab you should see something like the following:</p>
+<p><img alt="" src="../../_images/launcher-kernels.png" /></p>
+<p>You can now use these same techniques to manage as many environments as you need for your new projects.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/environments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../West_Coast_HeatWave_Basic.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Satellite sea surface temperatures along the West Coast of the United States</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../lab/lab01/lab01.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lab Session 1 - Introduction to Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
