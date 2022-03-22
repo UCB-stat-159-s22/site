@@ -341,6 +341,9 @@
 <div class="section" id="storing-your-environments-in-a-persistent-location">
 <h2>Storing your environments in a persistent location<a class="headerlink" href="#storing-your-environments-in-a-persistent-location" title="Permalink to this headline">¶</a></h2>
 <p>The first step to create new environments you can access later is to put them in a persistent location. You should create a folder for all your new environments, I recommend using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir <span class="nv">$HOME</span>/envs
+</pre></div>
+</div>
 <p>so that from now on, all new environments you create will live in <code class="docutils literal notranslate"><span class="pre">~/envs</span></code>. To tell conda that this is the case, create a file named <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> in your home directory (or edit it if it’s there already)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">envs_dirs</span><span class="p">:</span>
   <span class="o">-</span> <span class="o">~/</span><span class="n">envs</span>
