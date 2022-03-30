@@ -88,12 +88,8 @@ So far, our simple `mytestenv` environment can only be used at the command-line,
 
 First, you must install in this environment the `ipykernel` package. The following `environment.yml` file would give you a kernel you can use in the Hub (albeit with only the `tqdm` package, obviously):
 
-```yaml
-name: mytestenv
-dependencies:
-  - ipykernel=6.7.0
-  - python=3.9
-  - tqdm=4.62.3
+```{literalinclude} environment.yml
+:language: yaml
 ```
 
 Second, you need to let Jupyter know that you want to use this environment's kernel, by installing the environment's ipykernel into Jupyter:
@@ -111,3 +107,16 @@ After completing these steps, when you click on the launcher in JupyterLab you s
 ![](launcher-kernels.png)
 
 You can now use these same techniques to manage as many environments as you need for your new projects.
+
+
+## Environments and Makefiles
+
+We've discussed how to automate workflows with Make - once your repos have environments in them, the following Makefile illustrates for example how to create and set up the environment as discussed above via a Makefile:
+
+```{literalinclude} Makefile
+```
+
+One of the options presented uses this bash script:
+
+```{literalinclude} envsetup.sh
+```
