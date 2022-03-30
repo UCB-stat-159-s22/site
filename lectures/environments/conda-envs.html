@@ -428,7 +428,37 @@ notebook                 /srv/conda/envs/notebook
 <div class="section" id="environments-and-makefiles">
 <h2>Environments and Makefiles<a class="headerlink" href="#environments-and-makefiles" title="Permalink to this headline">¶</a></h2>
 <p>We’ve discussed how to automate workflows with Make - once your repos have environments in them, the following Makefile illustrates for example how to create and set up the environment as discussed above via a Makefile:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Makefile to create an environment from the command line</span>
+
+<span class="c1"># This target creates an environment first, and then configures it by </span>
+<span class="c1"># activating it and installing ipykernel into it.  Note that for the </span>
+<span class="c1"># activation/install commands to work, they must be executed in a single</span>
+<span class="c1"># line that is prefixed with `bash -ic` - this executes them under an </span>
+<span class="c1"># interactive shell, which is required for `conda activate` to work.</span>
+
+<span class="o">.</span><span class="n">PHONY</span><span class="p">:</span> <span class="n">env</span>
+<span class="n">env</span><span class="p">:</span>
+	<span class="n">mamba</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">envs</span><span class="o">/</span><span class="n">mytestenv</span>
+	<span class="n">bash</span> <span class="o">-</span><span class="n">ic</span> <span class="s1">&#39;conda activate mytestenv;python -m ipykernel install --user --name mytestenv --display-name &quot;IPython - mytestenv&quot;&#39;</span>
+
+<span class="c1"># The following target will achieve the same result via a different route: </span>
+<span class="c1"># it puts all the logic into a shell script that is executed with </span>
+<span class="c1"># &#39;bash -i&#39; so it runs in an interactive shell, so `conda activate`</span>
+<span class="c1"># works correctly</span>
+
+<span class="o">.</span><span class="n">PHONY</span><span class="p">:</span> <span class="n">env2</span>
+<span class="n">env2</span><span class="p">:</span>
+	<span class="n">bash</span> <span class="o">-</span><span class="n">i</span> <span class="n">envsetup</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
 <p>One of the options presented uses this bash script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash -i</span>
+
+<span class="n">mamba</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">envs</span><span class="o">/</span><span class="n">mytestenv</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">mytestenv</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span> <span class="n">mytestenv</span> <span class="o">--</span><span class="n">display</span><span class="o">-</span><span class="n">name</span> <span class="s2">&quot;IPython - mytestenv&quot;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
