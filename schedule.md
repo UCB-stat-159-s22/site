@@ -20,7 +20,7 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 7. March 2. Merge conflicts with nbdime ([sample repo](https://github.com/UCB-stat-159-s22/nbconflicts-demo)). Custom display logic in Jupyter. (_Note:_ this lecture has damaged audio for the last ~ 45 minutes).
 8. March 9. [Automation and Make](https://swcarpentry.github.io/make-novice), based on the Carpentries' tutorial.
 9. March 16. [Python Testing and Continuous Integration](https://carpentries-incubator.github.io/python-testing), based on the Carpentries' tutorial.
-10. March 30. Environments and Makefiles, binder, python packages.
+10. March 30. [Environments and Makefiles](lectures/environments/conda-envs), [binder](https://docs.google.com/presentation/d/14pJmHMbYpF7VFCOi-eh64DZgEbTXXwWcBnPtvW8hhso), packaging Python software.
 
 
 ## Live links for labs on the Berkeley DataHub
@@ -71,9 +71,6 @@ When an assignment consists of multiple articles, you should submit a summary pa
 
 
 * No assignment Mar 21, Spring Recess.
-
-**NOTE: the selections below are still subject to change**
-
 
 * #7, due Mar 28: Computational challenges
     - [The Limits of Reproducibility in Numerical Simulation](https://ieeexplore-ieee-org.libproxy.berkeley.edu/document/5719578).
