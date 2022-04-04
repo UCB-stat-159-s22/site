@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Session 7: Local Installation &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Lab Session 6: Automation and Make" href="../lab06/lab06.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/West_Coast_HeatWave_Basic.html">
+   Satellite sea surface temperatures along the West Coast of the United States
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/environments/conda-envs.html">
+   A quick guide to conda environments on our JupyterHub
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab01/lab01.html">
+   Lab Session 1 - Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab02/lab02.html">
+   Lab Session 2: GitHub &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab03/lab03.html">
+   Lab Session 3: Solving Conflicts in Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab04/lab04.html">
+   Lab Session 4: Version control with Jupytext
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab05/lab05.html">
+   Lab Session 5: Climate data and xarray
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab06/lab06.html">
+   Lab Session 6: Automation and Make
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab Session 7: Local Installation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lab/lab07/lab07.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lab/lab07/lab07.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-installation-and-configuration-of-miniconda">
+   Part 1: Installation and configuration of miniconda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-setting-the-hub-environment-in-local">
+   Part 2: Setting the Hub environment in local
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-reproducibility-check">
+   Part 3: Reproducibility check
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-comments">
+   Additional Comments
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lab Session 7: Local Installation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-installation-and-configuration-of-miniconda">
+   Part 1: Installation and configuration of miniconda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-setting-the-hub-environment-in-local">
+   Part 2: Setting the Hub environment in local
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-reproducibility-check">
+   Part 3: Reproducibility check
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-comments">
+   Additional Comments
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-session-7-local-installation">
+<h1>Lab Session 7: Local Installation<a class="headerlink" href="#lab-session-7-local-installation" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Statistics 159/259, Spring 2022</strong></p></li>
+<li><p>Prof. F. Pérez and GSI F. Sapienza, Department of Statistics, UC Berkeley.</p></li>
+<li><p>04/04/2022</p></li>
+</ul>
+<p>The goal for today is to setup your local machine with the JupyterLab we are using in the Stat 159/259 Hub.</p>
+<p>Useful links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/fperez/homesetup">fperez/homesetup</a></p></li>
+<li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Managing environments with Anaconda</a></p></li>
+<li><p><a class="reference external" href="https://stat159.datahub.berkeley.edu/hub/login?next=%2Fhub%2F">JupyterHub</a></p></li>
+<li><p><a class="reference external" href="https://ucb-stat-159-s22.github.io/site/lectures/intro-git/Git-Tutorial.html#convenient-credentials-management">Convenient credentials management</a></p></li>
+</ul>
+<div class="section" id="part-1-installation-and-configuration-of-miniconda">
+<h2>Part 1: Installation and configuration of miniconda<a class="headerlink" href="#part-1-installation-and-configuration-of-miniconda" title="Permalink to this headline">¶</a></h2>
+<p>Instead of installing conda with the full package management system and many Python libraries, we are going to install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>, a minimalist version of conda that included the package management tool and a small number of useful packages. If you already have conda installed in your machine, you may don’t need to do this. An easy way to check if conda is installed in your computes is by enter <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--help</span></code> in the terminal. You are also welcome of installing conda from zero by removing all conda directories and installing miniconda.</p>
+<p>You can install the last version of miniconda depending on you operating system from the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda website</a>. For unix machines, a more simple way of doing this is by using the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command followed by the installer link (<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/macos.html#install-macos-silent">silent installation mode</a>). For example, for a MacOSX machine you can use</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/local/conda
+</pre></div>
+</div>
+<p>and for a Linux machine</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/local/conda
+</pre></div>
+</div>
+<p><strong>Note for Windows users</strong></p>
+<blockquote>
+<div><p>If you are working from a Windows machine, you can directly install Miniconda using the link provided in the website. Most cloud-hosted computing is based on a Unix foundation, which both MacOS and Linux provide out of the box, so some of our instructions fit that workflow a little more easily. But for Windows platforms, Microsoft now officially supports something very similar, which is excellent and we highly encourage you to play with and learn about: <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about">the Windows Subsystem for Linux (WSL)</a>.  It provides top-notch Unix functionality next to your regular Windows tools and workflow, and is probably the ideal setup for modern scientific and research computing on Windows. Discussing it in detail is beyond the scope of this course, but we highly encourage you to explore this tool on your own (and let us know how it goes!).</p>
+</div></blockquote>
+<p>In order to specify the path where conda is installed, you need to add the following line to your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add path to conda</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/local/conda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>and execute it by <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">.bashrc</span></code>. After doing this, you will see that now conda is recognized. You can fix this changes by now running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code>, so you don’t need to worry again about <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. You can see where conda has been installed by typing <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">conda</span></code> in your terminal.</p>
+<p>You can change the configuration of conda inside <code class="docutils literal notranslate"><span class="pre">.condarc</span></code> manually or directly though the shell by using the following commands. In this case, we specify the <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html">channel</a> used by conda/mamba to download the libraries.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --add channels conda-forge
+conda config --set channel_priority strict
+</pre></div>
+</div>
+<p>Once you have installed conda, you can use it to install <a class="reference external" href="https://mamba.readthedocs.io/en/latest/installation.html">mamba</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install --yes mamba
+</pre></div>
+</div>
+<p>If this doesn’t work, you can also try <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">mamba</span> <span class="pre">-n</span> <span class="pre">base</span> <span class="pre">-c</span> <span class="pre">conda-forge</span></code>.</p>
+</div>
+<div class="section" id="part-2-setting-the-hub-environment-in-local">
+<h2>Part 2: Setting the Hub environment in local<a class="headerlink" href="#part-2-setting-the-hub-environment-in-local" title="Permalink to this headline">¶</a></h2>
+<p>Once you had installed miniconda, you can create virtual environments from a <code class="docutils literal notranslate"><span class="pre">yml</span></code> file just as we did in the Hub. As a first step, we are going to create a virtual environment with the same configuration we have in the Hub. The configuration file <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> for the Hub is available at the <a class="reference external" href="https://github.com/UCB-stat-159-s22/site">site repository for the course</a>. Before using <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> to create a new environment, take a look to the text file and try to identify parts of the file that are not necessary or irrelevant to create the Hub environment; you will have to remove the last lines of the file that include the pip instructions for the requirements of the JupyterBook we use for the website, which are not necessary for the creation of the virtual environment.</p>
+<p>Then, you can create a the virtual environment with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environmnent</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+<p>You can always use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">&lt;yml</span> <span class="pre">file&gt;</span></code>, but mamba is much faster than conda. It will take a few minutes until all the dependencies get installed in your machine.</p>
+<p>Now you can activate the environment from the terminal using <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">&lt;environment</span> <span class="pre">name&gt;</span></code>. From there, you can lunch the classical notebook by tipping <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> but you also have installed the JupyterLab, which you can lunch with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>.</p>
+<p>In order to reproduce the same environment we have in the Hub, we are going to install JupyterLab in our base environment and then create a Python kernel with the environment of the Hub. In your base environment (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">base</span></code>), be sure to have installed both <code class="docutils literal notranslate"><span class="pre">JupyterLab</span></code> and <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code>. If not, you can install then using conda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">jupyterlab</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">ipykernel</span>
+</pre></div>
+</div>
+<p>From here, the story is pretty much the same of what we did in the Hub to create a kernel with a new virtual environment (see <a class="reference external" href="https://ucb-stat-159-s22.github.io/site/lectures/environments/conda-envs.html#using-an-environment-in-your-notebooks">Using an environmnet in your notebooks</a>). Moving back to  the new environment we just created (<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">&lt;environment</span> <span class="pre">name&gt;</span></code>) we run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span> <span class="o">&lt;</span><span class="n">environment</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">display</span><span class="o">-</span><span class="n">name</span> <span class="s2">&quot;IPython - STAT 159&quot;</span>
+
+</pre></div>
+</div>
+<p>Now, if we comeback to <code class="docutils literal notranslate"><span class="pre">base</span></code> and lunch Jupyter Lab with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>, we should see the option creating a new notebook with the <code class="docutils literal notranslate"><span class="pre">IPython</span> <span class="pre">-</span> <span class="pre">STAT</span> <span class="pre">159</span></code> kernel.</p>
+</div>
+<div class="section" id="part-3-reproducibility-check">
+<h2>Part 3: Reproducibility check<a class="headerlink" href="#part-3-reproducibility-check" title="Permalink to this headline">¶</a></h2>
+<p>For Homework No4 you created a virtual environment with the desired installation for reproducing one of the papers. Clone the repository for the homework in you local machine and use the <code class="docutils literal notranslate"><span class="pre">yml</span></code> file in the GitHub repository to create a virtual environment in your local machine from which you are able to run the same code you ran in the Hub.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t have git installed on your machine, you can get it via conda/mamba too!</p>
+</div>
+</div>
+<div class="section" id="additional-comments">
+<h2>Additional Comments<a class="headerlink" href="#additional-comments" title="Permalink to this headline">¶</a></h2>
+<p>If you had made it to this point, you can continue the configuration of your local machine so it also includes some of the other tools we were using in the Hub.</p>
+<ol class="simple">
+<li><p><strong>Dotfiles</strong>: You can clone the bare repository you used to configure your bash, git and more setups in the hub. Remember to clone the repository you had forked in your personal GH account.</p></li>
+<li><p><strong>Midnight Commander</strong>: You can install the midnight commander on your local computer using <a class="reference external" href="https://brew.sh">brew</a>, an installation tool for Mac computers.</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lab/lab07"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../lab06/lab06.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab Session 6: Automation and Make</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
