@@ -20,7 +20,8 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 7. March 2. Merge conflicts with nbdime ([sample repo](https://github.com/UCB-stat-159-s22/nbconflicts-demo)). Custom display logic in Jupyter. (_Note:_ this lecture has damaged audio for the last ~ 45 minutes).
 8. March 9. [Automation and Make](https://swcarpentry.github.io/make-novice), based on the Carpentries' tutorial.
 9. March 16. [Python Testing and Continuous Integration](https://carpentries-incubator.github.io/python-testing), based on the Carpentries' tutorial.
-10. March 30. [Environments and Makefiles](lectures/environments/conda-envs), [binder](https://docs.google.com/presentation/d/14pJmHMbYpF7VFCOi-eh64DZgEbTXXwWcBnPtvW8hhso), packaging Python software.
+10. March 30. [Environments and Makefiles](lectures/environments/conda-envs), [binder](https://docs.google.com/presentation/d/14pJmHMbYpF7VFCOi-eh64DZgEbTXXwWcBnPtvW8hhso).
+11. April 6. Packaging Python software (illustrated via a [toy example](https://github.com/fperez/mytoy)). A [conceptual overview of matplotlib](lectures/matplotlib_beyond_basics), including an quick intro to Object Oriented Programming.
 
 
 ## Live links for labs on the Berkeley DataHub
