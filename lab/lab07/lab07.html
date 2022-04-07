@@ -374,11 +374,13 @@
 <p>Instead of installing conda with the full package management system and many Python libraries, we are going to install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>, a minimalist version of conda that included the package management tool and a small number of useful packages. If you already have conda installed in your machine, you may don’t need to do this. An easy way to check if conda is installed in your computes is by enter <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">--help</span></code> in the terminal. You are also welcome of installing conda from zero by removing all conda directories and installing miniconda.</p>
 <p>You can install the last version of miniconda depending on you operating system from the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda website</a>. For unix machines, a more simple way of doing this is by using the <code class="docutils literal notranslate"><span class="pre">wget</span></code> command followed by the installer link (<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/macos.html#install-macos-silent">silent installation mode</a>). For example, for a MacOSX machine (without M1 chip) you can use</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+mkdir -p <span class="nv">$HOME</span>/local/conda
 bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/local/conda
 </pre></div>
 </div>
 <p>and for a Linux machine</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+mkdir -p <span class="nv">$HOME</span>/local/conda
 bash ~/miniconda.sh -b -p <span class="nv">$HOME</span>/local/conda
 </pre></div>
 </div>
