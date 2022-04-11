@@ -20,7 +20,8 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 7. March 2. Merge conflicts with nbdime ([sample repo](https://github.com/UCB-stat-159-s22/nbconflicts-demo)). Custom display logic in Jupyter. (_Note:_ this lecture has damaged audio for the last ~ 45 minutes).
 8. March 9. [Automation and Make](https://swcarpentry.github.io/make-novice), based on the Carpentries' tutorial.
 9. March 16. [Python Testing and Continuous Integration](https://carpentries-incubator.github.io/python-testing), based on the Carpentries' tutorial.
-10. March 30. [Environments and Makefiles](lectures/environments/conda-envs), [binder](https://docs.google.com/presentation/d/14pJmHMbYpF7VFCOi-eh64DZgEbTXXwWcBnPtvW8hhso), packaging Python software.
+10. March 30. [Environments and Makefiles](lectures/environments/conda-envs), [binder](https://docs.google.com/presentation/d/14pJmHMbYpF7VFCOi-eh64DZgEbTXXwWcBnPtvW8hhso).
+11. April 6. Packaging Python software (illustrated via a [toy example](https://github.com/fperez/mytoy)). A [conceptual overview of matplotlib](lectures/matplotlib_beyond_basics), including an quick intro to Object Oriented Programming.
 
 
 ## Live links for labs on the Berkeley DataHub
@@ -31,12 +32,15 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 
 * [Lab 03](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab03%2Flab03.ipynb&branch=main).
 
-* [Lab 04](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab04%2Flab04.ipynb&branch=main)
+* [Lab 04](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab04%2Flab04.ipynb&branch=main).
 
-* [Lab 05](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab05%2Flab05.ipynb&branch=main)
+* [Lab 05](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab05%2Flab05.ipynb&branch=main).
 
-* [Lab 06](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab06%2Flab06.ipynb&branch=main)
+* [Lab 06](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab06%2Flab06.ipynb&branch=main). 
 
+* [Lab 07](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab07%2Flab07.ipynb&branch=main).
+
+* [Lab 08](https://stat159.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUCB-stat-159-s22%2Fsite&urlpath=lab%2Ftree%2Fsite%2Flab%2Flab08%2Flab08.ipynb&branch=main).
 
 
 ## Assigned Readings
