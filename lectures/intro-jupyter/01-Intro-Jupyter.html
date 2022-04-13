@@ -53,6 +53,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IPython: beyond plain Python" href="02-Beyond-Plain-Python.html" />
+    <link rel="prev" title="An overview of Jupyter tools" href="Index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -125,7 +127,7 @@
   Lectures
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro-git/Git-Tutorial.html">
    An interactive Git Tutorial: the tool you didn’t know you needed
@@ -141,9 +143,39 @@
    An overview of Jupyter tools
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   A quick, practical intro to the Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-Beyond-Plain-Python.html">
+   IPython: beyond plain Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03-Custom-Display-Logic.html">
+   Custom Display Logic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04-Rich-Output.html">
+   Rich Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05-widgets-interact.html">
+   Widgets without writing widgets: interact
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../West_Coast_HeatWave_Basic.html">
-   Satellite sea surface temperatures along the West Coast of the United States
+   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../climate-data.html">
+   Climate, oceans and data
   </a>
  </li>
  <li class="toctree-l1">
@@ -589,9 +621,9 @@
 <h2>Modality<a class="headerlink" href="#modality" title="Permalink to this headline">¶</a></h2>
 <p>The notebook user interface is <em>modal</em>. This means that the keyboard behaves differently depending upon the current mode of the notebook. A notebook has two modes: <strong>edit</strong> and <strong>command</strong>.</p>
 <p><strong>Edit mode</strong> is indicated by a blue cell border and a prompt showing in the editor area. When a cell is in edit mode, you can type into the cell, like a normal text editor.</p>
-<img src="images/edit_mode.png">
+<img alt="../../_images/edit_mode.png" src="../../_images/edit_mode.png" />
 <p><strong>Command mode</strong> is indicated by a grey cell background. When in command mode, the structure of the notebook can be modified as a whole, but the text in individual cells cannot be changed. Most importantly, the keyboard is mapped to a set of shortcuts for efficiently performing notebook and cell actions. For example, pressing <strong><code class="docutils literal notranslate"><span class="pre">c</span></code></strong> when in command mode, will copy the current cell; no modifier is needed.</p>
-<img src="images/command_mode.png">
+<img alt="../../_images/command_mode.png" src="../../_images/command_mode.png" />
 <p>Enter edit mode by pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or using the mouse to click on a cell’s editor area.</p>
 <p>Enter command mode by pressing <code class="docutils literal notranslate"><span class="pre">Esc</span></code> or using the mouse to click <em>outside</em> a cell’s editor area.</p>
 <p>Do not attempt to type into a cell when in command mode; unexpected things will happen!</p>
@@ -959,11 +991,10 @@ console.log("Hello World")
 </pre></div>
 </div>
 <p>For example, in the images folder, we have the Python logo:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;img src=&quot;images/python-logo.svg&quot; /&gt;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;img src=&quot;images/python_logo.svg&quot; /&gt;
 </pre></div>
 </div>
-<img src="images/python-logo.svg" />
-<p>and a video with the HTML5 video tag:</p>
+<img alt="../../_images/python_logo.svg" src="../../_images/python_logo.svg" /><p>and a video with the HTML5 video tag:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;video controls src=&quot;images/animation.m4v&quot; /&gt;
 </pre></div>
 </div>
@@ -1005,11 +1036,12 @@ e^x=\sum_{i=0}^\infty \frac{1}{i!}x^i
 </pre></div>
 </div>
 <p>to produce the Lorenz equations:</p>
-<p>\begin{align}
-\dot{x} &amp; = \sigma(y-x) \
-\dot{y} &amp; = \rho x - y - xz \
+<div class="amsmath math notranslate nohighlight" id="equation-8e1bbf6e-bf57-45fa-8247-bf4a782cb214">
+<span class="eqno">(1)<a class="headerlink" href="#equation-8e1bbf6e-bf57-45fa-8247-bf4a782cb214" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\dot{x} &amp; = \sigma(y-x) \\
+\dot{y} &amp; = \rho x - y - xz \\
 \dot{z} &amp; = -\beta z + xy
-\end{align}</p>
+\end{align}\]</div>
 <p>Please refer to the MathJax documentation for a comprehensive description of which parts of LaTeX are supported, but note that Jupyter’s support for LaTeX is <strong>limited to mathematics</strong>. You can <strong>not</strong> use LaTeX typesetting constrcuts for text or document structure, for text formatting you should restrict yourself to Markdown syntax.</p>
 </div>
 
@@ -1037,7 +1069,21 @@ e^x=\sum_{i=0}^\infty \frac{1}{i!}x^i
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">An overview of Jupyter tools</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02-Beyond-Plain-Python.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">IPython: beyond plain Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
@@ -1045,7 +1091,7 @@ e^x=\sum_{i=0}^\infty \frac{1}{i!}x^i
     <footer class="footer">
   <p>
     
-      By Fernando Pérez<br/>
+      By Fernando Pérez and Facundo Sapienza<br/>
     
         &copy; Copyright 2022.<br/>
   </p>

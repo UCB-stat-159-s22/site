@@ -142,8 +142,38 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/01-Intro-Jupyter.html">
+   A quick, practical intro to the Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/02-Beyond-Plain-Python.html">
+   IPython: beyond plain Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/03-Custom-Display-Logic.html">
+   Custom Display Logic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/04-Rich-Output.html">
+   Rich Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/05-widgets-interact.html">
+   Widgets without writing widgets: interact
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../lectures/West_Coast_HeatWave_Basic.html">
-   Satellite sea surface temperatures along the West Coast of the United States
+   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/climate-data.html">
+   Climate, oceans and data
   </a>
  </li>
  <li class="toctree-l1">
@@ -782,7 +812,8 @@
 <h3>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h3>
 <p>Let’s look at the snow across the globe in February and August, which are roughly the peaks of the summer/winter seasons.</p>
 <p>Recreate the following figure, along with a corresponding one for August 1980:</p>
-<img src="snow-distribution-1980-02.png" width="500px" /><div class="cell tag_otter_assign_solution_cell docutils container">
+<a class="reference internal image-reference" href="../../_images/snow-distribution-1980-02.png"><img alt="../../_images/snow-distribution-1980-02.png" src="../../_images/snow-distribution-1980-02.png" style="width: 500px;" /></a>
+<div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BEGIN SOLUTION</span>
 <span class="n">snow</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;1980-02&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
@@ -830,7 +861,8 @@
 <div class="section" id="question-5">
 <h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h3>
 <p>Let’s look for example at what the cycle in the northern hemisphere looks like for the year 1979. You need to replicate this figure:</p>
-<img src="snow-cycle-1979.png" width="500px" /><div class="cell tag_otter_assign_solution_cell docutils container">
+<a class="reference internal image-reference" href="../../_images/snow-cycle-1979.png"><img alt="../../_images/snow-cycle-1979.png" src="../../_images/snow-cycle-1979.png" style="width: 500px;" /></a>
+<div class="cell tag_otter_assign_solution_cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BEGIN SOLUTION</span>
 <span class="n">t_snow_north</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">t_snow_north</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">==</span><span class="mi">1979</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
@@ -847,7 +879,7 @@
 <h3>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">¶</a></h3>
 <p>And finally, we’re going to find the peaks for the maximum and minimum snow accumulation in both hemispheres, and study when those peaks happen, how much snow there is, and whether the amounto of total snow is going up or down.</p>
 <p>You’ll need to recreate a dataframe like the one pictured here (only a few rows shown, and this is for the northern hemisphere, you’ll make one for each hemisphere):</p>
-<img src="snow-peaks-north-df.png" width="900px" />
+<a class="reference internal image-reference" href="../../_images/snow-peaks-north-df.png"><img alt="../../_images/snow-peaks-north-df.png" src="../../_images/snow-peaks-north-df.png" style="width: 900px;" /></a>
 <p><strong>Hint:</strong> look up the documentation for the xarray <code class="docutils literal notranslate"><span class="pre">idxmax</span></code> method.</p>
 <p><strong>Hint:</strong></p>
 <ol class="simple">
@@ -998,7 +1030,7 @@
     <footer class="footer">
   <p>
     
-      By Fernando Pérez<br/>
+      By Fernando Pérez and Facundo Sapienza<br/>
     
         &copy; Copyright 2022.<br/>
   </p>

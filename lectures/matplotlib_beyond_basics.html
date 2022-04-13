@@ -142,8 +142,38 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/01-Intro-Jupyter.html">
+   A quick, practical intro to the Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/02-Beyond-Plain-Python.html">
+   IPython: beyond plain Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/03-Custom-Display-Logic.html">
+   Custom Display Logic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/04-Rich-Output.html">
+   Rich Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/05-widgets-interact.html">
+   Widgets without writing widgets: interact
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="West_Coast_HeatWave_Basic.html">
-   Satellite sea surface temperatures along the West Coast of the United States
+   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="climate-data.html">
+   Climate, oceans and data
   </a>
  </li>
  <li class="toctree-l1">
@@ -609,6 +639,7 @@ common case.</p></li>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Harmonic&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -634,6 +665,20 @@ common case.</p></li>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>  <span class="c1"># we manually make a figure and axis</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/matplotlib_beyond_basics_5_1.png" src="../_images/matplotlib_beyond_basics_5_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>  <span class="c1"># we manually make a figure and axis</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>  <span class="c1"># it&#39;s the axis who plots</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Harmonic&#39;</span><span class="p">)</span>  <span class="c1"># we set the title on the axis</span>
@@ -653,8 +698,8 @@ common case.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_beyond_basics_5_0.png" src="../_images/matplotlib_beyond_basics_5_0.png" />
-<img alt="../_images/matplotlib_beyond_basics_5_1.png" src="../_images/matplotlib_beyond_basics_5_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_6_0.png" src="../_images/matplotlib_beyond_basics_6_0.png" />
+<img alt="../_images/matplotlib_beyond_basics_6_1.png" src="../_images/matplotlib_beyond_basics_6_1.png" />
 </div>
 </div>
 <p>It’s important to understand the existence of these objects, even if you use mostly the top-level pyplot calls most of the time. Many things can be accomplished in MPL with mostly pyplot and a little bit of tweaking of the underlying objects. We’ll revisit the object-oriented API later.</p>
@@ -689,16 +734,17 @@ ax = f.add_subplot(111)
 <span class="c1"># Two subplots, unpack the output array immediately</span>
 <span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;first axis&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;2nd axis&#39;</span><span class="p">)</span>
 <span class="c1"># Put a figure-level title</span>
 <span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Two plots&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_beyond_basics_8_0.png" src="../_images/matplotlib_beyond_basics_8_0.png" />
-<img alt="../_images/matplotlib_beyond_basics_8_1.png" src="../_images/matplotlib_beyond_basics_8_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_9_0.png" src="../_images/matplotlib_beyond_basics_9_0.png" />
+<img alt="../_images/matplotlib_beyond_basics_9_1.png" src="../_images/matplotlib_beyond_basics_9_1.png" />
 </div>
 </div>
 <p>And finally, an arbitrarily complex grid can be made with <code class="docutils literal notranslate"><span class="pre">subplot2grid</span></code>:</p>
@@ -722,7 +768,7 @@ ax = f.add_subplot(111)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_beyond_basics_10_0.png" src="../_images/matplotlib_beyond_basics_10_0.png" />
+<img alt="../_images/matplotlib_beyond_basics_11_0.png" src="../_images/matplotlib_beyond_basics_11_0.png" />
 </div>
 </div>
 </div>
@@ -732,15 +778,25 @@ ax = f.add_subplot(111)
 the call:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">figure</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/matplotlib_beyond_basics_13_0.png" src="../_images/matplotlib_beyond_basics_13_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff1408e3d90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f92321d29d0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_12_1.png" src="../_images/matplotlib_beyond_basics_12_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_14_1.png" src="../_images/matplotlib_beyond_basics_14_1.png" />
 </div>
 </div>
 <p>But for finer control you can get a hold of the returned line object (more on
@@ -801,7 +857,7 @@ to get the visual results you need.</p>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
 
 <span class="c1"># We will set the width and color of all lines in the figure at once:</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -809,7 +865,7 @@ to get the visual results you need.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[None, None, None, None]
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_14_1.png" src="../_images/matplotlib_beyond_basics_14_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_16_1.png" src="../_images/matplotlib_beyond_basics_16_1.png" />
 </div>
 </div>
 <p>Finally, if you know what properties you want to set on a specific object, a
@@ -825,7 +881,7 @@ plain <code class="docutils literal notranslate"><span class="pre">set</span></c
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[None, None, None]
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_16_1.png" src="../_images/matplotlib_beyond_basics_16_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_18_1.png" src="../_images/matplotlib_beyond_basics_18_1.png" />
 </div>
 </div>
 </div>
@@ -841,10 +897,10 @@ plain <code class="docutils literal notranslate"><span class="pre">set</span></c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff140c32160&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9232174dc0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_18_1.png" src="../_images/matplotlib_beyond_basics_18_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_20_1.png" src="../_images/matplotlib_beyond_basics_20_1.png" />
 </div>
 </div>
 <p>The return value of the plot call is a list of lines, which can be manipulated
@@ -858,7 +914,7 @@ use a one-element tuple):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_beyond_basics_20_0.png" src="../_images/matplotlib_beyond_basics_20_0.png" />
+<img alt="../_images/matplotlib_beyond_basics_22_0.png" src="../_images/matplotlib_beyond_basics_22_0.png" />
 </div>
 </div>
 <p>One line property that is particularly useful to be aware of is <code class="docutils literal notranslate"><span class="pre">set_data</span></code>:</p>
@@ -892,7 +948,7 @@ use a one-element tuple):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_beyond_basics_22_0.png" src="../_images/matplotlib_beyond_basics_22_0.png" />
+<img alt="../_images/matplotlib_beyond_basics_24_0.png" src="../_images/matplotlib_beyond_basics_24_0.png" />
 </div>
 </div>
 </div>
@@ -971,7 +1027,7 @@ and return collections of one or more geometric objects (lines, patches, etc).</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;p(x)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_26_1.png" src="../_images/matplotlib_beyond_basics_26_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_28_1.png" src="../_images/matplotlib_beyond_basics_28_1.png" />
 </div>
 </div>
 <p>The <a class="reference external" href="https://matplotlib.org/stable/gallery/showcase/anatomy.html">anatomy of a figure</a> documentation provides a more in-depth look at these ideas:</p>
@@ -1003,7 +1059,7 @@ and return collections of one or more geometric objects (lines, patches, etc).</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Simplest errorbars, 0.2 in x, 0.4 in y&#39;)
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_29_1.png" src="../_images/matplotlib_beyond_basics_29_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_31_1.png" src="../_images/matplotlib_beyond_basics_31_1.png" />
 </div>
 </div>
 <p>Now a more elaborate one, using the OO interface to exercise more features.</p>
@@ -1049,7 +1105,7 @@ and return collections of one or more geometric objects (lines, patches, etc).</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_beyond_basics_31_0.png" src="../_images/matplotlib_beyond_basics_31_0.png" />
+<img alt="../_images/matplotlib_beyond_basics_33_0.png" src="../_images/matplotlib_beyond_basics_33_0.png" />
 </div>
 </div>
 </div>
@@ -1071,7 +1127,7 @@ and return collections of one or more geometric objects (lines, patches, etc).</
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff140aeacd0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_33_1.png" src="../_images/matplotlib_beyond_basics_33_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_35_1.png" src="../_images/matplotlib_beyond_basics_35_1.png" />
 </div>
 </div>
 <p>A more elaborate log plot using ‘symlog’, that treats a specified range as
@@ -1111,7 +1167,7 @@ linear (thus handling values near zero) and symmetrizes negative values:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;symlog both&#39;)
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_35_1.png" src="../_images/matplotlib_beyond_basics_35_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_37_1.png" src="../_images/matplotlib_beyond_basics_37_1.png" />
 </div>
 </div>
 </div>
@@ -1151,7 +1207,7 @@ linear (thus handling values near zero) and symmetrizes negative values:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ff1403f4c10&gt;
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_37_1.png" src="../_images/matplotlib_beyond_basics_37_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_39_1.png" src="../_images/matplotlib_beyond_basics_39_1.png" />
 </div>
 </div>
 </div>
@@ -1177,7 +1233,7 @@ linear (thus handling values near zero) and symmetrizes negative values:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7ff14032e640&gt;
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_39_1.png" src="../_images/matplotlib_beyond_basics_39_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_41_1.png" src="../_images/matplotlib_beyond_basics_41_1.png" />
 </div>
 </div>
 </div>
@@ -1227,7 +1283,7 @@ HILE    27.0482 87.3242 2.0880
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_beyond_basics_42_0.png" src="../_images/matplotlib_beyond_basics_42_0.png" />
+<img alt="../_images/matplotlib_beyond_basics_44_0.png" src="../_images/matplotlib_beyond_basics_44_0.png" />
 </div>
 </div>
 </div>
@@ -1285,7 +1341,7 @@ they are enclosed in <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_beyond_basics_44_0.png" src="../_images/matplotlib_beyond_basics_44_0.png" />
+<img alt="../_images/matplotlib_beyond_basics_46_0.png" src="../_images/matplotlib_beyond_basics_46_0.png" />
 </div>
 </div>
 </div>
@@ -1304,7 +1360,7 @@ array of random numbers, plotted in grayscale:</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff1403f48b0&gt;
 </pre></div>
 </div>
-<img alt="../_images/matplotlib_beyond_basics_46_1.png" src="../_images/matplotlib_beyond_basics_46_1.png" />
+<img alt="../_images/matplotlib_beyond_basics_48_1.png" src="../_images/matplotlib_beyond_basics_48_1.png" />
 </div>
 </div>
 <p>A real photograph is a multichannel image, <code class="docutils literal notranslate"><span class="pre">imshow</span></code> interprets it correctly:</p>
@@ -1316,7 +1372,7 @@ array of random numbers, plotted in grayscale:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/matplotlib_beyond_basics_48_0.png" src="../_images/matplotlib_beyond_basics_48_0.png" />
+<img alt="../_images/matplotlib_beyond_basics_50_0.png" src="../_images/matplotlib_beyond_basics_50_0.png" />
 </div>
 </div>
 <div class="section" id="id1">
@@ -1378,7 +1434,7 @@ array of random numbers, plotted in grayscale:</p>
     <footer class="footer">
   <p>
     
-      By Fernando Pérez<br/>
+      By Fernando Pérez and Facundo Sapienza<br/>
     
         &copy; Copyright 2022.<br/>
   </p>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Satellite sea surface temperatures along the West Coast of the United States &#8212; Collaborative and Reproducible Data Science</title>
+    <title>Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave &#8212; Collaborative and Reproducible Data Science</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="A quick guide to conda environments on our JupyterHub" href="environments/conda-envs.html" />
-    <link rel="prev" title="An overview of Jupyter tools" href="intro-jupyter/Index.html" />
+    <link rel="next" title="Climate, oceans and data" href="climate-data.html" />
+    <link rel="prev" title="Widgets without writing widgets: interact" href="intro-jupyter/05-widgets-interact.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -141,9 +141,39 @@
    An overview of Jupyter tools
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/01-Intro-Jupyter.html">
+   A quick, practical intro to the Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/02-Beyond-Plain-Python.html">
+   IPython: beyond plain Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/03-Custom-Display-Logic.html">
+   Custom Display Logic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/04-Rich-Output.html">
+   Rich Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/05-widgets-interact.html">
+   Widgets without writing widgets: interact
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Satellite sea surface temperatures along the West Coast of the United States
+   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="climate-data.html">
+   Climate, oceans and data
   </a>
  </li>
  <li class="toctree-l1">
@@ -293,12 +323,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Satellite sea surface temperatures along the West Coast of the United States
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#during-the-20142016-northeast-pacific-marine-heat-wave">
-   during the 2014–2016 northeast Pacific marine heat wave
+   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -346,8 +371,8 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#caluculate-the-monthly-sea-surface-temperature-anomalies">
-   Caluculate the Monthly Sea Surface Temperature Anomalies
+  <a class="reference internal nav-link" href="#calculate-the-monthly-sea-surface-temperature-anomalies">
+   Calculate the Monthly Sea Surface Temperature Anomalies
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -377,7 +402,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Satellite sea surface temperatures along the West Coast of the United States</h1>
+                <h1>Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -389,12 +414,7 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Satellite sea surface temperatures along the West Coast of the United States
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#during-the-20142016-northeast-pacific-marine-heat-wave">
-   during the 2014–2016 northeast Pacific marine heat wave
+   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -442,8 +462,8 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#caluculate-the-monthly-sea-surface-temperature-anomalies">
-   Caluculate the Monthly Sea Surface Temperature Anomalies
+  <a class="reference internal nav-link" href="#calculate-the-monthly-sea-surface-temperature-anomalies">
+   Calculate the Monthly Sea Surface Temperature Anomalies
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -472,11 +492,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="satellite-sea-surface-temperatures-along-the-west-coast-of-the-united-states">
-<h1>Satellite sea surface temperatures along the West Coast of the United States<a class="headerlink" href="#satellite-sea-surface-temperatures-along-the-west-coast-of-the-united-states" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="during-the-20142016-northeast-pacific-marine-heat-wave">
-<h1>during the 2014–2016 northeast Pacific marine heat wave<a class="headerlink" href="#during-the-20142016-northeast-pacific-marine-heat-wave" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="satellite-sea-surface-temperatures-along-the-west-coast-of-the-united-states-during-the-20142016-northeast-pacific-marine-heat-wave">
+<h1>Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave<a class="headerlink" href="#satellite-sea-surface-temperatures-along-the-west-coast-of-the-united-states-during-the-20142016-northeast-pacific-marine-heat-wave" title="Permalink to this headline">¶</a></h1>
 <p>In 2016 we published a <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016GL071039">paper</a> on the heat wave in the ocean off the California coast</p>
 <p>This analysis was the last time I used Matlab to process scientific data. To make Figure 1, here are the following steps:</p>
 <ul class="simple">
@@ -631,8 +648,8 @@ There are two version of this data:\</p>
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="caluculate-the-monthly-sea-surface-temperature-anomalies">
-<h1>Caluculate the Monthly Sea Surface Temperature Anomalies<a class="headerlink" href="#caluculate-the-monthly-sea-surface-temperature-anomalies" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="calculate-the-monthly-sea-surface-temperature-anomalies">
+<h1>Calculate the Monthly Sea Surface Temperature Anomalies<a class="headerlink" href="#calculate-the-monthly-sea-surface-temperature-anomalies" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>use <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.Dataset.resample.html">.resample</a> to calculate monthly average (downsample)</p></li>
 <li><p>use <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.groupby.html">.groupby</a> to calculate climatology</p></li>
@@ -770,17 +787,17 @@ There are two version of this data:\</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro-jupyter/Index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="intro-jupyter/05-widgets-interact.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">An overview of Jupyter tools</p>
+            <p class="prev-next-title">Widgets without writing widgets: interact</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="environments/conda-envs.html" title="next page">
+    <a class='right-next' id="next-link" href="climate-data.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">A quick guide to conda environments on our JupyterHub</p>
+        <p class="prev-next-title">Climate, oceans and data</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -791,7 +808,7 @@ There are two version of this data:\</p>
     <footer class="footer">
   <p>
     
-      By Fernando Pérez<br/>
+      By Fernando Pérez and Facundo Sapienza<br/>
     
         &copy; Copyright 2022.<br/>
   </p>

@@ -46,7 +46,7 @@ _Note:_ This course is inspired by, and based on, previous editions taught by my
 
 ## Textbook
 
-While not strictly a textbook for this course, we will rely heavily on the excellent, openly licensed: [Research software engineering in Python](https://merely-useful.tech/py-rse). More resources are listed in the [course overview page](overview.html).
+While not strictly a textbook for this course, we will rely heavily on the excellent, openly licensed: [Research software engineering in Python](https://merely-useful.tech/py-rse). More resources are listed in the [course overview page](overview).
 
 ## Administrativia
 
