@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : Collaborative and Reproducible Data Science  # The title of the book. Will be placed in the left navbar.
-author                      : Fernando Pérez  # The author of the book
+author                      : Fernando Pérez and Facundo Sapienza # The author of the book
 copyright                   : "2022"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
 
@@ -17,28 +17,21 @@ execute:
 # after we upgrade to j-book newer than 0.9.1 and its dependencies.  For now
 # this gives us the equivalent of html_images fixes, but without version
 # conflicts that currently arise from trying to use it.
-parse:
-  myst_extended_syntax: true
+#parse:
+#  myst_extended_syntax: true
 
 # Sphinx section commented out for now as per above todo, will activate it
 # later. 
 
-# sphinx:
-#   config:
-#     bibtex_bibfiles: 
-#       - references.bib
-#     myst_enable_extensions: 
-#     - amsmath
-#     - dollarmath
-#     - html_image
-#     - html_admonition
+bibtex_bibfiles: 
+  - references.bib
 
-
-# sphinx:
-#   config:
-#     bibtex_bibfiles: 
-#       - references.bib
-#     myst_enable_extensions: 
-#     - amsmath
-#     - dollarmath
-#     - html_image
+sphinx:
+  config:
+    exclude_patterns:
+      - README.md
+    myst_enable_extensions: 
+    - amsmath
+    - dollarmath
+    - html_image
+    - html_admonition
