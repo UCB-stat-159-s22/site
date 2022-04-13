@@ -21,6 +21,7 @@ parts:
   - file: lectures/climate-data
   - file: lectures/environments/conda-envs
   - file: lectures/matplotlib_beyond_basics
+  - file: lectures/documentation
 - caption: Labs
   chapters:
   - file: lab/lab01/lab01.ipynb
