@@ -5,54 +5,54 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>An overview of Jupyter tools &#8212; Collaborative and Reproducible Data Science</title>
+    <title>Documentation, JupyterBook and Github Pages &#8212; Collaborative and Reproducible Data Science</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="A quick, practical intro to the Jupyter Notebook" href="01-Intro-Jupyter.html" />
-    <link rel="prev" title="Git Visuals" href="../intro-git/git-visuals.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab Session 1 - Introduction to Python" href="../lab/lab01/lab01.html" />
+    <link rel="prev" title="Matplotlib: Beyond the basics" href="matplotlib_beyond_basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -72,26 +72,26 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../../_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../overview.html">
+  <a class="reference internal" href="../overview.html">
    Statistics 159/259, Spring 2022 Course Summary
   </a>
  </li>
@@ -103,7 +103,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../schedule.html">
+  <a class="reference internal" href="../schedule.html">
    Statistics 159/259: Weekly Plan
   </a>
  </li>
@@ -115,7 +115,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../syllabus.html">
+  <a class="reference internal" href="../syllabus.html">
    Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
   </a>
  </li>
@@ -127,67 +127,67 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro-git/Git-Tutorial.html">
+  <a class="reference internal" href="intro-git/Git-Tutorial.html">
    An interactive Git Tutorial: the tool you didn’t know you needed
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro-git/git-visuals.html">
+  <a class="reference internal" href="intro-git/git-visuals.html">
    Git Visuals
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro-jupyter/Index.html">
    An overview of Jupyter tools
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="01-Intro-Jupyter.html">
+  <a class="reference internal" href="intro-jupyter/01-Intro-Jupyter.html">
    A quick, practical intro to the Jupyter Notebook
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02-Beyond-Plain-Python.html">
+  <a class="reference internal" href="intro-jupyter/02-Beyond-Plain-Python.html">
    IPython: beyond plain Python
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03-Custom-Display-Logic.html">
+  <a class="reference internal" href="intro-jupyter/03-Custom-Display-Logic.html">
    Custom Display Logic
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04-Rich-Output.html">
+  <a class="reference internal" href="intro-jupyter/04-Rich-Output.html">
    Rich Output
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="05-widgets-interact.html">
+  <a class="reference internal" href="intro-jupyter/05-widgets-interact.html">
    Widgets without writing widgets: interact
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../West_Coast_HeatWave_Basic.html">
+  <a class="reference internal" href="West_Coast_HeatWave_Basic.html">
    Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../climate-data.html">
+  <a class="reference internal" href="climate-data.html">
    Climate, oceans and data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../environments/conda-envs.html">
+  <a class="reference internal" href="environments/conda-envs.html">
    A quick guide to conda environments on our JupyterHub
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../matplotlib_beyond_basics.html">
+  <a class="reference internal" href="matplotlib_beyond_basics.html">
    Matplotlib: Beyond the basics
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../documentation.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Documentation, JupyterBook and Github Pages
   </a>
  </li>
@@ -199,42 +199,42 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab01/lab01.html">
+  <a class="reference internal" href="../lab/lab01/lab01.html">
    Lab Session 1 - Introduction to Python
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab02/lab02.html">
+  <a class="reference internal" href="../lab/lab02/lab02.html">
    Lab Session 2: GitHub &amp; The Shell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab03/lab03.html">
+  <a class="reference internal" href="../lab/lab03/lab03.html">
    Lab Session 3: Solving Conflicts in Git
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab04/lab04.html">
+  <a class="reference internal" href="../lab/lab04/lab04.html">
    Lab Session 4: Version control with Jupytext
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab05/lab05.html">
+  <a class="reference internal" href="../lab/lab05/lab05.html">
    Lab Session 5: Climate data and xarray
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab06/lab06.html">
+  <a class="reference internal" href="../lab/lab06/lab06.html">
    Lab Session 6: Automation and Make
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab07/lab07.html">
+  <a class="reference internal" href="../lab/lab07/lab07.html">
    Lab Session 7: Local Installation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../lab/lab08/lab08.html">
+  <a class="reference internal" href="../lab/lab08/lab08.html">
    Lab Session 8: Matplotlib
   </a>
  </li>
@@ -279,9 +279,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/intro-jupyter/Index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/lectures/documentation.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -299,23 +299,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lectures/intro-jupyter/Index.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -328,7 +311,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>An overview of Jupyter tools</h1>
+                <h1>Documentation, JupyterBook and Github Pages</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -339,15 +322,28 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="an-overview-of-jupyter-tools">
-<h1>An overview of Jupyter tools<a class="headerlink" href="#an-overview-of-jupyter-tools" title="Permalink to this headline">¶</a></h1>
-<ol class="simple">
-<li><p><a class="reference internal" href="01-Intro-Jupyter.html"><span class="doc std std-doc">Intro-Jupyter</span></a></p></li>
-<li><p><a class="reference internal" href="02-Beyond-Plain-Python.html"><span class="doc std std-doc">Beyond-Plain-Python</span></a></p></li>
-<li><p><a class="reference internal" href="03-Custom-Display-Logic.html"><span class="doc std std-doc">Custom display logic</span></a></p></li>
-<li><p><a class="reference internal" href="04-Rich-Output.html"><span class="doc std std-doc">Rich Output</span></a></p></li>
-<li><p><a class="reference internal" href="05-widgets-interact.html"><span class="doc std std-doc">Widgets-interact</span></a></p></li>
-</ol>
+  <div class="tex2jax_ignore mathjax_ignore section" id="documentation-jupyterbook-and-github-pages">
+<h1>Documentation, JupyterBook and Github Pages<a class="headerlink" href="#documentation-jupyterbook-and-github-pages" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>A quick overview of: <a class="reference external" href="https://documentation.divio.com">The Documentation System</a></p></li>
+</ul>
+<p><img alt="" src="../_images/doc-quadrants.png" />
+<img alt="" src="../_images/doc-table.png" /></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.google.com/presentation/d/1D7jZ9mI-VcU9-s9IEEuGCvQH4rm5Bpwc3xek1Mu_Nak/edit#slide=id.g1057b8b45eb_0_2">JupyterBook 101</a></p></li>
+<li><p>Getting this to work on the hub?</p></li>
+</ul>
+<p>We need to run sphinx manually. These are the key commands for your reference:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book config sphinx .
+sphinx-build  . _build/html -D <span class="nv">html_baseurl</span><span class="o">=</span><span class="si">${</span><span class="nv">JUPYTERHUB_SERVICE_PREFIX</span><span class="si">}</span>/proxy/absolute/8000
+</pre></div>
+</div>
+<p>Then we can view the code with (in another terminal), going to the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder and running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m http.server
+</pre></div>
+</div>
+<p>and then heading to this URL:</p>
+<p><a class="reference external" href="https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html">https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html</a></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -363,7 +359,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./lectures/intro-jupyter"
+            path: "./lectures"
         },
         predefinedOutput: true
     }
@@ -375,17 +371,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../intro-git/git-visuals.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="matplotlib_beyond_basics.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Git Visuals</p>
+            <p class="prev-next-title">Matplotlib: Beyond the basics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01-Intro-Jupyter.html" title="next page">
+    <a class='right-next' id="next-link" href="../lab/lab01/lab01.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">A quick, practical intro to the Jupyter Notebook</p>
+        <p class="prev-next-title">Lab Session 1 - Introduction to Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -407,7 +403,7 @@
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
