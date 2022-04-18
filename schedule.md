@@ -22,6 +22,7 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 9. March 16. [Python Testing and Continuous Integration](https://carpentries-incubator.github.io/python-testing), based on the Carpentries' tutorial.
 10. March 30. [Environments and Makefiles](lectures/environments/conda-envs), [binder](https://docs.google.com/presentation/d/14pJmHMbYpF7VFCOi-eh64DZgEbTXXwWcBnPtvW8hhso).
 11. April 6. Packaging Python software (illustrated via a [toy example](https://github.com/fperez/mytoy)). A [conceptual overview of matplotlib](lectures/matplotlib_beyond_basics), including an quick intro to Object Oriented Programming.
+12. April 13. 
 
 
 ## Live links for labs on the Berkeley DataHub
@@ -57,7 +58,7 @@ When an assignment consists of multiple articles, you should submit a summary pa
 * #3, due Feb 22: Earth and Climate Science in the Cloud
     - [Perspectives on Data Reproducibility and Replicability in Paleoclimate and Climate Science](https://hdsr.mitpress.mit.edu/pub/dijwtzza/release/1).
     - [Gentemann et al. 2021, Science Storms the Cloud](https://www.essoar.org/doi/10.1002/essoar.10506344.2).
-    - Gentemann et al. "[Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave.](https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016GL071039)".  For this paper, start thinking about reproducibility issues with it. The lead author, [Dr. Chelle Gentemann](), will be our guest lecturer on Feb 23, and she will discuss aspects of this work. Later we will follow up with a reproducibility attempt around this paper.
+    - Gentemann et al. "[Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave.](https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016GL071039)".  For this paper, start thinking about reproducibility issues with it. The lead author, [Dr. Chelle Gentemann](https://twitter.com/ChelleGentemann), will be our guest lecturer on Feb 23, and she will discuss aspects of this work. Later we will follow up with a reproducibility attempt around this paper.
 
 * #4, due Feb 28: Core concepts
     - [Barba 2018, Terminologies for Reproducible Research](https://arxiv.org/abs/1802.03311)

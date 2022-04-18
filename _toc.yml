@@ -12,9 +12,16 @@ parts:
   - file: lectures/intro-git/Git-Tutorial
   - file: lectures/intro-git/git-visuals
   - file: lectures/intro-jupyter/Index
+  - file: lectures/intro-jupyter/01-Intro-Jupyter
+  - file: lectures/intro-jupyter/02-Beyond-Plain-Python
+  - file: lectures/intro-jupyter/03-Custom-Display-Logic
+  - file: lectures/intro-jupyter/04-Rich-Output
+  - file: lectures/intro-jupyter/05-widgets-interact
   - file: lectures/West_Coast_HeatWave_Basic
+  - file: lectures/climate-data
   - file: lectures/environments/conda-envs
   - file: lectures/matplotlib_beyond_basics
+  - file: lectures/documentation
 - caption: Labs
   chapters:
   - file: lab/lab01/lab01.ipynb

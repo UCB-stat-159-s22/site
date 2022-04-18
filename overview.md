@@ -4,7 +4,7 @@
 
 This course teaches “the why and how” of reproducible and collaborative research by combining questions of good computational practice in science, open science and statistical data analysis, in the context of today’s research environment. We will interleave practical topics in software engineering and statistical computing with broader discussions on elements of the philosophy of science and the foundations of statistics.
 
-More details can be found [in the syllabus](syllabus.html).
+More details can be found [in the syllabus](syllabus).
 
 ## Key Resources
 
