@@ -32,3 +32,4 @@ parts:
   - file: lab/lab06/lab06.ipynb  
   - file: lab/lab07/lab07.ipynb
   - file: lab/lab08/lab08.ipynb
+  - file: lab/lab09/lab09.ipynb
