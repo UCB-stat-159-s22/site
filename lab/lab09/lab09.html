@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Session 9: Jupyter Book &#8212; Collaborative and Reproducible Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Lab Session 8: Matplotlib" href="../lab08/lab08.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Collaborative and Reproducible Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview.html">
+   Statistics 159/259, Spring 2022 Course Summary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Statistics 159/259: Weekly Plan
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Syllabus
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../syllabus.html">
+   Syllabus for Statistics 159/259: Reproducible and Collaborative Statistical Data Science
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-git/Git-Tutorial.html">
+   An interactive Git Tutorial: the tool you didn’t know you needed
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-git/git-visuals.html">
+   Git Visuals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/Index.html">
+   An overview of Jupyter tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/01-Intro-Jupyter.html">
+   A quick, practical intro to the Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/02-Beyond-Plain-Python.html">
+   IPython: beyond plain Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/03-Custom-Display-Logic.html">
+   Custom Display Logic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/04-Rich-Output.html">
+   Rich Output
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/intro-jupyter/05-widgets-interact.html">
+   Widgets without writing widgets: interact
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/West_Coast_HeatWave_Basic.html">
+   Satellite sea surface temperatures along the West Coast of the United States during the 2014–2016 northeast Pacific marine heat wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/climate-data.html">
+   Climate, oceans and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/environments/conda-envs.html">
+   A quick guide to conda environments on our JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/matplotlib_beyond_basics.html">
+   Matplotlib: Beyond the basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/documentation.html">
+   Documentation, JupyterBook and Github Pages
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab01/lab01.html">
+   Lab Session 1 - Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab02/lab02.html">
+   Lab Session 2: GitHub &amp; The Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab03/lab03.html">
+   Lab Session 3: Solving Conflicts in Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab04/lab04.html">
+   Lab Session 4: Version control with Jupytext
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab05/lab05.html">
+   Lab Session 5: Climate data and xarray
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab06/lab06.html">
+   Lab Session 6: Automation and Make
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab07/lab07.html">
+   Lab Session 7: Local Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab08/lab08.html">
+   Lab Session 8: Matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab Session 9: Jupyter Book
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lab/lab09/lab09.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lab/lab09/lab09.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-create-your-first-book">
+   Part 1: Create your first Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-add-some-extra-features">
+   Part 2: Add some extra features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-publish-your-book-online">
+   Part 3: Publish your book online
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4-keep-your-book-updated-with-gh-actions">
+   Part 4: Keep your book updated with GH actions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lab Session 9: Jupyter Book</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-create-your-first-book">
+   Part 1: Create your first Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-add-some-extra-features">
+   Part 2: Add some extra features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-publish-your-book-online">
+   Part 3: Publish your book online
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4-keep-your-book-updated-with-gh-actions">
+   Part 4: Keep your book updated with GH actions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-session-9-jupyter-book">
+<h1>Lab Session 9: Jupyter Book<a class="headerlink" href="#lab-session-9-jupyter-book" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Statistics 159/259, Spring 2022</strong></p></li>
+<li><p>Prof. F. Pérez and GSI F. Sapienza, Department of Statistics, UC Berkeley.</p></li>
+<li><p>04/18/2022</p></li>
+</ul>
+<p>Today we are going to construct and deploy our first Jupyter Book! This is an incredible tool that allow us to transform contents in our project such as Jupyter notebooks, markdown files and figures into html and pdf files that can be then shared or even hosted on the web. Even if you haven’t use it yet, you had been exposed to Jupyter Book during all the semester: the <a class="reference external" href="https://github.com/UCB-stat-159-s22/site">course website</a> is the Jupyter Book generated from the <a class="reference external" href="https://ucb-stat-159-s22.github.io/site/overview.html">site repository</a>.</p>
+<p>We are going to put in practice the concepts we had covered in <a class="reference external" href="https://docs.google.com/presentation/d/1D7jZ9mI-VcU9-s9IEEuGCvQH4rm5Bpwc3xek1Mu_Nak/edit#slide=id.gdffb14669d_0_176">Jupyter Book 101</a>. A complete documentation of how to <a class="reference external" href="https://jupyterbook.org/start/your-first-book.html">create your first book</a> can be found in the Jupyter Book documentation. We recommend you to use these two to create the books for this lab and use the course website as a guide.</p>
+<p>We recommend you to use Jupyter book both in the Hub and in the local installation you have in your machine. In this last case, check you have installed <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> (either enter <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">jupyter-book</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--help</span></code> from the terminal).</p>
+<div class="section" id="part-1-create-your-first-book">
+<h2>Part 1: Create your first Book<a class="headerlink" href="#part-1-create-your-first-book" title="Permalink to this headline">¶</a></h2>
+<p>We are going to follow step by step the example in <a class="reference external" href="https://jupyterbook.org/start/your-first-book.html">create your first book</a>. For now, we are going to create a book in our machine (Hub or local computer) and then we are going to add these files into a GitHub repository.</p>
+<ol class="simple">
+<li><p>Create a new sample book using the command <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">create</span> <span class="pre">mynewbook/</span></code>.This will create a new template folder with some basic files used to deploy the book. Explore each one of the configuration files, specially <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>. All these are explained in the tutorial.</p></li>
+<li><p>Build your book. Do this both from the Hub and your local machine.</p>
+<ol class="simple">
+<li><p>If you are working in your local machine, you can simply execute <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">mynewbook/</span></code>.</p></li>
+<li><p>If you are working from the Stat159 Hub, you have to run Sphinx manually. <a class="reference external" href="https://ucb-stat-159-s22.github.io/site/lectures/documentation.html">Here</a> are the instructions of how to do this.</p></li>
+</ol>
+</li>
+<li><p>Explore the markdown and Jupyter notebook created in your book. They both explain the different elements you can include in them.</p></li>
+</ol>
+</div>
+<div class="section" id="part-2-add-some-extra-features">
+<h2>Part 2: Add some extra features<a class="headerlink" href="#part-2-add-some-extra-features" title="Permalink to this headline">¶</a></h2>
+<p>Let’s customize our new Jupyter Book a little bit. After each change, remember to re-build your book.</p>
+<ol class="simple">
+<li><p>Add a new image to your book and use it as the logo of the Jupyter book.</p></li>
+<li><p>Add a new reference to <code class="docutils literal notranslate"><span class="pre">references.bib</span></code> and cite such reference in either a markdown or Jupyter notebook in your book. Check that when deployed, the reference appears in the right format in the book. How to add more than one citation at once? You can explore the <a class="reference external" href="https://jupyterbook.org/tutorials/references.html">Get started with references</a>.</p></li>
+<li><p>Create a new Jupyter notebook inside your book and add it to the table of contents so it appears in the book. In such library, import a new library that is not already included in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> and add it to it so the notebook runs when the book is build. What is the difference between this <code class="docutils literal notranslate"><span class="pre">requirement.txt</span></code> and the requirement file usually named <code class="docutils literal notranslate"><span class="pre">environmnet.yml</span></code> we were using before?</p></li>
+</ol>
+</div>
+<div class="section" id="part-3-publish-your-book-online">
+<h2>Part 3: Publish your book online<a class="headerlink" href="#part-3-publish-your-book-online" title="Permalink to this headline">¶</a></h2>
+<p>For this part, use the tutorial <a class="reference external" href="https://jupyterbook.org/start/publish.html">Publish your book online</a>. All the instructions of how to create a new repository in GitHub with the contents of your book are included there plus and explanation about how the hosting of the Jupyter book works. After following these instructions, you should see your book hosted in <code class="docutils literal notranslate"><span class="pre">https://&lt;user&gt;.github.io/&lt;myonlinebook&gt;/</span></code>. Add this link to the description of your GitHub repository.</p>
+</div>
+<div class="section" id="part-4-keep-your-book-updated-with-gh-actions">
+<h2>Part 4: Keep your book updated with GH actions<a class="headerlink" href="#part-4-keep-your-book-updated-with-gh-actions" title="Permalink to this headline">¶</a></h2>
+<p>You can use the previous workflow any time you update the contents of you book or instead you can set a GitHub action that does this for you any time you make a change in the book repository. You can explore different ways of doing this in <a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html?highlight=actions">GitHub Pages and Actions</a>.</p>
+<p>In order to create a new action, go to the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> window in your GitHub repository and do <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">workflow</span> <span class="pre">&gt;</span>&#160; <span class="pre">set</span> <span class="pre">up</span> <span class="pre">a</span> <span class="pre">workflow</span> <span class="pre">yourself</span></code>. Create a new file <code class="docutils literal notranslate"><span class="pre">.github/workflows/book.yml</span></code> with the same contents we have in <code class="docutils literal notranslate"><span class="pre">book.yml</span></code> file in the <a class="reference external" href="https://github.com/UCB-stat-159-s22/site/blob/main/.github/workflows/book.yml">site repository</a>. Notice that in the site we are using <code class="docutils literal notranslate"><span class="pre">book-requirement.txt</span></code> while the default name for the requirement file for Jupyter book is <code class="docutils literal notranslate"><span class="pre">requirement.txt</span></code>. In order to GitHub actions to run without an error, you should standardize the name of the requirement file.</p>
+<p>Now, when you push or make a new commit to the repository your changes should be reflected in the website after the corresponded GitHub action has been completed without errors (you can see this in the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> window in GitHib).</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lab/lab09"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../lab08/lab08.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lab Session 8: Matplotlib</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fernando Pérez and Facundo Sapienza<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
