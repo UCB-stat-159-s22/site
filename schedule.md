@@ -110,6 +110,5 @@ When an assignment consists of multiple articles, you should submit a summary pa
 
 
 * #12, due May 9: Earth and climate science
-    - [Feulner 2016, Science under Societal Scrutiny: Reproducibility in Climate Science](https://onlinelibrary.wiley.com/doi/10.1002/9781118865064.ch12).
-    - [Geyer et al. 2021, Limits of reproducibility and hydrodynamic noise in atmospheric regional modelling](https://www.nature.com/articles/s43247-020-00085-4).
     - [Hoffimann et al. 2021, Geostatistical Learning: Challenges and Opportunities](https://arxiv.org/abs/2102.08791)
+    - [Geyer et al. 2021, Limits of reproducibility and hydrodynamic noise in atmospheric regional modelling](https://www.nature.com/articles/s43247-020-00085-4).
