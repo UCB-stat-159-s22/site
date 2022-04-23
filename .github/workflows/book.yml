@@ -19,9 +19,16 @@ jobs:
       with:
         python-version: 3.9
 
-    - name: Install dependencies
+    - name: Install jupyter book dependencies
       run: |
         pip install -r book-requirements.txt
+    - name: Install notebook dependencies
+      run : |
+        conda env create -f environment.yml
+        conda activate ligo
+        pip install .
+        python -m ipykernel install --user --name ligo --display-name "IPython - LIGO"
+        conda deactivate ligo
     # Build the book
     - name: Build the book
       run: |
