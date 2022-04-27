@@ -106,7 +106,7 @@ When an assignment consists of multiple articles, you should submit a summary pa
     - [Abernathey et al. 2021, Cloud-Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/document/9354557).
 
 
-* No assignment May 2, RRR Weeek, but if you'd like some fun reading for intellectual inspiraiton, I recommend [Ten Simple Rules for Doing Your Best Research, According to Hamming](http://dx.plos.org/10.1371/journal.pcbi.0030213).
+* No assignment May 2, RRR Weeek, but if you'd like some fun reading for intellectual inspiraiton, I recommend this perspective on [Opening Up to Open Science](https://issues.org/opening-up-open-science-gentemann-erdmann-kroeger/) by Chelle Gentemann, that covers many of the questions you have explored around incentives and the future of science.
 
 
 * #12, due May 9: Earth and climate science
