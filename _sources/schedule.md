@@ -22,7 +22,13 @@ Note that all lecture videos are posted on the [bCourses "Lectures" playlist for
 9. March 16. [Python Testing and Continuous Integration](https://carpentries-incubator.github.io/python-testing), based on the Carpentries' tutorial.
 10. March 30. [Environments and Makefiles](lectures/environments/conda-envs), [binder](https://docs.google.com/presentation/d/14pJmHMbYpF7VFCOi-eh64DZgEbTXXwWcBnPtvW8hhso).
 11. April 6. Packaging Python software (illustrated via a [toy example](https://github.com/fperez/mytoy)). A [conceptual overview of matplotlib](lectures/matplotlib_beyond_basics), including an quick intro to Object Oriented Programming.
-12. April 13. 
+12. April 13. [Documentation, JupyterBook and Github Pages & Actions](lectures/documentation).
+13. April 20. [Data Serialization](lectures/data-serialization).
+14. April 27. Four vignettes in Open Science (each name links to their slides):
+  a) [Lisa Rennels](https://docs.google.com/presentation/d/1lC7yJna5A_BYDIimg-lrHm8nGVsavLw2/edit?usp=sharing&ouid=104780714595432457614&rtpof=true&sd=true) - PhD student at Berkeley who works on integrated modeling of the social and economic impact of climate change with Julia; co-lead on the Mimi Framework project.
+  b) [Jordi Bolibar](https://docs.google.com/presentation/d/1MLgGj3n1jybFRPRdDaEZ-_ZRm9ByvHFL/edit?usp=sharing&ouid=104780714595432457614&rtpof=true&sd=true) - Postdoc in glaciology at Utrecht University, working on projects that combine machine learning and physics to understand the fate of glaciers, with Julia.
+  c) [Whyjay Zheng](https://docs.google.com/presentation/d/12S-SVzJOhqwaDo87n_Mdg1bDUqo1qYurqFkBzX8w9hc/edit?usp=sharing) - Postdoc at UC Berkeley in my group, who works on both modeling glaciers and understanding them with remote sensing data, with Python.
+  d) [Jarrod Millman](https://drive.google.com/file/d/1-TZDNkSxaokqZAPKJrSuzhw3sjifOUTB/view?usp=sharing) - researcher at Berkeley who has been one of the leaders in the Scientific Python community since the early days, and today co-leads an effort to guide the ecosystem into the next decade.
 
 
 ## Live links for labs on the Berkeley DataHub
