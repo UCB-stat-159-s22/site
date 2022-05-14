@@ -25,6 +25,7 @@ dependencies:
   - h5py=3.6.0
   - hdf4=4.2.15
   - hdf5=1.12.1
+  - hypothesis=6.39.3
   - intake=0.6.5
   - intake-esm=2021.8.17
   - intake-xarray=0.5.0
